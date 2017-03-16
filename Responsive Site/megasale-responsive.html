@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="">
+	<title>Megasale Responsive Practice</title>
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; letter-spacing: 1.2px; line-height: 1.3;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0 15px; width: 960px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		.row{margin: 0;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		header{box-shadow: 0 0 15px #e4e5e2; padding: 10px 0; margin-bottom: 10px;}
+		#logo{width: 250px}
+		.title{color: #23356e; font-size: 37px; font-weight: bold; margin-bottom: 0;}
+		.sub-title{font-size: 36px; color: #23356e;}
+		hr{border: 0; border-top: 1px solid; width: 45px; margin: 15px 0; text-align: left;}
+		.top-p{width: 830px;}
+		.top-list li{list-style-image: url(img/green-check.png); margin-bottom: 15px;}
+		.top-list{padding-left: 22px; margin-top: 15px;}
+		.second-list{padding: 0;}
+		.select{margin-top: 30px; font-size: 27px; color: #23356e;}
+		#top-select{margin-top: 15px;}
+
+		.bottle-div{float: right; position: relative;}
+		.bottle-number{width: 226px; float: left; text-align: center;}
+		.blue-heading{background-color: #23356e; color: #fff; font-size: 24px; padding: 15px 0; text-align: center;}
+		.red{color: red; font-size: 14px; position: absolute; top: 455px; margin-left: 48px;}
+		.bold{font-family: "Proxima_Nova_SemiBold";}
+		.perbot{font-size: 30px; font-family: "Proxima_Nova_SemiBold"; display: inline-block;}
+		.middle{margin: 20px auto;}
+		.addToCart, .bottom-button{width: 185px; text-align: center; border: 1px solid #e47925; background: #dfa15a; color: #fff; font-size: 20px;
+		    			   border-radius: 2px; box-shadow: 0px 1px 3px #666666; margin: 15px auto; padding: 7px;
+		                   background-image: linear-gradient(to bottom, #dfa15a, #ed8924); cursor: pointer;}
+		.addToCart:hover, .bottom-button:hover{box-shadow: 0px 1px 3px #666666; background: #e47825; 
+		        	       background-image: linear-gradient(to bottom, #e47825, #ba5b12);}
+		.shipping{color: #4880c2; font-family: "Proxima_Nova_SemiBold"; display: inline-block; margin-left: 10px; 		  vertical-align: 4px;}
+		.truck-pic{width: 25px;}
+		.rest-box{-webkit-box-shadow: 0px 8px 10px -1px #ccc;
+						  -moz-box-shadow: 0px 8px 10px -1px #ccc;
+						  box-shadow: 0px 8px 10px -1px #ccc; padding: 40px 0;}
+		.middle-box{background-color: #e5f5fd; margin-top: 40px;}
+		.bold-blue{font-family: "Proxima_Nova_SemiBold"; color: #23356e; font-size: 15px;}
+		.middle-banner{background-color: #fff; height: 40px; position: absolute; width: 260px; left: 212px;
+							   -webkit-box-shadow: 0px 8px 10px -1px #ccc;  z-index: 999;
+						 	   -moz-box-shadow: 0px 8px 10px -1px #ccc;
+						  	   box-shadow: 0px 8px 10px -1px #ccc;}
+		#triangle-down{width: 0; height: 0; border-left: 17px solid transparent; border-right: 17px solid transparent;
+							   border-top: 12px solid #23356e; margin: auto;}
+		.middle-number{width: 236px; margin-top: -20px;}
+		.package-div{margin-top: 40px; position: relative;}
+		#triangle-bottomleft{width: 0; border-bottom: 14px solid #b7b7b7; border-right: 14px solid transparent;
+							 height: 0; position: absolute; right: -1px; top: -14px;}
+		#triangle-bottomright{width: 0; height: 0; border-bottom: 14px solid #b7b7b7; 
+							  border-left: 14px solid transparent; position: absolute; left: -1px; top: -14px;}
+		#seals{position: absolute; right: 0; top: 330px;}
+		#primal-bottle{position: absolute; width: 270px; right: -50px; top: 80px;}
+		#money-back{width: 160px; margin-top: 50px;}
+		.question{color: #4880c2; margin-top: 45px; font-weight: bold;}
+		#supp{width: 400px;}
+		.review-title{font-size: 19px; color: #23376e; margin-bottom: 8px;}
+		.customer{font-size: 14px; margin-left: 15px; vertical-align: -2px;}
+		.actual-review{padding: 15px 0 30px; line-height: 1.4;}
+		.single-review{border-bottom: 1px solid; padding: 30px 0 20px;}
+		.bold{font-weight: bold;}
+
+		@media only screen and (min-width: 320px) and (max-device-width: 736px) {
+			.second-list{padding-left: 22px;}
+		}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<img src="img/gundrymd_logo.png" alt="" id="logo">
+			</div>
+		</header>
+		<div class="container">
+			<h1 class="title">UP TO 50% OFF PRIMAL PLANTS</h1>
+			<p class="sub-title">Limited-Time Offer: 24 Hours ONLY</p>
+			<hr>
+			<p class="top-p">The 25 green, polyphenol-rich superfoods in Primal Plants work to give you more youthful, healthier-looking skin from the inside out. This formula also contains unique digestive and metabolic-enhancing blends to restore balance to your gut bacteria and help you stay slim.</p>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+					<ul class="top-list">
+						<li>Enhance metabolism to support fat-burning</li>
+						<li>Gives your skin a youthful, healthy vibrance</li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+					<ul class="top-list second-list">
+						<li>Polyphenols from green superfoods boost energy</li>
+						<li>Additional savings on multi-jar packages</li>
+					</ul>
+				</div>
+			</div>
+			<p class="select" id="top-select">SELECT A PACKAGE TO BEGIN</p>
+			<hr>
+				<div class="package-div">
+				<div class="bottle-number">
+					<div class="blue-heading">
+						<p>6 JARS</p>
+					</div>
+					<div class="rest-box">
+						<p>Regular Price: <s>$539.94</s></p>
+						<p class="bold">Your Price: $269.97</p>
+						<hr class="middle">
+						<p class="perbot">$44.99</p> <span>per jar</span>
+						<a href="http://gundrymd.com/cmd.php?pid=d975bb10b85545558f3d642830f9bd01&bn=1&clear=1"><div class="addToCart">BUY NOW</div></a>
+						<img src="img/truck.png" alt="" class="truck-pic"> <p class="shipping">FREE SHIPPING</p>
+					</div>
+				</div>
+				<div class="bottle-number middle-number">
+					<div class="blue-heading">
+						<p>3 JARS</p>
+					</div>
+					<div class="middle-banner">
+						<div id="triangle-bottomleft"></div>
+						<div id="triangle-bottomright"></div>
+						<div id="triangle-down"></div>
+						<p class="bold-blue">MOST POPULAR</p>
+					</div>
+					<div class="rest-box middle-box">
+						<p>Regular Price: <s>$284.97</s></p>
+						<p class="bold">Your Price: $156.73</p>
+						<hr class="middle">
+						<p class="perbot">$52.24</p> <span>per jar</span>
+						<a href="http://gundrymd.com/cmd.php?pid=4293a84f2fef4959aa893075f1724f9b&bn=1&clear=1"><div class="addToCart">BUY NOW</div></a>
+						<img src="img/truck.png" alt="" class="truck-pic"> <p class="shipping">FREE SHIPPING</p>
+					</div>
+				</div>
+				<div class="bottle-number">
+					<div class="blue-heading">
+						<p>1 JAR</p>
+					</div>
+					<div class="rest-box">
+						<p>Regular Price: <s>$99.99</s></p>
+						<p class="bold">Your Price: $59.99</p>
+						<hr class="middle">
+						<p class="perbot">$59.99</p>
+						<a href="http://gundrymd.com/cmd.php?pid=92cc1bb4b1ce4ce787387dd5d7e54c18&bn=1&clear=1"><div class="addToCart">BUY NOW</div></a>
+						<img src="img/truck.png" alt="" class="truck-pic"> <p class="shipping">+ $4.95 SHIPPING</p>
+					</div>
+				</div>
+				<img src="img/primal-50.png" alt="" id="primal-bottle">
+				<img src="img/small-seals.png" alt="" id="seals">
+			</div>
+			<div class="clear"></div>
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-lg-3 col-xs-12 text-center">
+						<img src="img/money-back.png" alt="" id="money-back">
+					</div>
+					<div class="col-md-9 col-sm-9 col-lg-9 col-xs-12">
+						<p class="select">100% MONEY BACK GUARANTEE</p>
+						<hr>
+						<p>We work hard to formulate the most advanced products on the market. Our 90-Day Customer Satisfaction Guarantee is designed to give you ample opportunity to experience optimal results from your product, completely risk-free.</p>
+					</div>
+				</div>
+				<p class="select">FAQ</p>
+				<hr>
+				<p class="question">How many jars should I order?</p>
+				<p>The 3 jar package is our most popular option because it gives you more savings (45% off) and lets you take full advantage of my 90-day money-back guarantee. However, since this sale lasts ONLY for the next 24 hours, I recommend the 6 jar option – which offers maximum savings at 50% off.</p>
+				<p class="question">What are the ingredients in Gundry MD Primal Plants?</p>
+				<img src="img/primal_sup.png" alt="" id="supp">
+				<p class="question">How safe is Primal Plants?</p>
+				<p>Gundry MD Primal Plants contains only 100% natural and safe ingredients. The formula is tested for quality and purity at an independent, 3rd-party facility. However, as a physician, I recommend consulting with your own health care provider before beginning any new program.</p>
+				<p class="question">How safe is Primal Plants?</p>
+				<p>Gundry MD Primal Plants contains only 100% natural and safe ingredients. The formula is tested for quality and purity at an independent, 3rd-party facility. However, as a physician, I recommend consulting with your own health care provider before beginning any new program.</p>
+				<p class="question">When can I expect results?</p>
+				<p>Most users report feeling a significant energy boost on their first day of use. Within the first week you'll notice an overall healthier glow to your skin and you'll feel your digestive system flowing like it's supposed to. The deeper metabolic benefits are usually reported with continued use over the first 3-4 weeks. Please use Primal Plants as directed.</p>
+				<p class="question">How do I use Primal Plants?</p>
+				<p>Simply mix one scoop into water or a beverage of your choice, mix well, and it's ready to drink! Drink one glass a day (everyday) to get all the skin, metabolic, and digestive benefits from this polyphenol mix. Many users love to mix Primal Plants with their Vital Reds to create a delicious flavor combo!</p>
+				<p class="select">CUSTOMER REVIEWS</p>
+				<hr>
+				<div class="single-review">
+					<p class="review-title">Experienced Dramatic Changes in My Skin</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Michelle B.</span></span>
+					<p class="actual-review">I have been taking primal plants for about a month now. I have experienced dramatic changes in my skin, not so many breakouts and dryness, and have increased energy to keep me going through the day. I am a mother of 3, work full time, and am enrolled in graduate school as a part-time student. The energy boost I get after taking the supplement helps me keep going throughout the day. I am extremely satisfied with the outcome. I used to also have problems with constipation and bloating, but now I am pretty regular and the bloating has gone away. I would definitely recommend this product to others.</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">Energy Levels Are Up</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Curtis Fraser</span></span>
+					<p class="actual-review">I take Primal Plants in the morning and Vital reds in the afternoon. I feel my brain fog is gone, energy levels are up, my skin is clearing up and I'm looking younger/more attractive.</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">I Feel Amazing...</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Kristen B.</span></span>
+					<p class="actual-review">I came across Dr.Gundry and Primal Plants while I was researching high quality supplements. I decided to give it a chance and haven't looked back. The taste is way better than I thought it would be. And more importantly I feel amazing! I have a lot more energy that allows me to play with my kids longer and I have been able to focus at work better. I have had zero side effects! No gas, bloating, or upset stomach. I can't imagine not starting my day with Primal Plants. I recently went out of town to visit my dad and brought my Primal Plants with me. My dad tried it and immediately ordered a three month supply. Whether or not you're considering this product to clear up any skin imperfections or if you are like me and looking for drinkable easily absorbed nutrition, give it a try!</p>
+				</div>
+
+				<div class="single-review">
+					<p class="review-title">I Am Seeing Results On My Scale</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Julie S.</span></span>
+					<p class="actual-review">I have used several green drinks in the past. This is the best tasting, easy to dissolve product I have used. I am seeing results on my scale and that makes me happy too! I notice that after I drink Primal Plants, I feel a little energy boost.</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">Sleeping and Skin Problems Improved</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Mary F.</span></span>
+					<p class="actual-review">I have noticed that my sleeping has improved. I had a skin problem on my forehead that my doctor treated and it did not clear up. After taking primal plants for about 3 weeks it started to shrink up and is almost gone.</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">I Am a Believer!</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Allan B.</span></span>
+					<p class="actual-review">I am a 73 year old man with a long history on annoying acne. Unhealthy, oily skin treated on and off with antibiotics. Saw your video and was impressed with the fact that a solution to the problem could be had from within! After a month and a half on Primal Plants I was significantly clear! Pleasant to take every morning at breakfast. I am a believer!</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">Skin Has Cleared Up...Cravings For Sweets Diminished</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Rita B.</span></span>
+					<p class="actual-review">I've been taking Primal Plants for 7 days now, which I take first thing in the morning, and my skin has cleared up. My face was always more or less broken out. I haven't had clear skin since my teens, even my female co-workers are noticing the difference. An absolute great plus is that my waistline is also shrinking! My cravings for sweets and fatty foods have diminished quite a bit and I attribute these changes since I started taking PP!!!</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">Lost Pounds With Little Effort</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">William G.</span></span>
+					<p class="actual-review">The green apple taste is good and primal plants has helped me loose pounds in two weeks with very little effort on my part</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">More Energy and Clarity</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Jennifer B.</span></span>
+					<p class="actual-review">Better morning start. More energy and clarity.... Been fighting off a seasonal cold and feel that Primal Plants is helping me kick it. Will continue using Primal Plants indefinitely. Thank You for a great health product!</p>
+				</div>
+				<div class="single-review">
+					<p class="review-title">Overall Feeling of Wellness</p>
+					<img src="img/review-stars.png" alt=""> <span class="customer">Customer: <span class="bold">Linda A.</span></span>
+					<p class="actual-review">I have been taking a scoop of Primal Plants each day in my morning smoothie. I have felt increased energy and an overall feeling of wellness. My stomach problems have disappeared and I think it is helping me to lose weight, which I didn't expect.</p>
+				</div>
+			</div>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</body>
+	</html>

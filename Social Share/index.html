@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Social Share Buttone</title>
+
+<style type="text/css">
+ a:link{text-decoration: none;}
+ .container{width: 960px; margin: auto; position: relative; margin-top: 400px;}
+ button #share-image{width: 20px; vertical-align: -7px; margin-right: 5px;}
+.share-button{background-color: #fff; border-radius: 5px; padding: 5px; font-size: 15px; margin-top: 90px; outline: 0;}
+ #share-buttons-div{width: 500px; position: absolute;}
+.icons{width: 45px; display: none;}
+.button-icons{border: 0; outline: 0; width: 50px; display: inline-block;}
+#email-icon{width: 48px;}
+/*.button-icons:hover{opacity: .5;}*/
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* toolip code and styling*/
+.triangle-up{width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 10px solid black; position: absolute; top: -10px; left: 28px;}
+.toolip{background-color: black; color: #fff; position: absolute; width: 55px; padding: 5px; left: -8px; top: 57px; border-radius: 5px; display: none;}
+.toolip p{margin: 0; font-size: 14px; text-align: center;}
+.button-icons:hover + .toolip{display: block;}
+.facebook{left: 43px;}
+.google{left: 97px;}
+.print{left: 150px;}
+.copy{left: 207px}
+.tumblr{left: 262px;}
+.twitter{left: 313px;}
+</style>
+</head>
+<body>
+   <div class="container">
+       <div id="share-buttons-div">
+
+        <!-- Email -->
+        <div class="button-icons hvr-grow-shadow">
+        <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+            <img src="share_email.svg" alt="Email" class="icons" id="email-icon" />
+        </a>
+        </div>
+        <div class="toolip">
+        <div class="triangle-up"></div>
+            <p>Email</p>
+        </div>
+        
+
+        <!-- Facebook -->
+        <div class="button-icons hvr-grow-shadow">
+        <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com">
+            <img src="share_facebook.svg" alt="Facebook" class="icons" />
+        </a>
+        </div>
+        <div class="toolip facebook">
+        <div class="triangle-up"></div>
+            <p>Facebook</p>
+        </div>
+        <!-- Google+ -->
+        <div class="button-icons hvr-grow-shadow">
+        <a href="https://plus.google.com/share?url=https://simplesharebuttons.com">
+            <img src="share_googleplus.svg" alt="Google" class="icons"/>
+        </a>
+        </div>
+        <div class="toolip google">
+        <div class="triangle-up"></div>
+            <p>Google</p>
+        </div>
+        <!-- Print -->
+        <div class="button-icons hvr-grow-shadow">
+        <a href="javascript:;" onclick="window.print()">
+            <img src="share_printer.svg" alt="Print" class="icons"/>
+        </a>
+        </div>
+        <div class="toolip print">
+        <div class="triangle-up"></div>
+            <p>Print</p>
+        </div>
+        <div class="button-icons hvr-grow-shadow">
+        <img src="copy_link.svg" class="icons" alt="" data-clipboard-text="http://www.eyalbenmoshe.com/" id="copy">
+        </div>
+        <div class="toolip copy">
+        <div class="triangle-up"></div>
+            <p>Copy Link</p>
+        </div>
+        <!-- Tumblr-->
+        <div class="button-icons hvr-grow-shadow">
+        <a href="http://www.tumblr.com/share/link?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons">
+            <img src="share_tumblr.svg" alt="Tumblr" class="icons"/>
+        </a>
+        </div>
+        <div class="toolip tumblr">
+        <div class="triangle-up"></div>
+            <p>Tumblr</p>
+        </div>
+        <!-- Twitter -->
+        <div class="button-icons hvr-grow-shadow">
+        <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons">
+            <img src="share_twitter.svg" alt="Twitter" class="icons" />
+        </a>
+        </div>
+        <div class="toolip twitter">
+        <div class="triangle-up"></div>
+            <p>Twitter</p>
+        </div>
+        </div>
+        <button class="share-button"><img src="share-image.png" alt="" id="share-image"><span>Share</span></button>
+        
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        var time = 0;
+        $(".share-button").click(function(){
+            $(".icons").each(function(){
+                $(this).delay(time).fadeIn(500);
+                time += 500;
+            })
+        })
+
+        $("#copy").click(function() {
+            $(".copy p").html("Copied!")
+        })
+    })
+
+    new Clipboard('#copy');
+
+</script>
+</body>
+
+
+</html>

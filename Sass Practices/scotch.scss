@@ -1,0 +1,12 @@
+$primaryColor: #eeffcc;;
+
+body{background: $primaryColor; $primaryColor: #ccc !global;;}
+
+p{color: $primaryColor}
+
+a.myLink{
+	 color: red; 
+	 font-size: 30px;
+	 text-align: center;
+	 &:hover{color: yellow; text-align: left;}
+}

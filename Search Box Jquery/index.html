@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Search Box</title>
+	<!-- http://stackoverflow.com/questions/11717681/jquery-search-doesnt-work-as-expected?noredirect=1&lq=1 -->
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px; margin-top: 200px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		#result li{font-weight:normal; color: blue; text-decoration: underline; cursor: pointer; margin: 20px 0;}
+		#search{width: 280px; padding: 4px; border-radius: 3px;}
+		#search:focus{outline: none;}
+		.search-text{display: inline-block; margin-left: 20px;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div id="faq">
+				
+					<input id="search" value="" /><p class="search-text">Search</p>
+					<ul id="result">
+						<li>how round is the Earth?</li>
+						<li>how solid am I?</li>
+						<li>proper date places?</li>
+						<li>how do I fix my pants?</li>
+						<li>is the world dying?</li>
+						<li>how is it people are so poor?</li>
+						<li>being good is bad?</li>
+						<li>look good and spend less?</li>
+						<li>feel optimum health</li>
+						<li>zoolander became famous with this trick</li>
+						<li>xavier lost his walking abilities</li>
+						<li>walking makes you lose weight</li>
+						<li>abs of steel</li>
+						<li>doing more for less</li>
+						<li>querying databases</li>
+						<li>missing out on all the best deals?</li>
+					</ul>
+			</div><!-- #faq -->
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$('#search').keyup(function(e) {
+					var s = $(this).val().trim();
+					if (s === '') {
+						$('#result li').show();
+						return true;
+					}
+					$('#result li:not(:contains(' + s + '))').hide();
+					$('#result li:contains(' + s + ')').show();
+					return true;
+				});
+
+		}); // end document ready
+</script>
+	</body>
+	</html>

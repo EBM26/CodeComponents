@@ -1,0 +1,15 @@
+body {
+  background: #eeffcc; }
+
+p {
+  color: #ccc; }
+
+a.myLink {
+  color: red;
+  font-size: 30px;
+  text-align: center; }
+  a.myLink:hover {
+    color: yellow;
+    text-align: left; }
+
+/*# sourceMappingURL=scotch.css.map */

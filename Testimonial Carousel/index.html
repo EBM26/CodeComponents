@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Testimonial Carousel</title>
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; letter-spacing: 1.2px;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px; margin-top: 300px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+
+		/*    module css   */
+		.testimonial-div{background-color: #f8f8f8; width: 100%; height: 180px;}
+		.testi-text{margin-top: 0;}
+		.slide-divs{width: 750px; margin: auto; color: #3f60aa; font-style: italic; font-family: Athelas; line-height: 1.3; 
+			font-size: 19px;}
+		.name-date{text-align: right; padding-right: 50px; margin-top: 5px;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="testimonial-div">
+			<div class="container">
+				<div class="slide-divs">
+					<p class="testi-text"></p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){ 
+
+				var testimonials = ['"I have used your product for 2 weeks and Wow!! My skin looks brighter and my family are noticing the difference, a big change. Wait till I have finished using the two bottles in my possession, they will never recognize me. I will keep you informed."<p class="name-date">-Dagma, August 19, 2016<p>',
+				'"After 1 month I noticed amazing improvement. It is easy to use.I feel very confident now"<p class="name-date">-Kamala, August 21, 2016</p>',
+				'"I have been using the Lift+Firm Sculpting cream for several weeks and I love it! The skin on my face and the backs of my hands appears smoother and fuller. The fine lines around my mouth are smoothing out. People never really think I am my true age and this cream is only improving that. I am an RN and a candidate for a PhD in Holistic Health and I am feeling more and more like a good representation of health; good energy, healthy body and youthful skin!"<p class="name-date">-Jean L, June 30, 2015</p>',
+				"<q>Love the effects and comments!! The cream has done wonders for my face and neck, and so far the tightened feeling is absolutely exhilarating!! I also love the comments made from co-workers and friends about how young I look, and they don't believe me when I tell them my true age!</q>",
+				'"A "must try" for anyone unsatisfied with the elasticity of their skin. I am a retired Dermatology nurse and was very skeptical about a cream that could rejuvenate skin to the point that it appears "lifted," but I have to admit that my skin does appear firmer with less sagging. I love the scent and feel of your cream on my skin. Thank you for this amazing product."<p class="name-date">-Dona L, July 7, 2015</p>',
+				"<q>Love the product!!! This cream is amazing!!!. The results were immediate from day one. I've tried many other products and none have come close to your product. My skin has dramatically lifted around the neck and jawline my cheeks are higher, my skin is more even toned and glowing, and I have received many compliments from family and friends. My daughter is also using your cream and is experiencing the same results. Thank you so much for creating a product that delivers the results it guarantees but is also very affordable as well.</q><p class='name-date'>-Helma P, August 11, 2015</p>",
+				'"I am thrilled it is working. I have been using the product for about a month now, and I notice quite a difference on my face and back of hands. Years of sunbathing in the Hamptons growing up with baby oil and iodine. I am thrilled it is working, and just had my 70th birthday, and friends comment how much younger I look."<p class="name-date">-Shirly Z, June 18, 2015</p>',
+				'"The first natural product that I have been able to use. I decided to take the 14 day picture challenge. The first 14 days I saw a really nice difference in my dark spots and my blemishes. I have a slue of products that have been truly unsuccessful for me, this is the first natural product that I have been able to use with very good positive results."<p class="name-date">-Venita, June 18, 2015</p>',
+				'"Have noticed in just a short space of time that the dark spot corrector is working to reduce the appearance of the dark spots . It also seems to of tightened the skin so a double bonus !! Really pleased with my purchase ! Will definitely buy more and happy to recommend to others."<p class="name-date">-Lynsday, June 26, 2016</p>',
+				"<q>I was using a different product for 8 months with no results then I found this cream and in less than 2 weeks I saw the results I couldn't achieve with a day and night cream I was using and costs three time as much as the Beverly hills spot corrector!</q><p class='name-date'>-Rosieswaimn, June 24, 2015</p>",
+				"<q>just amazing Everyday I use this cream I love it more and more, it's actually the first time in my life that I can say a cream actually works, it's doing what it's advertising for, my face and my neck looks a lot better, and I noticed my lines are less noticeable, I simply love it. Thank you</q><p class='name-date'>-Monica, Nov 11 2016</p>",
+				"<q>My Favorite Cream! Of all the creams i've tried and used, this became my favorite! When i started using it, i already felt its compatibility with my skin. It's exactly how i like my face to feel. My face feels fresh and supple everytime i put the cream on. In 1 week i noticed my jaw looked lifted, and my face looked even more youthful.</q><p class='name-date'>-Ms McKenna, August 17, 2016</p>"]
+
+				var rando = Math.floor(Math.random()*(testimonials.length)); // makes the testimonials random with every page load
+				var len = testimonials.length;
+
+				$(".testi-text").html(testimonials[rando])
+
+				function TestiFader() {
+					$(".testi-text").fadeOut(1000, function(){
+						if((rando+1)>=len) rando = -1;
+						$(".testi-text").html(testimonials[(rando +1)]);
+						rando++;
+					});
+					$(".testi-text").fadeIn(1000);
+				}
+				setInterval(TestiFader, 5000);
+
+			}); 
+		</script>
+	</body>
+	</html>

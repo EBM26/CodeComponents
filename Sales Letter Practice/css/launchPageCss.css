@@ -1,0 +1,79 @@
+*{text-decoration: none; max-width: 100%;}
+html,body{margin: 0; padding: 0; color: #333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+img{border: none;}
+.clearfix{clear: both}
+.bold{font-weight: bold;}
+.italic{font-style: italic;}
+.underline{text-decoration: underline;}
+.center{text-align: center;}
+.left{text-align: left;}
+.margTop{margin-top: 40px;}
+.caption{font-size: 11px; color: #ed1c24; margin-top: 20px;}
+.container{margin: 0 auto; width: 700px; padding-left: 0px; padding-right: 0px;}
+.topHeader{background-color: #2a2a29;}
+.container2{width: 100%;}
+#updateSection h2.blackColorFix{color: black; border-bottom: none;}
+.fontsmaller{font-size: smaller; font-weight: lighter; font-style: italic;}
+p{font-size: 16px; margin-bottom: 20px;}
+.blueBorder{border: 7px solid #00539a;}
+.blueBorder p{color: red; font-size: 24px; font-weight: bold; margin-top: 8px; margin-bottom: 8px;}
+h1{color: #0580be; font-size: 35px; margin-bottom: 50px;}
+h3{font-size: 20px; color: #000000;}
+.row{margin-top: 20px; margin-right: 0px; margin-left: 0px;}
+#firstSection, #inflamationSection, #inflamationSecond{margin-bottom: 50px;}
+.whiteBackGroundBorder.whiteBackPadding{padding-bottom: 5px; padding-top: 0px;-webkit-box-shadow: inset 0px 0px 8px -1px rgba(243,243,243,1); -moz-box-shadow: inset 0px 0px 8px -1px rgba(243,243,243,1); box-shadow: inset 0px 0px 8px -1px rgba(243,243,243,1);}
+.noPadding{padding-left: 0px; padding-right: 0px;}
+header{background: #ffffff; background: -moz-linear-gradient(top, #ffffff 0%, #ececec 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ececec)); background: -webkit-linear-gradient(top, #ffffff 0%,#ececec 100%); background: -o-linear-gradient(top, #ffffff 0%,#ececec 100%); background: -ms-linear-gradient(top, #ffffff 0%,#ececec 100%); background: linear-gradient(to bottom, #ffffff 0%,#ececec 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ececec',GradientType=0 ); -webkit-box-shadow: inset 0px -15px 20px 0px rgba(221,221,221,1); -moz-box-shadow: inset 0px -15px 20px 0px rgba(221,221,221,1); box-shadow: inset 0px -15px 20px 0px rgba(221,221,221,1);}
+header .container{padding-top: 10px; padding-bottom: 10px;}
+header .row{margin-top: 0px;}
+.margBott.buttonFix{margin-left: 0px;}
+#updateSection .symptomsList{margin-left: 0px;}
+.symptomsList{padding-left: 0px; margin-left: 40px; font-weight: bold;}
+.symptomsList li{background:url(../images/PRcheckMark.png) no-repeat; margin-bottom: 20px; margin-top: 10px;padding-left: 35px; list-style-type: none; color: #333; font-size: 16px;}
+.whiteBackGroundBorder{background-color: white; border: 2px solid #f3f3f3; padding-top: 30px; padding-bottom: 30px;}
+.symptomsList.noMargin{margin-left: 0px;}
+#doctorBioSection, #inflamationSecond, #inflamationSecond, #docBioSec, #inflamationFourth, #lactoSection, #destroyer2, #howLongSection, #updateSection, #stillHereSection, .bckGroundColorFix{background-color: #edf8fe;}
+.blueBackGround{background-color: #0b80be; padding-top: 20px; padding-bottom: 20px;}
+.bckGroundColorFix{padding-top: 10px; padding-bottom: 10px; padding-left: 20px;padding-right: 20px;}
+.blueBackGround p{color: white; font-size: 20px; font-weight: 200; margin-left: 20px; margin-right: 20px;}
+.startQuote:before{content: url(../images/startQuote.png);margin-right: 12px; vertical-align: text-bottom;}
+.endQuote:after{content: url(../images/closingQuote.png); margin-left: 8px;}
+.noBottMargin{margin-bottom:0px;}
+p.fontSlight{font-weight: lighter; font-size: smaller;}
+.getStartedButton{ margin-bottom: 20px;background-color: #f5d80a; border-radius: 5px; width: 66%;border: 1px solid #ad8226; border-radius: 10px; color: #333; font-size: 20px; padding: 5px 25px; font-weight: bold; text-align: center; background: #fce00f; background: -moz-linear-gradient(top, #fce00f 0%, #ffb200 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fce00f), color-stop(100%,#ffb200)); background: -webkit-linear-gradient(top, #fce00f 0%,#ffb200 100%); background: -o-linear-gradient(top, #fce00f 0%,#ffb200 100%); background: -ms-linear-gradient(top, #fce00f 0%,#ffb200 100%); background: linear-gradient(to bottom, #fce00f 0%,#ffb200 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce00f', endColorstr='#ffb200',GradientType=0 ); margin-bottom: 20px; margin: 0 auto;}
+.getStartedButton a{color: black; font-size: 25px;}
+.lightTealBack{background-color: #edf8fe;}
+.hazardIcon{margin-top: 50px;}
+.getStartedButton.margBott{margin-bottom: 20px;}
+.margBott{margin-bottom: 40px;}
+#updateSection h2{color:#ef434f; font-size: 40px; border-bottom: 7px solid #ef434f; margin-bottom: 40px;}
+#vitalBiotics .symptomsList.margLeft{margin-left: 40px;}
+#vitalBiotics .symptomsList{margin-left: 0px; margin-top: 30px;}
+.abstractImg{width: 100%;}
+.symptomsList.margLeft li{margin-left: 20px;}
+.questions{font-size: 21px; color: #626565; font-weight: bold;}
+.answers{margin-left: 20px;margin-bottom: 20px;}
+.links a{color: inherit;}
+.padLeftFix{padding-left: 20px; padding-top: 20px;}
+.subscript{font-size: 10px;vertical-align: top;}
+.topBotBorder{border-top: 2px solid #5ac7d5; border-bottom: 2px solid #5ac7d5;}
+#inflamationSection h1{color: #ec2227;}
+.padTop{padding-top: 50px;}
+.padddingFix{padding-left: 50px; padding-right: 50px;}
+#stillHereSection, .padBot{padding-bottom: 50px;}
+#startedSection, #howLongSection{padding-bottom: 50px;}
+.redColorFix{color: #ec2027;}
+.padBott{padding-top: 30px; padding-bottom: 30px;}
+.margLeft{margin-left: 20px;}
+footer{background-color: #cccbca;}
+footer .container{ width: 960px; }
+footer p{font-size: small;}
+
+@media only screen and (max-width: 500px) {
+	.row{ padding-left: 10px; padding-right: 10px; }
+	.mobileCenter, footer{text-align: center;}
+}
+
+@media only screen and (min-width: 510px) and (max-width: 800px) {
+	.container{width: 86%;}
+}

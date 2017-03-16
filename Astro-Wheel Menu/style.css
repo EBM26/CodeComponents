@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-backface-visibility: hidden;
+}
+
+/*HEADER*/
+.header {
+  height: 25px;
+  background: #222;
+  color: #eee;
+  text-align: center;
+  font: 10px/25px Helvetica, Verdana, sans-serif; 
+}
+
+.header a {
+  color: #999;
+}
+
+.menu {
+  margin-top: 40px;
+}
+
+/*WRAPPER*/
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  width: 960px;
+}
+
+
+.wheel {
+  width: 100%;
+}
+
+/*MAIN CIRCLE*/
+.circle {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: #093b62;
+
+  box-shadow: inset 0px 0px 30px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0px 0px 30px rgba(0,0,0,0.3);
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.small-triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid #147dd9;
+  margin-top: 30px;
+  margin-left: 375px;
+}
+
+.Rfloat {
+  float: right;
+}
+
+.Lfloat {
+  float: left;
+}
+
+.clear {
+  clear: both;
+  height: 1px;
+  line-height: 1px;
+  margin-bottom: -1px;
+  overflow: hidden;
+}
+
+.sign {
+  margin-right: 12px;
+  margin-bottom: 35px;
+  padding: 10px 30px;
+  width: 130px;
+  color: #333;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  background: #24d1fd;
+  text-align: center;
+  float: left;
+
+}
+
+.sign-div {
+  margin-left: 35px;
+}
+
+.sign:hover {
+  background: #eee;
+}
+
+.dates {
+  font-size: 15px;
+}

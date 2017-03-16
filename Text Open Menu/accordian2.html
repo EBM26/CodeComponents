@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accordian 2 Example</title>
+	<!-- Code example taken from this page https://codepen.io/brenden/pen/Kwbpyj -->
+	<link rel="shortcut icon" href="favicon-test.ico">
+	<style>
+		*{box-sizing: border-box; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+		a{text-decoration: none;color: inherit;}
+		body{font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 16px; color: #333333; margin: 0; padding: 0;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px; margin-top: 300px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		ul{list-style: none;padding: 0;}
+		.inner{padding-left: 1em; overflow: hidden; display: none;}
+    li{margin: .5em 0;}
+   	a.toggle {width: 100%; display: block; background-color: blue; cursor: pointer;transition: background .3s ease;
+   				  font-size: 25px; color: #fff; padding: 20px; text-align: center;}
+   	a.toggle:hover {background-color: gold;}
+  </style>
+</head>
+<body>
+<div class="container">
+<ul class="accordion">
+  <li>
+    <a class="toggle">Item 1</a>
+    <ul class="inner">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+  
+  <li>
+    <a class="toggle">Item 2</a>
+    <ul class="inner">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </li>
+  
+  <li>
+    <a class="toggle">Item 3</a>
+    <ul class="inner">
+      <li>
+        <a href="#" class="toggle">Open Inner</a>
+        <div class="inner">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla. Duis a elit et dolor laoreet volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean cursus ultrices justo et varius. Suspendisse aliquam orci id dui dapibus
+            blandit. In hac habitasse platea dictumst. Sed risus velit, pellentesque eu enim ac, ultricies pretium felis.
+          </p>
+        </div>
+      </li>
+      
+      <li>
+        <a href="#" class="toggle">Open Inner #2</a>
+        <div class="inner">
+          <p>
+            Children will automatically close upon closing its parent.
+          </p>
+        </div>
+      </li>
+      
+      <li>Option 3</li>
+    </ul>
+  </li>
+  
+  <li>
+    <a class="toggle">Item 4</a>
+    <ul class="inner">
+      <li>
+        <a href="#" class="toggle">Technically any number of nested elements</a>
+        <ul class="inner">
+          <li>
+            <a href="#" class="toggle">Another nested element</a>
+            <div class="inner">
+              <p>
+                As long as the inner element has inner as one of its classes then it will be toggled.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla. Duis a elit et dolor laoreet volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean cursus ultrices justo et varius. Suspendisse aliquam orci id dui dapibus
+                blandit. In hac habitasse platea dictumst. Sed risus velit, pellentesque eu enim ac, ultricies pretium felis.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      <li>Option 2</li>
+      
+      <li>Option 3</li>
+    </ul>
+  </li>
+</ul>
+</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script>
+  	$(document).ready(function(){
+
+  		$('.toggle').click(function(e) {
+  		e.preventDefault();
+  
+    var $this = $(this);
+  
+    if ($this.next().hasClass('show')) {
+        $this.next().removeClass('show');
+        $this.next().slideUp(350);
+    } else {
+        $this.parent().parent().find('li .inner').removeClass('show');
+        $this.parent().parent().find('li .inner').slideUp(350);
+        $this.next().toggleClass('show');
+        $this.next().slideToggle(350);
+    }
+});
+
+});
+  </script>
+</body>
+</html>

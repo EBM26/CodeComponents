@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,IAAI;EAAC,UAAU,EAFA,OAAO;;AAItB,CAAC;EAAC,KAAK,EAFwC,IAAI;;AAInD,QAAQ;EACN,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;EAClB,cAAO;IAAC,KAAK,EAAE,MAAM;IAAE,UAAU,EAAE,IAAI",
+"sources": ["scotch.scss"],
+"names": [],
+"file": "scotch.css"
+}

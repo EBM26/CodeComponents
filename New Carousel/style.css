@@ -1,0 +1,78 @@
+#slideshow { 
+   height: 700px; /* Update to your slider height */
+  position: relative;
+  overflow: hidden; 
+}
+
+#slideshow > div { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  background-size: cover !important;
+  height: 700px;
+  z-index: -999;
+}
+
+body {
+
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 16px;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+#slide-1 {
+	background: url("images/hero_bg.jpg") no-repeat;
+}
+
+#slide-2 {
+	background: url("images/hero_bg_02.jpg") no-repeat;
+}
+
+#slide-3 {
+	background: url("images/vital-banner.jpg") no-repeat;
+}
+
+#left-arrow {
+  width: 60px;
+}
+
+#right-arrow {
+  width: 30px;
+}
+
+.arrow-div-1{
+  position: absolute;
+  top: 300px;
+  left: 90px;
+  width: 30px;
+  opacity: .5;
+  background-color: #fff;
+  padding: 15px 30px 10px 0;
+  display: none;
+}
+
+.arrow-div-2{
+  position: absolute;
+  right: 90px;
+  top: 300px;
+  width: 30px;
+  opacity: .5;
+  background-color: #fff;
+  padding: 15px;
+  display: none;
+}
+
+.slider:hover .show{
+  display: block;
+}
+
+.show:hover {
+  opacity: 1;
+}
+
+.show-me {
+	display: block !important;
+}

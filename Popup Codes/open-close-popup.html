@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Close Popup and Open Other Popup</title>
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px; margin-top: 300px; position: relative;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.big-box{width: 400px; margin: auto;}
+		.small-box{border: 1px solid #333; width: 198px; height: 198px;}
+		.small-box:hover{opacity: .5;}
+		.blue{background-color: blue;}
+		.green{background-color: green;}
+		.yellow{background-color: yellow;}
+		.red{background-color: red;}
+		.popup{position: absolute; width: 100px; color: #fff; padding: 20px; text-align: center; display: none; border: 1px solid #333;}
+		.fourth{top: 260px; color: #333;}
+		.third{right: 0; top: 60px;}
+		.second{right: 0; top: 245px;}
+		.first{top: 60px;}
+		.show{display: block;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="red popup first"><p>This is the first popup</p></div>
+		<div class="green popup second"><p>This is the second popup</p></div>
+		<div class="blue popup third"><p>This is the third popup</p></div>
+		<div class="yellow popup fourth"><p>This is the fourth popup</p></div>
+
+		<div class="big-box">
+			<div class="small-box blue Rfloat"></div>
+			<div class="small-box red"></div>
+			<div class="clear"></div>
+			<div class="small-box green Rfloat"></div>
+			<div class="small-box yellow"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			$(".blue").click(function() {
+				$( ".popup" ).fadeOut( "slow" )
+				$(".third").fadeIn("slow");
+			})
+
+			$(".yellow").click(function() {
+				$( ".popup" ).fadeOut( "slow" )
+				$(".fourth").fadeIn("slow");
+			})
+
+			$(".red").click(function() {
+				$( ".popup" ).fadeOut( "slow" )
+				$(".first").fadeIn("slow");
+			})
+
+			$(".green").click(function() {
+				$( ".popup" ).fadeOut( "slow" )
+				$(".second").fadeIn("slow");
+			})
+			
+		})
+
+	</script>
+</body>
+</html>

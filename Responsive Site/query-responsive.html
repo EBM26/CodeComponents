@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Query Responsive</title>
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 16px; font-weight: 300; background-color: #fff;  color: #62686c; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; letter-spacing: 1.2px;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		header{padding: 20px 0 10px;    
+				-webkit-box-shadow: 0px 7px 12px -5px rgba(0,0,0,0.11);
+			    -moz-box-shadow: 0px 7px 12px -5px rgba(0,0,0,0.11);
+			    box-shadow: 0px 7px 12px -5px rgba(0,0,0,0.11);}
+		.nav-links{padding-top: 30px;}
+		.nav-links li{display: inline-block; padding-right: 35px; font-size: 14px;}
+		.last-nav{padding-right: 0 !important;}
+		.cart{width: 75%;}
+		.cta {color: white; font-size: 18px; width: 185px; padding: 5px; text-align: center; border: 1px solid #db5826;
+    		  border-radius: 3px;
+		    -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.21);
+		    -moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.21);
+		    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.21);
+		    background: #ea9e42;
+		    background: -webkit-linear-gradient(#ea9e42, #d88b2d);
+		    background: -o-linear-gradient(#ea9e42, #d88b2d);
+		    background: -moz-linear-gradient(#ea9e42, #d88b2d);
+		    background: linear-gradient(#ea9e42, #d88b2d)}
+		.sign-div{font-size: 15px; width: 200px; margin-right: 20px; border-left: 1px solid #8c8c8c;
+				  padding: 0px 0px 25px 20px;}
+		.offer-div{padding: 40px 0; width: 760px;}
+		.ex-div{padding: 15px 0 13px 0; font-size: 17px;}
+		.blue-line{display: block; width: 100%; height: 18px; background: #23366e; border-top: 1px solid #435383; 
+				   border-bottom: 1px solid #435383;}
+		h1{font-size: 40px; color: #23376e; font-weight: normal; margin-bottom: 25px;}
+		.main-cont{padding-top: 70px;}
+		.desc{font-size: 11px;}
+		.right-pic-div{width: 286px;}
+		.left-text{width: 640px;}
+		.left-text p, .right-text p{margin-bottom: 35px;}
+		.right-text{width: 603px;}
+		.left-pic-div{width: 330px;}
+		.mar-bot20{margin-bottom: 3%;}
+		hr{border: 0; border-top: 1px solid #62686c; margin: 3% 0;}
+		h4{font-size: 30px; color: #23376e; font-weight: normal;}
+		.thumb-div-right{width: 480px;}
+		.thumb-desc{display: inline-block; margin-left: 20px; font-size: 15px; width: 295px; vertical-align: top;}
+		.row{margin-top: 3%;}
+		.mar-top-lg{margin-top: 10%;}
+		.thumb-div-left{width: 480px;}
+		.font15{font-size: 15px;}
+		.point-div-left{width: 440px;}
+		.point-div-right{width: 480px;}
+		h3{text-transform: uppercase; font-size: 20px; margin: 10px 0; font-weight: normal;}
+		.breadcrumbs{padding-top: 10px; color: #23376e;}
+		.marbot35{margin-bottom: 30px;}
+		.black-box{display: inline-block; background-color: #333; height: 30px; width: 30px; vertical-align: middle;
+				   border-radius: 5px; color: #fff; font-weight: bold; text-align: center; padding-top: 5px;}
+		.stay{margin-right: 10px; display: inline-block; color: #23376e;}
+		.guarantee-text{font-size: 12px; width: 825px;}
+		footer{padding-bottom: 20px;}
+		   /* tablet style */
+		@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+			.container{width: 80%;}
+			.Rfloat, .Lfloat{float: none; margin: auto;}
+			.thumb-div-left, .thumb-div-right, .point-div-right, .point-div-left, .right-text, .left-text{width: 100%;}
+			.cta, .sign-div{float: right;}
+			.tablet-hide{display: none;}
+			.breadcrumbs li{padding-right: 28px; padding-bottom: 15px;}
+			.breadcrumbs{text-align: center;}
+
+		}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="links-div Rfloat">
+					<ul class="nav-links">
+						<li>HOME</li>
+						<li>ABOUT</li>
+						<li>SKINCARE</li>
+						<li>SUPPLEMENTS</li>
+						<li>CONTACT</li>
+						<li class="last-nav"><img src="img/cart.png" class="cart" alt=""></li>
+					</ul>
+				</div>
+				<img src="img/gundrymd_logo.png" alt="" id="logo">
+				<div class="clear"></div>
+			</div>
+		</header>
+		<div class="container offer-div">
+			<div class="cta Rfloat">Next Step</div>
+			<div class="sign-div Rfloat">
+				<p>Sign up and get 10% off any puschase.</p>
+			</div>
+			<div class="ex-div">
+				<p>EXCLUSIVELY ONLINE FOR YOU</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="blue-line"></div>
+		<div class="container main-cont">
+			<h1>A Letter from Dr. Steven Gundry</h1>
+			<div class="left-text Lfloat">
+				<p>Hello, my name is Dr. Steven Gundry, and if you are interested in greatly improving your health, and giving yourself the best possible chance at a long and happy life, I'd like to assure you: you are in the right place.</p>
+				<p>I founded Gundry MD with one mission: To allow you to benefit from a new scientific breakthrough that has allowed literally thousands of people to feel healthier and happier than they ever thought possible.</p>
+				<p>This includes many who considered themselves, "beyond hope"... or worried they suffered from a problem that could not be fixed.</p>
+				<p>Yet, despite the effectiveness of what you are about to discover today, you cannot learn about this in any medical textbook, on any other website. In fact, even most other doctors will readily admit that when it comes to what I'm about to share with you... they don't have a clue.</p>
+			</div>
+			<div class="right-pic-div Rfloat">
+				<img src="img/doc-gun.jpg" alt="">
+				<p class="desc">Dr. Steven Gundry &ndash; the medical mind behind Gundry MD's wellness products.</p>
+			</div>
+			<div class="clear mar-bot20"></div>
+			<div class="left-pic-div Lfloat">
+				<img src="img/dr-conference.jpg" alt="">
+				<p class="desc">Dr. Gundry's expertise as a heart surgeon led him to new breakthroughs in full-body health treatment.</p>
+			</div>
+			<div class="right-text Rfloat">
+				<p>For over thirty years, I have been one of the world's pre-eminent experts in heart surgery. My experiences took me all over the world, and to new frontiers of medical science. I was a driving force behind major breakthroughs in medical technology and surgical procedures &ndash; breakthroughs that have revolutionized the way doctors save the lives of patients worldwide.</p>
+				<p>But back in 2001, I was asked to treat a chronically ill, overweight patient. This man was considered a hopeless case, someone who couldn't be helped even by surgery. But hopeless cases have been a specialty of mine over the years, and I was willing to take this man's challenge on when no one else would.</p>
+				<p>What I found was that this man had actually reversed his heart-threatening symptoms... symptoms he was told were inoperable...with nothing but a combination of natural, dietary nutrients. This led me to further research of my own. The conclusions I made were unmistakable.</p>
+			</div>
+			<div class="clear mar-bot20"></div>
+			<div class="left-text Lfloat">
+				<p>The key to strong, sustainable health lives in all of us... in beneficial "good" microbes in our bodies that are in danger of dying out, thanks to dietary and environmental issues that overload our systems with threatening "bad" microbes. Once you begin taking care of your "good" microbes... or, as I like to call them, "your bugs"... you can be amazed by the changes you see.</p>
+				<p>And I know...because it also worked for me.</p>
+				<p>When I first met this "lost cause" patient, I was seriously overweight myself.  I had high blood pressure, "bad" cholesterol, all the warning signs for oncoming diabetes and heart disease. I worked out regularly and tried to watch my diet, but I was still struggling with my weight.  But following the principles of my new research, a study I am now calling, "Holobiotics"... I lost 70 pounds in just a year.</p>
+			</div>
+			<div class="right-pic-div Rfloat">
+				<img src="img/dr-md.jpg" alt="">
+				<p class="desc">Dr. Gundry holds patents on several life-saving medical devices. His new research in the field of "Holobiotics" helps patients get healthy without surgery.</p>
+			</div>
+			<div class="clear mar-bot20"></div>
+			<p class="mar-bot20">This is why, in 2002, I left my former position at California's Loma Linda University Medical Center, and founded The Center for Restorative Medicine, where I have spent the last 14 years studying the human microbiome &ndash; and developing the principles of Holobiotics that have now changed the lives of countless others.</p>
+			<p class="mar-bot20">My center, based in Palm Springs and Santa Barbara, is devoted to teaching our patients how to live healthier lives through diet and lifestyle choices that will help them avoid the kind of surgeries I performed for over three decades.</p>
+			<p class="mar-bot20">And the rest of the medical world is still catching up.</p>
+			<p class="mar-bot20">I created GundryMD.com to share with you these new discoveries that have taken me over 30 years of working with the toughest cases to figure out.</p>
+			<p class="mar-bot20">Because you see, while I'm able to serve a few hundred patients a year at my medical centers, I know my reach is limited. This is evident by the fact that I now have a 6 month waiting list for those who wish to see me.</p>
+			<p class="mar-bot20">Although I greatly enjoy seeing patients personally, I don't want you to have to wait 6 months, or even one week, to take advantage of these discoveries that for many of my patients have been literally life-changing.</p>
+			<p class="mar-bot20">Welcome to Gundry MD. I'm honored to have you here, and it is my pleasure to guide you towards your healthiest future.</p>
+			<p class="mar-bot20">Dr. Steven Gundry, M.D.</p>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>Dr. Gundry: The History</h1>
+			<h4>EDUCATION</h4>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/yale.jpg" alt=""><p class="thumb-desc">Yale University cum laude graduate, with special honors in Human Biological and Social Evolution</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/nt.jpg" alt=""><p class="thumb-desc">Served as a clinical associate at the National Institutes of Health</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/education-s.jpg" alt=""><p class="thumb-desc">Alpha Omega Alpha graduate of the Medical College of Georgia School of Medicine</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/ormond-charity.jpg" alt=""><p class="thumb-desc">Fellowship at the Hospital for Sick Children, Great Ormond Street, London</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<img src="img/michagan.jpg" alt=""><p class="thumb-desc">Completed residencies in General Surgery and Thoracic Surgery at the University of Michigan</p>
+			</div>
+			<h4 class="mar-top-lg">AFFILIATIONS</h4>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/loma.jpg" alt=""><p class="thumb-desc">Former Professor and Chairman of Cardiothoracic Surgery, Loma Linda University Medical Center, Loma Linda, CA</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/aha.jpg" alt=""><p class="thumb-desc">Two successive terms as President of the Board of Directors, American Heart Association, Desert Division</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/asaio.jpg" alt=""><p class="thumb-desc">Served on the Board of Directors, American Society of Artificial Internal Organs</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/frm.jpg" alt=""><p class="thumb-desc">Current medical director, International Heart &amp; Lung Institute, Palm Springs, CA</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/ismics.jpg" alt=""><p class="thumb-desc">Founding board member and treasurer, International Society of Minimally Invasive Cardiothoracic Surgerys</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/rebuild.jpg" alt=""><p class="thumb-desc">Founder and current director, the Center for Restorative Medicine, Palm Springs and Santa Barbara, CA</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<h4 class="mar-top-lg">EXPERIENCE</h4>
+			<div class="row">
+				<div class="point-div-left Lfloat">
+					<p class="font15">&mdash; Joined his colleague, Leonard Bailey, to perform more infant and pediatric heart transplants than anyone else in the world</p>
+				</div>
+				<div class="point-div-right Rfloat">
+					<p class="font15">&mdash; Has operated in more than thirty countries, including on charitable missions to China, India, and Zimbabwe in Africa</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="point-div-left Lfloat">
+					<p class="font15">&mdash; Pioneered the science of interspecies heart and tissue transplants, and kept a baboon alive with a transplanted pig heart for 28 days, a record for this type of surgery</p>
+				</div>
+				<div class="point-div-right Rfloat">
+					<p class="font15">&mdash; As consultant to Computer Motion, was one of the first surgeons to receive FDA approval for robot-assisted minimally invasive surgery</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="point-div-left Lfloat">
+					<p class="font15">&mdash; One of the first twenty surgeons to test the implantable left ventricular assist device, a form of artificial heart</p>
+				</div>
+				<div class="point-div-right Rfloat">
+					<p class="font15">&mdash; Consultant to self-improvement guru Tony Robbins, Oscar-winning actor Alan Arkin, and Dr. Mehmet Oz of TV's The Dr. Oz Show</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<h4 class="mar-top-lg">INVENTIONS</h4>
+			<h3>Holds patents on numerous surgical and medical assistance devices, including:</h3>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/cc.jpg" alt=""><p class="thumb-desc">The Gundry Retrograde Cardioplegia Cannula, the world's most widely used device for preventing cell damage during open heart surgery</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/glt.jpg" alt=""><p class="thumb-desc">The Gundry Lateral Tunnel, a "living" tissue that can rebuild parts of the heart in children with severe genetic heart defects</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/vc.jpg" alt=""><p class="thumb-desc">The Skoosh Venous Cannula, the world's most widely used data and fluid transfer tube used in minimally invasive heart surgery</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<h4 class="mar-top-lg">HONORS</h4>
+			<div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/cos.jpg" alt=""><p class="thumb-desc">Fellow of the American College of Surgeons; the American College of Cardiology; the American Academy of Pediatrics; and the College of Chest Physicians</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/asa.jpg" alt=""><p class="thumb-desc">One of only 500 Fellows of the American Surgical Association</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<h4 class="mar-top-lg">PUBLICATION</h4>
+			 <div class="row">
+				<div class="thumb-div-left Lfloat">
+					<img src="img/author-of.jpg" alt=""><p class="thumb-desc">Author of more than 300 chapters, articles, and abstracts in peer-reviewed journals on surgery, immunology, genetics, nutrition, and lipid investigations</p>
+				</div>
+				<div class="thumb-div-right Rfloat">
+					<img src="img/press-book.jpg" alt=""><p class="thumb-desc">Author of the best-selling Three Rivers Press book Dr. Gundry's Diet Evolution: Turn Off the Genes That Are Killing You and Your Waistline</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<h1 class="mar-top-lg">Dr. Gundry: The Philosophy</h1>
+			<div class="left-text Lfloat">
+				<p>If you're curious about Gundry MD Holobiotics supplements and health products, you're probably asking one question before all the others...</p>
+				<h4 class="">WHAT IS HOLOBIOTICS?</h4>
+				<p>It's the concept that guides Dr. Gundry's "Diet Evolution" system, and all the supplements and products he's designed to support it. It's based on the belief that true health only happens when you're living in a state of cooperation with the trillions of tiny microbes that live everywhere in, on, and around your body.</p>
+				<p>Think of your body like an apartment complex. You're the landlord, and these trillions of tiny bugs are your tenants. Some of those bugs are "good" tenants, managing your digestion, helping energy move throughout your body, and powering as much as 80 percent of your immune system function, to keep you from getting sick or infected. But your body is also home to "bad" tenants...lectins (plant-based proteins that harm proper cell function), pathogens (bugs that cause illness and infection), and gut yeasts (which harm healthy digestion and help make you overweight).</p>
+			</div>
+			<div class="right-pic-div Rfloat">
+				<img src="img/body.jpg" alt="">
+				<p class="desc">HOLOBIOTICS:  Your body and its "bugs" working together to give you optimum health</p>
+			</div>
+			<div class="clear mar-bot20"></div>
+			<div class="left-pic-div Lfloat">
+				<img src="img/shugar.jpg" alt="">
+				<p class="desc">Sugar and other sweeteners endanger your "good" bugs and keep you from feeling your best</p>
+			</div>
+			<div class="right-text Rfloat">
+					<p>Naturally, you don't want these "bad" bugs running the show. But when you feed them unhealthy foods like sugars, artificial sweeteners, and preservatives, this makes them stronger, helps them kill off the "good" bugs...and turns your body into the kind of "building" where only bad bugs would want to live.</p>
+					<p>To restore your body to optimum health and wellness, you need to be sure you're taking care of the "good" bugs, making them stronger and better able to do their jobs promoting a strong and healthy you. Every product from Gundry MD Holobiotics is designed with this purpose in mind...whether it's a nutritional supplement for keeping the bugs in your gut powerfully effective...a skin treatment to nourish the healthy bacteria that live on the outside of your body...or any of the exciting new products currently in the works in the Gundry MD labs.</p>
+					<p>That's holobiotics. It's all about taking care of your good bacteria. Because if you take care of them... they'll take care of you.</p>
+			</div>
+			<div class="clear mar-bot20"></div>
+		</div>
+		<hr class="marbot35">
+		<footer>
+			<div class="container">
+				<div class="Rfloat tablet-hide">
+					<p class="stay tab-moblie-hide">Stay Connected!</p>
+					<div class="black-box tab-moblie-hide">F</div>
+					<div class="black-box tab-moblie-hide">T</div>
+				</div>
+					<ul class="nav-links breadcrumbs">
+						<li>HOME</li>
+						<li>ABOUT</li>
+						<li>SKINCARE</li>
+						<li>SUPPLEMENTS</li>
+						<li>PARTNERS</li>
+						<li class="last-nav">CONTACT</li>
+					</ul>
+					<div class="clear"></div>
+				<div class="guarantee-text Rfloat row">
+					<p class="tablet-hide">If you're not 100% satisfied with your product for any reason, you're covered by our 100% money-back guarantee (does not cover shipping and handling) for 90 day. For refunds, contact our customer support team at (800) 852-0477 and we'll refund your purchase, no questions, no hassle.</p>
+					<p>The information on this website has not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p>
+					<p>&copy; Gundry MD 2016. All Rights Reserved Terms &map; Conditions | Privacy Policy | Site Map</p>
+				</div>
+				<img src="img/money-back.png" alt="" class="row tablet-hide">
+			</div>
+		</footer>
+	</body>
+	</html>

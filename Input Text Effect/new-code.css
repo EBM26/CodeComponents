@@ -1,0 +1,34 @@
+/* contact form modified styles*/
+
+.et_pb_contact_form_label {
+    position: absolute;
+    display: none;
+    opacity: .7;
+    font-size: 15px; 
+    pointer-events:none;
+}
+
+.et_pb_contact_form {
+    position: relative;
+}
+
+
+label[for="et_pb_contact_first-name_1"]{top: 3%; left: 4.4%;}
+label[for="et_pb_contact_last-name_1"]{top: 3%; left: 54.4%;}
+label[for="et_pb_contact_email_1"]{top: 21%; left: 4.4%;}
+label[for="et_pb_contact_subject_1"]{top: 21%; left: 54.4%;}
+label[for="et_pb_contact_message_1"]{top: 40%; left: 4.4%;} 
+
+.et_pb_contact_field{margin-bottom: 5.5%;}	
+.et_pb_contact_main_title{padding-bottom: 30px;}
+
+
+@media screen and (max-width: 767px) {
+    .et_pb_contact_field{margin-bottom: 13%;}
+    label[for="et_pb_contact_first-name_1"]{top: 2.5%; left: 6.4%;}
+    label[for="et_pb_contact_last-name_1"]{top: 15.5%; left: 6.4%;}
+    label[for="et_pb_contact_email_1"]{top: 28.5%; left: 6.4%;}
+    label[for="et_pb_contact_subject_1"]{top: 41%; left: 6.4%;}
+    label[for="et_pb_contact_message_1"]{top: 54.5%; left: 6.4%;} 
+}
+		

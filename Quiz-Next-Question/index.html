@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Crepe Aging Quiz</title>
+	<link rel="stylesheet" href="css/ebm-style.css">
+	<style>
+		.site-color{color: #3a5eac;}
+		header{background: #3a5eac; padding: 20px 0;}
+		*{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
+html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+img{border: none;}
+li{list-style-type: none;}
+div{display: block; margin: 0; padding: 0;}
+u{text-decoration: underline;}
+s{text-decoration: line-through;}
+i{font-style: italic;}
+b{font-weight: bold;}
+a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+.Fright{float: right; display: table;}
+.Fleft{float: left; display: table;}
+.clear{clear: both;}
+.container{width: 960px; margin: auto;}
+.margin25{margin: 25px 0;}
+.margin20{margin: 20px 0;}
+.margin30{margin: 30px auto;}
+.marright5{margin-right: 5px;}
+.marleft25{margin-left: 25px;}
+.martop10{margin-top: 10px;}
+.martop25{margin-top: 25px;}
+.martop20{margin-top: 20px;}
+.martop55{margin-top: 55px !important;}
+.marbot5{margin-bottom: 5px;}
+.marbot25{margin-bottom: 25px;}
+.marbot10{margin-bottom: 10px;}
+.marbot40{margin-bottom: 40px;}
+.marg1055{margin: 10px 0 55px;}
+.marbot100{margin-bottom: 100px;}
+.negmarbot30{margin-bottom: -30px;}
+.align-left{text-align: left;}
+.font12{font-size: 12px;}
+.font45{font-size: 45px;}
+.font25{font-size: 25px;}
+.font15{font-size: 15px;}
+.font21{font-size: 21px;}
+.font65{font-size: 65px;}
+.inline{display: inline;}
+.inline-block{display: inline-block;}
+.uppercase{text-transform: uppercase;}
+.center{text-align: center;}
+.site-color{color:  #6d6e71;}
+.relative{position: relative;}
+.hidden{display: none;}
+.padmobile{padding: 0 15px;}
+.white{color: #fff;}
+
+		.aging-back{padding-bottom: 12%;}
+		.fast{text-transform: uppercase; font-size: 50px; padding-top: 20%;}
+		hr{border: 0; border-top: 2px solid; width: 450px; margin: 60px auto;}
+		.progress-bar{background: #e6e6e6; width: 100%; height: 35px; border-radius: 25px; margin: 50px auto;}
+		.inside-progress{background: #f7a660; width: 16%; height: 100%; border-radius: 25px;}
+		.question-div{font-size: 34px; margin-left: 80px; display: none;}
+		.ques-num{font-size: 24px;}
+		.input{position: absolute; z-index: 100; opacity: 0; cursor: pointer; width: 30px; height: 30px;
+			   top: -3px; right: -2px;}
+		.checkbox{border: 1px solid #b7b7b7; border-radius: 5px; background-color: #fff; width: 23px; height: 23px; 
+    			  vertical-align: -2px; margin-right: 10px; position: relative; cursor: pointer; 
+    			  display: inline-block;}
+    	.active{display: block;}
+    	.CTA{background: #ff8124; color: #fff; font-size: 27px; font-weight: bold; text-align: center; width: 230px; 
+    		  margin: 30px auto; padding: 6px 0 4px; cursor: pointer;}
+    	.CTA:hover{opacity: .6;}
+    	.padbot40{padding-bottom: 40px;}
+    	.orange-check{position: absolute; max-width: 130%; top: -4px; display: none;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="container center">
+				<img src="img/white-logo.png" alt="">
+			</div>
+		</header>
+		<div class="aging-back">
+		<div class="container center">
+			<p class="fast">How fast<br><b>is your skin aging?</b></p>
+			<hr>
+			<p class="font25">Does your skin make you look older than you actually are? Take this 1-minute quiz for a <b>FREE Skin Analysis</b> — you may be surprised by the results.</p>
+		</div>
+		</div>
+		<div class="container padbot40">
+			<div class="progress-bar"> <div class="inside-progress"></div> </div>
+			<div class="question-div active" id="question1">
+				<p class="ques-num">1 of 6</p>
+				<p class="marbot25 martop10"><b>Are you male or female?</b></p>
+				<div class="checkbox"><input type="radio" name="gender" class="input" value="male"></div> <p class="inline-block marbot10">Female</p><br>
+				<div class="checkbox"><input type="radio" name="gender" class="input" value="female"></div> <p class="inline-block marbot10">Male</p>
+			</div>
+			<div class="question-div" id="question2">
+				<p class="ques-num">2 of 6</p>
+				<p class="marbot25 martop10"><b>How old are you?</b></p>
+				<div class="checkbox"><input type="radio" name="age" class="input" value="under"></div> <p class="inline-block marbot10">Under 25 years old</p><br>
+				<div class="checkbox"><input type="radio" name="age" class="input" value="25"></div> <p class="inline-block marbot10">25-44 years old</p><br>
+				<div class="checkbox"><input type="radio" name="age" class="input" value="45"></div> <p class="inline-block marbot10">45-64 years old</p><br>
+				<div class="checkbox"><input type="radio" name="age" class="input" value="65"></div> <p class="inline-block marbot10">65-84 years old</p><br>
+				<div class="checkbox"><input type="radio" name="age" class="input" value="over"></div> <p class="inline-block marbot10">Over 85 years old</p>
+			</div>
+			<div class="question-div" id="question3">
+				<p class="ques-num">3 of 6</p>
+				<p class="marbot25 martop10"><b>Fine lines and wrinkles?</b></p>
+				<div class="checkbox"><input type="radio" name="concern" class="input" value="lines"></div> <p class="inline-block marbot10">Fine lines and wrinkles</p><br>
+				<div class="checkbox"><input type="radio" name="concern" class="input" value="dry"></div> <p class="inline-block marbot10">Dry, flakey skin</p><br>
+				<div class="checkbox"><input type="radio" name="concern" class="input" value="crepey"></div> <p class="inline-block marbot10">Thin, "crepey" skin</p><br>
+				<div class="checkbox"><input type="radio" name="concern" class="input" value="sun"></div> <p class="inline-block marbot10">Sun-damaged skin</p><br>
+				<div class="checkbox"><input type="radio" name="concern" class="input" value="sagging"></div> <p class="inline-block marbot10">Sagging skin</p>
+			</div>
+			<div class="question-div" id="question4">
+				<p class="ques-num">4 of 6</p>
+				<p class="marbot25 martop10"><b>Where on your body do you have the most issues?</b></p>
+				<div class="checkbox"><input type="radio" name="issues" class="input" value="arms"></div> <p class="inline-block marbot10">Upper arms</p><br>
+				<div class="checkbox"><input type="radio" name="issues" class="input" value="neck"></div> <p class="inline-block marbot10">Neck</p><br>
+				<div class="checkbox"><input type="radio" name="issues" class="input" value="chest"></div> <p class="inline-block marbot10">Chest</p><br>
+				<div class="checkbox"><input type="radio" name="issues" class="input" value="hands"></div> <p class="inline-block marbot10">Hands</p><br>
+				<div class="checkbox"><input type="radio" name="issues" class="input" value="knees"></div> <p class="inline-block marbot10">Knees</p><br>
+				<div class="checkbox"><input type="radio" name="issues" class="input" value="elbows"></div> <p class="inline-block marbot10">Elbows</p>
+			</div>
+			<div class="question-div" id="question5">
+				<p class="ques-num">5 of 6</p>
+				<p class="marbot25 martop10"><b>Which, of these, is your primary skincare goal?</b></p>
+				<div class="checkbox"><input type="radio" name="skincare" class="input" value="wrinkles"></div> <p class="inline-block marbot10">Fewer fine lines and wrinkles</p><br>
+				<div class="checkbox"><input type="radio" name="skincare" class="input" value="plumper"></div> <p class="inline-block marbot10">Plumper, more supple skin</p><br>
+				<div class="checkbox"><input type="radio" name="skincare" class="input" value="silkier"></div> <p class="inline-block marbot10">Smoother, silkier skin</p><br>
+				<div class="checkbox"><input type="radio" name="skincare" class="input" value="lifted"></div> <p class="inline-block marbot10">Tighter, more "lifted" skin</p>
+			</div>
+			<div class="question-div" id="question6">
+				<p class="ques-num">6 of 6</p>
+				<p class="marbot25 martop10"><b>What impression has your skin made on others?</b></p>
+				<div class="checkbox"><img src="img/curved-orange-check.png" class="orange-check" alt=""><input type="radio" name="impression" class="input" value="younger"></div> <p class="inline-block marbot10">People think I’m younger than I am</p><br>
+				<div class="checkbox"><img src="img/curved-orange-check.png" class="orange-check" alt=""><input type="radio" name="impression" class="input" value="older"></div> <p class="inline-block marbot10">People think I’m older than I am</p><br>
+				<div class="checkbox"><img src="img/curved-orange-check.png" class="orange-check" alt=""><input type="radio" name="impression" class="input" value="correct"></div> <p class="inline-block marbot10">People usually guess my correct age</p>
+				<div class="CTA">SUBMIT</div>
+			</div>
+
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+					$(".checkbox").click(function() {
+						if ( $("#question1").hasClass("active") ) {
+							 $("#question1").removeClass("active")
+							 $("#question2").addClass("active")
+							 $(".inside-progress").css("width", "32%")
+						}
+
+						else if ( $("#question2").hasClass("active") ) {
+							 $("#question2").removeClass("active")
+							 $("#question3").addClass("active")
+							 $(".inside-progress").css("width", "48%")
+						}
+
+						else if ( $("#question3").hasClass("active") ) {
+							 $("#question3").removeClass("active")
+							 $("#question4").addClass("active")
+							 $(".inside-progress").css("width", "54%")
+						}
+
+						else if ( $("#question4").hasClass("active") ) {
+							 $("#question4").removeClass("active")
+							 $("#question5").addClass("active")
+							 $(".inside-progress").css("width", "70%")
+						}
+
+						else if ( $("#question5").hasClass("active") ) {
+							 $("#question5").removeClass("active")
+							 $("#question6").addClass("active")
+							 $(".inside-progress").css("width", "86%")
+						}
+
+						else if ($("#question6").hasClass("active")) {
+							$(".orange-check").hide()
+							$(this).find(".orange-check").show()
+						}
+					})
+
+					$(".CTA").click(function() {
+						var links = ["results1.php", "results2.php", "results3.php"]
+						var random = Math.floor(Math.random() * links.length);
+						var sendCust = links[random]
+						window.location = sendCust;
+					})	
+			})
+		</script>
+	</body>
+	</html>

@@ -53,7 +53,10 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 .padmobile{padding: 0 15px;}
 .white{color: #fff;}
 
-		.aging-back{padding-bottom: 12%;}
+		.site-color{color: #3a5eac;}
+		header{background: #3a5eac; padding: 20px 0;}
+
+		.aging-back{width: 100%; padding-bottom: 160px; background: #f8f8f8;}
 		.fast{text-transform: uppercase; font-size: 50px; padding-top: 20%;}
 		hr{border: 0; border-top: 2px solid; width: 450px; margin: 60px auto;}
 		.progress-bar{background: #e6e6e6; width: 100%; height: 35px; border-radius: 25px; margin: 50px auto;}
@@ -71,6 +74,8 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
     	.CTA:hover{opacity: .6;}
     	.padbot40{padding-bottom: 40px;}
     	.orange-check{position: absolute; max-width: 130%; top: -4px; display: none;}
+    	.special-font{width: 700px; margin: auto;}
+    	#face{position: absolute; bottom: 0;}
 	</style>
 		<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -82,11 +87,13 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 				<img src="img/white-logo.png" alt="">
 			</div>
 		</header>
-		<div class="aging-back">
-		<div class="container center">
+		<div class="aging-back relative">
+		<div class="center special-font">
 			<p class="fast">How fast<br><b>is your skin aging?</b></p>
 			<hr>
-			<p class="font25">Does your skin make you look older than you actually are? Take this 1-minute quiz for a <b>FREE Skin Analysis</b> — you may be surprised by the results.</p>
+			<p class="font25">Does your skin make you look older than you actually are? Take this 1-minute quiz for a <b>FREE skin analysis</b> — and learn the best "look younger" technique for your skin.</p>
+		</div>
+		<img src="img/left-face-new.png" alt="" id="face">
 		</div>
 		</div>
 		<div class="container padbot40 question-container">
@@ -144,6 +151,6 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="js/refactoredJquery.js"></script>
+		<script src="js/myJquery.js"></script>
 	</body>
 	</html>

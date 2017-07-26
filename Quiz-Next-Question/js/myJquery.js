@@ -44,4 +44,15 @@
 						var sendCust = links[random]
 						window.location = sendCust;
 					})	
+
+					function imageMove(width, percent) {
+						var ww = $( window ).width();
+						var imageLeft = $("#face");
+
+						if (ww < 1720) {
+							imageLeft.css('left', '-20%');
+						}
+					}
+
+					$(window).on("resize", imageMove);
 			})

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>ES6 Wes Bos Notes</title>
+	<style>
+		*{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		p, .code-snippet{margin-bottom: 10px;}
+		.Fright{float: right; display: table;}
+		.Fleft{float: left; display: table;}
+		.clear{clear: both;}
+		.container{max-width: 960px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 30px 15px;}
+		.white{color: #fff;}
+		h1, h3{text-decoration: underline; margin: 15px 0 5px;}
+		.code-snippet{padding: 10px; border: 1px solid; background: #eee;
+					  display: inline-block; line-height: 1.4;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container padmobile">
+			<h1 class="center"><u>Wes Bos ES6 Notes</u></h1>
+			<h3>Variables</h3>
+			<p>1. 'let' and 'cont' variables share in common the fact that they are blocked scoped, meaning they are only available inside a block of code defined by the curly brackets {}.</p>
+			<p>2. The main difference between 'let' and 'const' variables is that 'let' variables can be updated and their values change where as 'const' variables are just as they sound, constant, they can NEVER be updated.</p>
+			<p>3. <b><u>RULE OF USE:</u></b> This is a good practice to follow when writing varaiables in ES6:<br> A. Never use 'var'. <br> B. Use 'const' by default for all your variables. <br> C. Use 'let' only if you need to change the value of your variable later on in your code</p>
+			<h3>Function Improvements: Arrows and Default Arguments</h3>
+			<p>1. New "Fat Arrow Functions" are the first and only place we see a fat arrow in Javascript.</p>
+			<p>2. One-line arrow functions cannot have names (nameless functions). If you wish to be able to debug them, you should store them inside a variable like so:</p>
+			<div class="code-snippet">
+				const fullNames4 = names.map(name => `${name} bos`);
+			</div>
+			<p>3. Due to the above rule, if you wish to use the 'this' keyword, you will HAVE to use a normal function in order that 'this' can reference the enclosed function and not the window object.</p>
+			<p>4. In normal Javascript, the 'this' keyword is change by the scope of each function. If there is a function within a function, 'this' will inherit it's scope and if it is nameless, it will return the window object. <br>
+			In ES6, 'this' inherits the it's value from the parent function.</p>
+			<div class="code-snippet">
+				    const box = document.querySelector('.box');<br>
+    				box.addEventListener('click', function() {<br>
+					this.classList.toggle(first);<br>
+			        setTimeout(() => {<br>
+			        console.log(this);<br>
+			        this.classList.toggle(second);<br>
+			      }, 500);<br>
+			    });
+			</div>
+			<p>5. In ES6, you can pass default argument values in a function:</p>
+			<div class="code-snippet">
+				  function calculateBill(total, tax = 0.13, tip = 0.15) {<br>
+    				return total + (total * tax) + (total * tip);<br>
+  					}
+			</div>
+			<p>6. <b><u>RULE OF USE:</u></b> This is a good practice to follow when writing Arrow Functions in ES6:<br> A. Never use Arrow Functions if you want to use 'this'. Use regular functions instead. <br> B. Never use Arrow Functions if you need to use the 'arguments' object (a JavaScript object use when you need to use unlimited arguments in a function) . <br> C. Use 'Arrow Functions' on all your other simple and not-so-simple functions that do not need the above features to work.</p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</body>
+	</html>

@@ -36,7 +36,7 @@
 		.code-snippet{padding: 10px; background: #000; color: #fff;
 					  display: inline-block; line-height: 1.4;}
 		.ab-list{margin-left: 38px;}
-		.ab-list li{list-style-type: upper-alpha;}
+		.ab-list li{list-style-type: upper-alpha !important;}
 		.one-two-list{margin-left: 20px;}
 		.one-two-list li{list-style-type: decimal; margin-bottom: 10px;}
 		.variable{color: #66d9ef;}
@@ -100,11 +100,31 @@
 				</ol>
 			<h3>Module # 3: Template Strings (Template Literals)</h3>
 			<ol class="one-two-list">
-				<li>This is a way to concatenate variables and strings without having to using plus signs and quotation marks. Instead we can use backticks and dollar signs with curly brackets like so:</li>
+				<li>This is a way to concatenate variables and strings without having to using plus signs and quotation marks. Instead we can use back-ticks and dollar signs with curly brackets like so:</li>
 				<div class="code-snippet">
 				<span class="variable">const</span> sentence = <span class="quote">`My dog ${name} is ${age <span class="operator">*</span> <span class="code-num">7</span>} years old.`</span>;
 				</div>
+				<li>Template strings allow you to nest other template strings inside of them, map functions, "if" statements, and function callbacks.</li>
 			</ol>
+			<h3>Module # 4: Additional String Methods</h3>
+			<ol class="one-two-list">
+				<li>ES6 comes with 4 new string methods that allow you to inspect strings kind of like regex:</li>
+				<ol class="ab-list">
+					<li>startsWith( )</li>
+					<li>endsWith( )</li>
+					<li>includes( )</li>
+					<li>repeat( )</li>
+				</ol>
+				<li>startsWith( ) checks is a string starts with whatever characters you pass into the parentheses. It also takes a second argument that can start from a certain character number by passing in the numbers of characters to ignore. IS CASE SENSITIVE.</li>
+				<div class="code-snippet">
+					<span class="variable">const</span> String1 <span class="operator">=</span> <span class="quote">'20-AC2018-jz'</span><br>
+					<span class="variable">String1</span>.startsWith( <span class="quote">'AC'</span>, <span class="code-num">3</span> )
+				</div>
+				<li>endsWith( ) checks is a string ends with whatever characters you pass into the parentheses. It also takes a second argument that can end from a certain character number by passing in the numbers of characters to ignore. IS CASE SENSITIVE.</li>
+				<li>includes( ) checks is a string contains whatever characters you pass into the parentheses. IS CASE SENSITIVE.</li>
+				<li>repeat( ) can take a string and repeat it the number of times that you pass into the parentheses.</li>
+			</ol>
+			<h3>Module # 5: Destructuring</h3>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</body>

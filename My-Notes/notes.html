@@ -8,7 +8,8 @@
 	<title>ES6 Wes Bos Notes</title>
 	<style>
 		*{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
-		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;
+				  font-size: 17px; letter-spacing: .3px;}
 		img{border: none;}
 		li{list-style-type: none;}
 		div{display: block; margin: 0; padding: 0;}
@@ -32,12 +33,18 @@
 		.padmobile{padding: 30px 15px;}
 		.white{color: #fff;}
 		h1, h3{text-decoration: underline; margin: 15px 0 10px; color: blue;}
-		.code-snippet{padding: 10px; border: 1px solid; background: #eee;
+		.code-snippet{padding: 10px; background: #000; color: #fff;
 					  display: inline-block; line-height: 1.4;}
 		.ab-list{margin-left: 38px;}
 		.ab-list li{list-style-type: upper-alpha;}
 		.one-two-list{margin-left: 20px;}
 		.one-two-list li{list-style-type: decimal; margin-bottom: 10px;}
+		.variable{color: #66d9ef;}
+		.quote{color: #e6db74;}
+		.fun-name{color: #a6e22d;}
+		.operator{color: #f92772;}
+		.argument{color: #fd9720;}
+		.code-num{color: #ae81ff;}
 	</style>
 		<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,25 +70,25 @@
 				<li>New "Fat Arrow Functions" are the first and only place we see a fat arrow in Javascript.</li>
 				<li>One-line arrow functions cannot have names (nameless functions). If you wish to be able to debug them, you should store them inside a variable like so:</li>
 			<div class="code-snippet">
-				const fullNames4 = names.map(name => `${name} bos`);
+				<span class="variable">const</span> fullNames4 <span class="operator">=</span> names.<span class="variable">map</span> (<span class="argument"> name</span> <span class="operator">=></span> <span class="quote">`${name} bos`</span> );
 			</div>
 			<li>Due to the above rule, if you wish to use the 'this' keyword, you will HAVE to use a normal function in order that 'this' can reference the enclosed function and not the window object.</li>
 			<li>In normal Javascript, the 'this' keyword is change by the scope of each function. If there is a function within a function, 'this' will inherit it's scope and if it is nameless, it will return the window object. <br>
 			In ES6, 'this' inherits the it's value from the parent function.</li>
 			<div class="code-snippet">
-				    const box = document.querySelector('.box');<br>
-    				box.addEventListener('click', function() {<br>
-					this.classList.toggle(first);<br>
-			        setTimeout(() => {<br>
-			        console.log(this);<br>
-			        this.classList.toggle(second);<br>
-			      }, 500);<br>
+				    <span class="variable">const</span> box = <span class="variable">document</span>.<span class="variable">querySelector</span>( <span class="quote">'.box'</span> );<br>
+    				box.addEventListener ( <span class="quote">'click'</span>, <span class="variable">function</span> ( ) {<br>
+					<span class="argument">this</span>.classList.<span class="variable">toggle</span> ( first );<br>
+			        <span class="variable">setTimeout</span> (( ) <span class="variable">=></span> {<br>
+			        <span class="variable">console</span>.<span class="variable">log</span>( <span class="argument">this</span> );<br>
+			        <span class="argument">this</span>.classList.<span class="variable">toggle</span>( second );<br>
+			      }, <span class="code-num">500</span>);<br>
 			    });
 			</div>
 			<li>In ES6, you can pass default argument values in a function:</li>
 			<div class="code-snippet">
-				  function calculateBill(total, tax = 0.13, tip = 0.15) {<br>
-    				return total + (total * tax) + (total * tip);<br>
+				 <span class="variable">function</span> calculateBill( <span class="argument">total</span>, <span class="argument">tax</span> <span class="operator">=</span> <span class="code-num">0.13</span>, <span class="argument">tip</span> <span class="operator">=</span> <span class="code-num">0.15</span> ) {<br>
+    				<span class="operator">return</span> total <span class="operator">+</span> ( total <span class="operator">*</span> tax ) <span class="operator">+</span> ( total <span class="operator">*</span> tip );<br>
   					}
 			</div>
 			<li><u>RULE OF USE:</u> This is a good practice to follow when writing Arrow Functions in ES6:</li>
@@ -91,7 +98,13 @@
 					<li>Never use Arrow Functions if you need to use the 'arguments' object (a JavaScript object use when you need to use unlimited arguments in a function) .</li>
 					<li>Use 'Arrow Functions' on all your other simple and not-so-simple functions that do not need the above features to work.</li>
 				</ol>
-			<h3>Module # 3: Template Strings</h3>
+			<h3>Module # 3: Template Strings (Template Literals)</h3>
+			<ol class="one-two-list">
+				<li>This is a way to concatenate variables and strings without having to using plus signs and quotation marks. Instead we can use backticks and dollar signs with curly brackets like so:</li>
+				<div class="code-snippet">
+				<span class="variable">const</span> sentence = <span class="quote">`My dog ${name} is ${age <span class="operator">*</span> <span class="code-num">7</span>} years old.`</span>;
+				</div>
+			</ol>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</body>

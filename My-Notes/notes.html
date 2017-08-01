@@ -31,7 +31,7 @@
 		.hidden{display: none;}
 		.padmobile{padding: 30px 15px;}
 		.white{color: #fff;}
-		h1, h3{text-decoration: underline; margin: 15px 0 10px;}
+		h1, h3{text-decoration: underline; margin: 15px 0 10px; color: blue;}
 		.code-snippet{padding: 10px; border: 1px solid; background: #eee;
 					  display: inline-block; line-height: 1.4;}
 		.ab-list{margin-left: 38px;}
@@ -46,7 +46,7 @@
 	<body>
 		<div class="container padmobile">
 			<h1 class="center"><u>Wes Bos ES6 Notes</u></h1>
-			<h3>Variables</h3>
+			<h3>Module # 1: Variables</h3>
 			<ol class="one-two-list">
 				<li>'let' and 'cont' variables share in common the fact that they are blocked scoped, meaning they are only available inside a block of code defined by the curly brackets {}.</li>
 				<li>The main difference between 'let' and 'const' variables is that 'let' variables can be updated and their values change where as 'const' variables are just as they sound, constant, they can NEVER be updated.</li>
@@ -58,7 +58,7 @@
 					<li>Use 'let' only if you need to change the value of your variable later on in your code.</li>
 				</ol>
 			
-			<h3>Function Improvements: Arrows and Default Arguments</h3>
+			<h3>Module # 2: Function Improvements: Arrows and Default Arguments</h3>
 			<ol class="one-two-list">
 				<li>New "Fat Arrow Functions" are the first and only place we see a fat arrow in Javascript.</li>
 				<li>One-line arrow functions cannot have names (nameless functions). If you wish to be able to debug them, you should store them inside a variable like so:</li>
@@ -91,6 +91,7 @@
 					<li>Never use Arrow Functions if you need to use the 'arguments' object (a JavaScript object use when you need to use unlimited arguments in a function) .</li>
 					<li>Use 'Arrow Functions' on all your other simple and not-so-simple functions that do not need the above features to work.</li>
 				</ol>
+			<h3>Module # 3: Template Strings</h3>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</body>

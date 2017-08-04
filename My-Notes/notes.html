@@ -146,6 +146,18 @@
 				</div>
 			</ol>
 			<h3>Module # 6: Iterables &amp; Looping</h3>
+			<ol class="one-two-list">
+				<li>ES6 features a new loop called "for of" that features the ability to break the loop at a specific place, ignore prototypes that are attached to a specific iterable (something that re-iterates), and has several other properties that combine the abilities of other Javascript loops like forEach( ), map( ), and other loops.</li>
+				<li>The other great thing about a "for of" loop is that if works with all iterables including DOM collections, a string, an argument, an array, a map, and a set. It cannot iterate over an object, for that you should use a "for in" loop.</li>
+				<li>The syntax is simple and fewer lines of code like so:</li>
+				<div class="code-snippet">
+					<span class="variable">const</span> array <span class="operator">=</span> [ <span class="code-num">3</span>, <span class="code-num">5</span>, <span class="code-num">6</span>, <span class="code-num">8</span> ];<br>
+						<span class="operator">for</span> ( num <span class="operator">of</span> array ) {<br>
+   						num<span class="operator">++</span>;<br>
+    					<span class="variable">console</span>.<span class="variable">log</span>( num )<br>
+					}
+				</div>
+			</ol>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</body>

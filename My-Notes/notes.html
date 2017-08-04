@@ -31,8 +31,9 @@
 		.relative{position: relative;}
 		.hidden{display: none;}
 		.padmobile{padding: 30px 15px;}
+		.nomarg{margin: 0;}
 		.white{color: #fff;}
-		h1, h3{text-decoration: underline; margin: 15px 0 10px; color: blue;}
+		h1, h3{text-decoration: underline; margin: 35px 0 10px; color: blue;}
 		.code-snippet{padding: 10px; background: #000; color: #fff;
 					  display: inline-block; line-height: 1.4;}
 		.ab-list{margin-left: 38px;}
@@ -52,7 +53,7 @@
 	</head>
 	<body>
 		<div class="container padmobile">
-			<h1 class="center"><u>Wes Bos ES6 Notes</u></h1>
+			<h1 class="center nomarg"><u>Wes Bos ES6 Notes</u></h1>
 			<h3>Module # 1: Variables</h3>
 			<ol class="one-two-list">
 				<li>'let' and 'cont' variables share in common the fact that they are blocked scoped, meaning they are only available inside a block of code defined by the curly brackets {}.</li>
@@ -125,6 +126,25 @@
 				<li>repeat( ) can take a string and repeat it the number of times that you pass into the parentheses.</li>
 			</ol>
 			<h3>Module # 5: Destructuring</h3>
+			<ol class="one-two-list">
+				<li>Destructuring is an expression that makes it possible to take apart (destructure) values from arrays or properties from objects into distinct variables. So instead of having to reiterate variables for each value or property, you can destructure the object or array into a line of code like so:</li>
+				<div class="code-snippet">
+					<span class="variable">const</span> person <span class="operator">=</span> {<br>
+    					first: <span class="quote">'Wes'</span>,<br>
+    					last: <span class="quote">'Bos'</span>,<br>
+    					country: <span class="quote">'Canada'</span>,<br>
+    					city: <span class="quote">'Hamilton'</span>,<br>
+    					twitter: <span class="quote">'@wesbos'</span><br>
+  					};<br>
+					<span class="variable">const</span> { first, last, twitter } <span class="operator">=</span> person;
+				</div>
+				<li>With destructuring objects, you can descructure nested property values, rename properties, and also set default values for properties that haven't been defined.</li>
+				<li>When you destructure from an object you will use curly brackets, when you destructure from an array you will use square brackets like so:</li>
+				<div class="code-snippet">
+					<span class="variable">const</span> details <span class="operator">=</span> [ <span class="quote">'Wes Bos'</span>, <span class="code-num">123</span>, <span class="quote">'wesbos.com'</span> ];<br>
+					<span class="variable">const</span> [ name, id, website ] <span class="operator">=</span> details;
+				</div>
+			</ol>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</body>

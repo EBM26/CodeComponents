@@ -160,7 +160,39 @@
 			</ol>
 			<h3>Module # 7: An Array of Array Improvements</h3>
 			<ol class="one-two-list">
-				
+				<li>There are several new array methods in ES6:</li>
+				<li>Array.from( ) can take any none-array element and turn it into an array. Aside from the first argument that is the element you wish to turn into an array, it also takes a second argument that is a map function that iterates over the array values:</li>
+				<div class="code-snippet">
+					<span class="variable">const</span> people <span class="operator">=</span> <span class="variable">document</span>.<span class="variable">querySelectorAll</span>( <span class="quote">'.people p'</span> );<br>
+					<span class="variable">const</span> peopleArray <span class="operator">=</span> <span class="variable">Array</span>.<span class="variable">from</span>( people, <span class="argument">person</span> <span class="variable">=></span> {<br>
+					<span class="operator">return</span> person.textContent;<br>
+					});<br>
+					<span class="variable">console</span>.<span class="variable">log</span>( peopleArray );
+				</div>
+				<li>The Array.of( ) method is pretty simple, it takes an unlimited number of arguments and creates an array out of them.</li>
+				<li>Array.find( ) is a callback function that returns true or false on any given parameter that you wish to find in an array. It is useful for larger sets of data in array form.</li>
+				<li>Array.findIndex( ) is an array method that finds the index number of any given argument.</li>
+			</ol>
+			<h3>Module # 8: Say Hello to ...Spread and ...Rest</h3>
+			<ol class="one-two-list">
+				<li></li>
+			</ol>
+			<h3>Module # 9: Object Literal Upgrades</h3>
+			<ol class="one-two-list">
+				<li>The upgrades to Javascript object literals (key/value pairs like in json object) are that if your value is the same as the key, you can just omit the value. Also, if your values are functions, you can omit the "function" word from them.</li>
+			</ol>
+			<h3>Module # 10: Promises</h3>
+			<ol class="one-two-list">
+				<li></li>
+			</ol>
+			<h3>Module # 11: Symbols</h3>
+			<ol class="one-two-list">
+				<li>The Symbol( ) function returns a unique value for each property that is placed inside of it even if it is the same value. This is useful if you don't want two similar values to collide in your code:</li>
+				<div class="code-snippet">
+					<span class="variable">const</span> wes <span class="operator">=</span> <span class="variable">Symbol</span>(<span class="quote">'Wes'</span>);<br>
+  					<span class="variable">const</span> person <span class="operator">=</span> <span class="variable">Symbol</span>(<span class="quote">'Wes'</span>);<br>
+  					// wes != person
+				</div>
 			</ol>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

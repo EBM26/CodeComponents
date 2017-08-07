@@ -8,16 +8,29 @@
 	<title>Mock Page</title>
 <!-- 	<link rel="stylesheet" href="css/style.css">
  -->	<style>
-		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
-		body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+		*{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
 		li{list-style-type: none;}
 		div{display: block; margin: 0; padding: 0;}
-		img{border: 0;}
-		.container{margin: auto; padding: 0; width: 960px;}
-		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
-		.Lfloat{float: left;}
-		.Rfloat{float: right;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
 		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right; display: table;}
+		.Fleft{float: left; display: table;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
 		header{padding: 10px; box-shadow: 0px 5px 10px -4px rgba(0,0,0,0.37); background-color: #fff;}
 		footer{padding: 25px 0; border-top: 2px solid #62676b; background-color: #fff; font-size: 14px;}
 		h1{font-size: 35px; text-align: center; margin: 20px 0;}
@@ -31,7 +44,7 @@
 	<body>
 		<header>
 			<div class="container">
-				<p class="Rfloat">Hours 9 - 5 Erry Day</p>
+				<p class="Fright">Hours 9 - 5 Erry Day</p>
 				<img src="http://m.princetonnutrients.com/img/princeton-logo.svg" id="logo" alt="">
 				<div class="clear"></div>
 			</div>
@@ -69,6 +82,6 @@
 				&copy; Gundry MD 2016. All Rights Reserved Terms &amp; Conditions | Privacy Policy | 9465 Wilshire Boulevard, Suite 300 Beverly Hills, California, 90212
 			</div>
 		</footer>
-		<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</body>
 	</html>

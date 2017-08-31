@@ -38,6 +38,6 @@
 				
 			</div>
 		</footer>
-		<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+		<!-- <script src="../jquery.min.js"></script> -->
 	</body>
 	</html>

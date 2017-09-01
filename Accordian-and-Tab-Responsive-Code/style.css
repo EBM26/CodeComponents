@@ -67,6 +67,8 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 .underline {padding-bottom: 10px; border-bottom: 1px solid;}
 .plus{display: none;}
 .mobile-tab{display: none;}
+.openTab{}
+.closeTab{}
 
 @media (max-width: 736px) {
     #tabbed-box{width: auto; margin: auto;}

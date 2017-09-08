@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 	<meta name="format-detection" content="telephone=no">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Work+Sans" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="mp-favicon.ico" />
 	<title>Eyal's Javascript Notes</title>
 	<style>
 		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
@@ -21,10 +22,9 @@
 		header{padding: 20px 0; border-bottom: 1px solid; margin-bottom: 50px;}
 		header .container{text-align: center;}
 		.header-p{font-size: 2.5em; display: inline-block; vertical-align: 8px; margin-left: 30px;}
-		#logo-pic{width: 140px;}
-		
+
 		.subject{font-size: 2em; margin-bottom: 20px; color: blue; font-style: italic;}
-		.example-div{display: inline-block; padding: 10px; background: #fbfaf8; font-size: 19px; border: 1px solid #ccc;
+		.example-div{display: inline-block; padding: 10px 25px; background: #fbfaf8; font-size: 19px; border: 1px solid #ccc;
 				  	 white-space: pre-line; margin-bottom: 13px; line-height: 1.7;}
 		.example-div p, .openMe p{margin-bottom: 13px;}
 
@@ -34,15 +34,14 @@
 		.comment{color: #708090;}
 		.string{color: #669900;}
 
-		.openMe{display: none;}
 		.method-title{font-weight: bold; cursor: pointer; border-bottom: 2px solid; display: inline-block; 
-					  padding-bottom: 1px; margin-bottom: 15px;}
+					  padding-bottom: 1px; margin-bottom: 15px; color: blue; font-size: 1.5em;}
 		.method-div{margin-bottom: 5px; display: inline-block;}
 		.display{display: inline-block;}
 		.martop15{margin-top: 15px;}
 		.string-color{color: #690;}
-		.ab-list{margin-left: 38px;}
-		.ab-list li{list-style-type: upper-alpha !important;}
+		.ab-list{margin-left: 38px; margin-top: 10px;}
+		.ab-list li{list-style-type: upper-alpha !important; margin-bottom: 0 !important;}
 		.one-two-list{margin-left: 20px;}
 		.one-two-list li{list-style-type: decimal; margin-bottom: 10px;}
 
@@ -63,8 +62,6 @@
 			</div>
 		</header>
 		<div class="container">
-				<p class="subject">Basics</p>
-
 				<div class="method-div">
 					<p class="method-title">Javascript Basics</p>
 					<div class="openMe">
@@ -180,10 +177,10 @@
 							<li>,  Multiple evaluation.</li>
 							<li>Parentheses are used to alter the order of evaluation determined by operator precedence. This means an expression within parentheses is fully evaluated before its value is used in the remainder of the expression. </li>
 								<div class="example-div"><span class="token">var</span> result = <span class="integer">78</span> * <span class="integer">96</span> + <span class="integer">3</span>;  
-								document.write(result);  
-								document.write("<br/>");  
+								document.<span class="keyword">write</span>(result);  
+								document.<span class="keyword">write</span>("<br/>");  
 								result = <span class="integer">78</span> * (<span class="integer">9</span> + <span class="integer">3</span>);  
-								document.write(result);  
+								document.<span class="keyword">write</span>(result);  
 								<span class="comment">// Output:  
 								// 7491  
 								// 936 </span> </div>
@@ -191,11 +188,212 @@
 							<p>The following example shows a statement that includes a variety of operators and resolves to "true":</p>
 							<div class="example-div"><span class="token">var</span> num = <span class="integer">10</span>;  
 								if(<span class="integer">5</span> == num / <span class="integer">2</span> &amp;&amp; (<span class="integer">2</span> + <span class="integer">2</span> * num).toString() === <span class="string">"22"</span>) {  
-								    document.write(true);  
+								    document.<span class="keyword">write</span>(true);  
 								}  
 								   <span class="comment"> // Output:  
 								    // true </span> </div>
 							<p>The operators are evaluated in this order: ( ) for the grouping, *, + (within the grouping), "." for the function, ( ) for the function, /, ==, ===, and &amp;&amp;.</p>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Controlling Program Flow</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>Normally, statements in a JavaScript script are executed one after the other, in the order in which they are written. This is called <b>sequential execution</b>, and is the default direction of program flow.</li>
+							<li>An alternative to sequential execution transfers the program flow to another part of your script. That is, instead of executing the next statement in the sequence, another statement is executed instead.  There are two main kinds of program structures that accomplish this. </li>
+							<li>The first is the selection structure. You use it to specify alternate courses of program flow, creating a junction in your program (like a fork in a road). There are four selection structures available in JavaScript. 
+							<ul class="ab-list">
+									<li>the single-selection structure (<b>if)</b></li>
+									<li>the double-selection structure (<b>if/else)</b></li>
+									<li>the inline ternary operator <b>?:</b></li>
+									<li>the multiple-selection structure (<b>switch)</b></li>
+								</ul>
+							</li>
+							<li>The second type of program control structure is the <b>repetition structure</b>. You use it to specify that an action is to be repeated while some condition remains true. When the conditions of the control statement have been met (usually after some specific number of iterations), control passes to the next statement beyond the repetition structure. There are four repetition structures available in JavaScript:
+								<ul class="ab-list">
+									<li>the expression is tested at the top of the loop <b>(while)</b></li>
+									<li>the expression is tested at the bottom of the loop <b>(do/while)</b></li>
+									<li>operate on each of an object's properties <b>(for/in)</b></li>
+									<li>counter controlled repetition <b>(for)</b></li>
+								</ul>
+							</li>
+							<li>JavaScript also supports an implicit conditional form called <b>Conditional Operator</b>. It uses a question mark after the condition to be tested (rather than the word if before the condition). It also specifies two alternatives, one to be used if the condition is met and one if it is not. A colon must separate these alternatives:</li>
+							<div class="example-div"><span class="token">var</span> AMorPM = (theHour >= <span class="integer">12</span>) ? <span class="string">"PM"</span> : <span class="string">"AM"</span>;</div>
+							<li>If you have several conditions to be tested together, and you know that one is more likely to pass or fail than the others, you can use a feature called <b>short circuit evaluation</b> to speed the execution of your script. When JavaScript evaluates a logical expression, it only evaluates as many sub-expressions as required to get a result. For example, if you have an AND expression such as ((x == 123) &amp;&amp; (y == 6)), JavaScript first checks if x is 123. If it is not, the entire expression cannot be true, even if y is equal to 6. Hence, the test for y is never made, and JavaScript returns the value false.</li>
+							<li>Here are the different loops and a general guide of when to use each:
+								<ul class="ab-list">
+									<li><b>For Loops:</b> When you know how many times you want to loop. When you are iterating through the indices of an array. When you have some sort of counter. It is also the fastest performing loop according to JsPerf.   </li>
+									<li><b>For-In Loops:</b> When you are iterating over the properties of an object.</li>
+									<li><b>For-Each:</b> When you want to iterate over the values of an object's properties.</li>
+									<li><b>While Loops:</b> When you may be unsure of the number of times to loop. When you want to loop while some condition is true.</li>
+									<li><b>Do-While</b> Loops: When you want it to loop at least once before checking if the condition is true.</li>
+								</ul>
+							</li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Controlling Program Flow</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>The recommended way to display text is to create an element and write to its <b>textContent</b> property.</li> 
+							<div class="example-div"><span class="token">var</span> div = document.<span class="keyword">getElementById</span>(<span class="string">"textDiv"</span>);  
+							    div.textContent = <span class="string">"my text"</span>;  
+							    <span class="token">var</span> text = div.textContent;</div>
+							<li>You can also create an element and write to its <b>innerHTML</b> or <b>innerText</b> properties. Setting these properties affects only the text in the element itself, not in its children. However, these properties also have some disadvantages:
+								<ul class="ab-list">
+									<li>The innerText property doesn't work in all browsers, so you might want to avoid it for reasons of compatibility.</li>
+									<li>The innerText property is affected by CSS styles, and doesn't appear if the element is hidden.</li>
+									<li>The innerHTML property gets and sets both nested nodes and text. If it isn't secured, it could be used for script-injection attacks. In addition, setting it to text without HTML tags removes all previously set nodes.</li>
+									<li>You can use the document.write method without having to create an element. However, using this method causes the entire web page to be cleared, which might not be what you want.</li>
+								</ul>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">HTML DOM Events</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page. </li> 
+							<li>Events are a part of the <b>Document Object Model</b> (DOM) Level 3 and every HTML element contains a set of events which can trigger JavaScript Code.</li>
+							<li>Each available event has an <b>event handler</b>, which is block of code (usually a user-defined JavaScript function) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are registering an event handler. Note that event handlers are sometimes called <b>event listeners</b> — they are pretty much interchangeable for our purposes, although strictly speaking they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.</li>
+							<li>There are a number of different ways in which you can add event listener code to web pages so that it will be run when the associated event fires:</li>
+							<div class="example-div"><span class="comment">// Event handler properties</span>
+							<span class="token">var</span> btn = document.<span class="keyword">querySelector</span>(<span class="string">'button'</span>);
+							btn.onclick = <span class="token">function</span>( ) {
+							  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+							  document.body.style.backgroundColor = rndCol;
+							}</div>
+							<p>You could also set the handler property to be equal to a named function name. The following would work just the same:</p>
+							<div class="example-div"><span class="token">var</span> btn = document.<span class="keyword">querySelector</span>(<span class="string">'button'</span>);
+								<span class="token">function</span> <span class="keyword">bgChange</span>( ) {
+								  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+								  document.body.style.backgroundColor = rndCol;
+								}
+								btn.onclick = bgChange;</div>
+							<p>Inline event handlers — (don't use these) :</p>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">bgChange</span>( ) {
+									  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+									  document.body.style.backgroundColor = rndCol;
+									}</div>
+							<p>For a start, it is not a good idea to mix up your HTML and your JavaScript, as it becomes hard to parse — keeping your JavaScript all in one place is better; if it is in a separate file you can apply it to multiple HTML documents.  One button is OK, but what if you had 100 buttons? You'd have to add 100 attributes to the file; it would very quickly turn into a maintenance nightmare. <br>With JavaScript, you could easily add an event handler function to all the buttons on the page no matter how many there were, using something like this:</p>
+							<div class="example-div"><span class="token">var</span> buttons = document.<span class="keyword">querySelectorAll</span>(<span class="string">'button'</span>);
+							for (<span class="token">var</span> i = 0; i < buttons.length; i++) {
+							  buttons[i].onclick = bgChange;
+							}</div>
+							<p>The newest type of event mechanism is defined in the Document Object Model (DOM) Level 2 Events Specification, which provides browsers with a new function — <b>addEventListener( )</b>. This functions in a similar way to the event handler properties, but the syntax is obviously different. We could rewrite our random color example to look like this:</p>
+							<div class="example-div"><span class="token">var</span> btn = document.<span class="keyword">querySelector</span>(<span class="string">'button'</span>);
+							<span class="token">function </span><span class="keyword">bgChange</span>( ) {
+							  <span class="token">var</span> rndCol = 'rgb(' + <span class="keyword">random</span>(255) + ',' + <span class="keyword">random</span>(255) + ',' + <span class="keyword">random</span>(255) + ')';
+							  document.body.style.backgroundColor = rndCol;
+							}   
+							btn.addEventListener('click', bgChange);</div>
+							<p>So inside the addEventListener( ) function, we specify two parameters — the name of the event we want to register this handler for, and the code that comprises the handler function we want to run in response to it. Note that it is perfectly appropriate to put all the code inside the addEventListener( ) function, in an anonymous function, like this:</p>
+							<div class="example-div">btn.<span class="keyword">addEventListener</span>('click', <span class="token">function</span>( ) {
+							  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+							  document.body.style.backgroundColor = rndCol;
+							});</div>
+							<li>Sometimes inside an event handler function you might see a parameter specified with a name such as event, evt, or simply e. This is called the <b>event object</b>, and it is automatically passed to event handlers to provide extra features and information. For example, let's rewrite our random color example again slightly:
+							<div class="example-div"><span class="token">function</span> <span class="keyword">bgChange</span>(e) {
+								  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+								  e.target.style.backgroundColor = rndCol;
+								  console.log(e);
+								}  
+								btn.addEventListener('click', bgChange);</div>
+							<p>Here you can see that we are including an event object, e, in the function, and in the function setting a background color style on <b>e.target</b> — which is the button itself. The target property of the event object is always a reference to the element that the event has just occurred upon. So in this example we are setting a random background color on the button, not the page. e.target is incredibly useful when you want to set the same event handler on multiple elements, and do something to all of them when an event occurs on them. </p>
+							<li><b>Event bubbling</b> and capturing are two mechanisms that describe what happens when two handlers of the same event type are activated on one element. The browsers then handle the conflicting situations in 1 of 2 different ways:
+								<ul class="ab-list">
+									<li><b>Capturing:</b> The browser checks to see if the element's outer-most ancestor (<html>) has an onclick event handler registered on it in the capturing phase, and runs it if so. Then it moves on to the next element inside "<html>" and does the same thing, then the next one, and so on until it reaches the element that was actually clicked on.</li>
+									<li><b>Bubbling:</b> The browser checks to see if the element that was actually clicked on has an onclick event handler registered on it in the bubbling phase, and runs it if so. Then it moves on to the next immediate ancestor element and does the same thing, then the next one, and so on until it reaches the "<html>" element.</li>
+								</ul>
+							</li>
+							<p>In modern browsers, by default, all event handlers are registered in the bubbling phase.</p>
+							<li>The standard event object has a function available on it called <b>stopPropagation( )</b>, which when invoked on a handler's event object makes it so that handler is run, but the event doesn't bubble any further up the chain, so no more handlers will be run.</li>
+							<li>There are many DOM Events and you can find a full list online. The most used are the Mouse Events which include onclick, onmousedown, onmouseover, etc. and Keyboard Events which have onkeydown, onkeypress, and onkeyup.</li>
+							<li>The DOM elements in Javascript are accessed by the <b>getElementsByTagName( ) Method</b>. There are several ways to use this method:
+								<ul class="ab-list">
+									<li>Finding HTML elements by id <b>document.getElementById( )</b></li>
+									<li>Finding HTML elements by tag name (the element itself such as a p tag) <b>document.getElementsByTagName( )</b></li>
+									<li>Finding HTML elements by class name <b>document.getElementsByClassName( )</b></li>
+									<li>Finding HTML elements by CSS selectors (for this you would use the css selectors in the parenthesis such as "." or "#") <b>document.querySelector( )</b> or <b>document.querySelectorAll( )</b> to grab all elements with that selector.</li>
+								</ul>
+							</li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Recursion</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>Loosely defined, <b>recursion</b> is the process of taking a big problem and sub-dividing it into multiple, smaller instances of the same problem. Put into practice, that generally means writing a function that calls itself. Probably the most classic example of this concept is the <b>factorial function</b>.</li> 
+							<div class="example-div"><span class="token">function</span> <span class="keyword">factorial</span>( n ) {
+								  <span class="token">if</span> ( n === 1 ) {
+								    return 1;
+								  }
+								  return n * factorial( n - 1 );
+								}</div>
+							<li>Another good example of recursion is the classic string reversal problem:
+								<div class="example-div"><span class="token">function</span> <span class="keyword">reverse</span>( str ) {
+								  <span class="token">if</span> ( str.length <= 1 ) {
+								    return str;
+								  }
+								  return <span class="keyword">reverse</span>( str.substr( 1 ) ) + str[ 0 ];
+								}</div>
+							<p>NOTICE that these examples have a <b>Leave Event</b>; a control statement that allows the function to exit the recursive loop. WIthout that you will get stuck in an infinite loop:</p>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">demo</span>( ) {
+							    <span class="keyword">demo</span>( );
+							}
+							    <span class="keyword">demo</span>( );</div>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Calculating Dates and Times</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>You can use the <b>Date object</b> to perform common calendar and clock tasks, such as comparing dates and calculating elapsed time. When you create an instance of the Date object without specifying a date, it returns a value that represents the current date and time, including year, month, day, hour, minute, second, and millisecond. You can then read or modify this date and time.</li> 
+							<li>The following example shows how to instantiate a date without using any parameters and display it in the format mm-dd-yy:</li>
+							<div class="example-div"><span class="token">var</span> dt = <span class="token">new</span> <span class="keyword">Date</span>( );  
+							<span class="comment">// Display the month, day, and year. getMonth() returns a 0-based number. </span> 
+							<span class="token">var</span> month = dt.<span class="keyword">getMonth</span>( )+1;  
+							<span class="token">var</span> day = dt.<span class="keyword">getDate</span>( );  
+							<span class="token">var</span> year = dt.<span class="keyword">getFullYear</span>( );  
+							document.<span class="keyword">write</span>(month + '-' + day + '-' + year);  
+							<span class="comment">// Output: current month, day, year </span> </div>
+							<li>You can also set a specific date by passing a date string to the constructor:
+							<div class="example-div"><span class="token">var</span> myDate = <span class="token">new</span> Date(<span class="string">"1/1/1990"</span>)  
+							myDate.<span class="keyword">setMonth</span>(myDate.<span class="keyword">getMonth</span>( ) + 1);  
+							myDate.<span class="keyword">setDate</span> (myDate.<span class="keyword">getDate</span>( ) - 1);  
+							document.<span class="keyword">write</span>(myDate);  
+							<span class="comment">// Output: Wed Jan 31 00:00:00 PST 1990 </span> </div>
+							<li>The time zone displayed in the date string corresponds to the time zone set on the local machine. JavaScript is flexible about the format of the string you use as the parameter. For example, you can input "8-24-2009", "August 24, 2009", or "24 Aug 2009".</li>
+							<li>You can use the <b>getX</b> and <b>setX</b> methods of the Date object to set specific dates and times. The following example shows how you can set a date to the previous day. Note that if necessary the month and year values are also changed:</li>
+							<li>The <b>getDay method</b> gets the day of the week as a number between 0 (Sunday) and 6 (Saturday). (This is not the same as the <b>getDate method</b>, which gets the day of the month as a number between 1 and 31).</li>
+							<div class="example-div"><span class="token">var</span> myDate = <span class="token">new</span> Date(<span class="string">"1/1/1990"</span>)  
+								myDate.<span class="keyword">setMonth</span>(myDate.<span class="keyword">getMonth</span>( ) + 1);  
+								myDate.<span class="keyword">setDate</span> (myDate.<span class="keyword">getDate</span>( ) - 1);  
+								document.<span class="keyword">write</span>(myDate);  
+								<span class="comment">// Output: Wed Jan 31 00:00:00 PST 1990</span>  </div>
+							<li>When you compare dates in JavaScript, you should keep in mind that the == operator returns true only if the dates on both sides of the operator refer to the same object. Therefore, if you have two separate Date objects set to the same date, date1 == date2 returns false. In addition, a Date object set with only the date and not the time is initialized to midnight of that date. So if you compare one Date set without a specified time to Date.now, for example, you should be aware that the first Date is set to midnight and Date.now is not.</li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Copying, Passing, and Comparing Data</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>In JavaScript, how data is handled depends on its data type. Numbers and Boolean values (true and false) are copied, passed, and compared by value. When you copy or pass by value, you allocate a space in computer memory and copy the <b>value</b> of the original into it. If you then change the original, the copy is not affected (and vice versa), because the two are separate entities.</li>
+							<li>Objects, arrays, and functions are copied, passed, and compared by <b>reference</b>. When you copy or pass by reference, you essentially create a pointer to the original item, and use the pointer as if it were a copy. If you then change the original, you change both the original and the copy (and vice versa). There is really only one entity; the "copy" is not actually a copy, it's just another reference to the data.</li>
+							<li>When comparing by reference, the two variables must refer to exactly the same entity for the comparison to succeed. For example, two distinct Array objects will always compare as unequal, even if they contain the same elements. One of the variables must be a reference to the other one for the comparison to succeed. </li>
+							<li><b>Strings</b> are copied and passed by reference, but are compared by value. Note that if you have two String objects (created with new String("something")), they are compared by reference, but if one or both of the values is a string value, they are compared by value.</li>
+							<li>Copying and passing strings by reference saves memory; but because you cannot change strings once they are created, it becomes possible to compare them by value. This lets you test whether two strings have the same content even if one was generated entirely separately from the other.</li>
 						</ul> 
 					</div>
 				</div><br><!--   method div   -->

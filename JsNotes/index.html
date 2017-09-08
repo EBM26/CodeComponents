@@ -11,7 +11,7 @@
 		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
 		body{font-size: 19px; font-weight: 300; background-color: #fff;  color: #000; font-family: 'Open Sans', sans-serif; letter-spacing: 1.1px;}
 		li{list-style-type: none;}
-		div{display: block; margin: 0; padding: 0;}
+		div{display: block; margin: 0; padding: 0; box-sizing: border-box;}
 		img{border: 0;}
 		.container{margin: auto; padding: 0; width: 960px;}
 		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
@@ -36,7 +36,7 @@
 
 		.method-title{font-weight: bold; cursor: pointer; border-bottom: 2px solid; display: inline-block; 
 					  padding-bottom: 1px; margin-bottom: 15px; color: blue; font-size: 1.5em;}
-		.method-div{margin-bottom: 5px; display: inline-block;}
+		.method-div{margin-bottom: 25px;}
 		.display{display: inline-block;}
 		.martop15{margin-top: 15px;}
 		.string-color{color: #690;}
@@ -46,7 +46,7 @@
 		.one-two-list li{list-style-type: decimal; margin-bottom: 10px;}
 
 		@media (max-width: 980px) {
-			.container{width: auto; padding: 0 20px;}
+			.container{width: auto; padding: 0 15px 0 20px; overflow: hidden;}
 			.header-p, .subject{font-size: 1.2em;}
 		}
 
@@ -81,7 +81,7 @@
 							<p>The vague difference a statement and an expression is that an expression expects a value whereas a statement performs an action such as a "for loop". Wherever JavaScript expects a statement, you can also write an expression. Such a statement is called an expression statement. The reverse does not hold: you cannot write a statement where JavaScript expects an expression. For example, an if statement cannot become the argument of a function.</p>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Varialbles</p>
@@ -123,7 +123,7 @@
 									// 2000Hello  </span></div>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Data Types</p>
@@ -139,7 +139,7 @@
 							<li>The <b>undefined</b> value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Operators</p>
@@ -153,7 +153,7 @@
 							<li><b>Equality and Strict Equality:</b> The difference between == (equality) and === (strict equality) is that the equality operator will coerce (convert) values of different types before checking for equality. For example, comparing the string "1" with the number 1 will compare as true. The strict equality operator, on the other hand, will not coerce values to different types, and so the string "1" will not compare as equal to the number 1. So althought == checks the value to be equal whereas === checks value and data type. </li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Operator Precedence</p>
@@ -195,7 +195,7 @@
 							<p>The operators are evaluated in this order: ( ) for the grouping, *, + (within the grouping), "." for the function, ( ) for the function, /, ==, ===, and &amp;&amp;.</p>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Controlling Program Flow</p>
@@ -233,7 +233,7 @@
 							</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Controlling Program Flow</p>
@@ -252,7 +252,7 @@
 								</ul>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">HTML DOM Events</p>
@@ -297,7 +297,7 @@
 							  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 							  document.body.style.backgroundColor = rndCol;
 							});</div>
-							<li>Sometimes inside an event handler function you might see a parameter specified with a name such as event, evt, or simply e. This is called the <b>event object</b>, and it is automatically passed to event handlers to provide extra features and information. For example, let's rewrite our random color example again slightly:
+							<li>Sometimes inside an event handler function you might see a parameter specified with a name such as event, evt, or simply e. This is called the <b>event object</b>, and it is automatically passed to event handlers to provide extra features and information. For example, let's rewrite our random color example again slightly:</li>
 							<div class="example-div"><span class="token">function</span> <span class="keyword">bgChange</span>(e) {
 								  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 								  e.target.style.backgroundColor = rndCol;
@@ -324,7 +324,7 @@
 							</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Recursion</p>
@@ -337,7 +337,7 @@
 								  }
 								  return n * factorial( n - 1 );
 								}</div>
-							<li>Another good example of recursion is the classic string reversal problem:
+							<li>Another good example of recursion is the classic string reversal problem:</li>
 								<div class="example-div"><span class="token">function</span> <span class="keyword">reverse</span>( str ) {
 								  <span class="token">if</span> ( str.length <= 1 ) {
 								    return str;
@@ -351,7 +351,7 @@
 							    <span class="keyword">demo</span>( );</div>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Calculating Dates and Times</p>
@@ -366,7 +366,7 @@
 							<span class="token">var</span> year = dt.<span class="keyword">getFullYear</span>( );  
 							document.<span class="keyword">write</span>(month + '-' + day + '-' + year);  
 							<span class="comment">// Output: current month, day, year </span> </div>
-							<li>You can also set a specific date by passing a date string to the constructor:
+							<li>You can also set a specific date by passing a date string to the constructor:</li>
 							<div class="example-div"><span class="token">var</span> myDate = <span class="token">new</span> Date(<span class="string">"1/1/1990"</span>)  
 							myDate.<span class="keyword">setMonth</span>(myDate.<span class="keyword">getMonth</span>( ) + 1);  
 							myDate.<span class="keyword">setDate</span> (myDate.<span class="keyword">getDate</span>( ) - 1);  
@@ -379,7 +379,7 @@
 							<li>When you compare dates in JavaScript, you should keep in mind that the == operator returns true only if the dates on both sides of the operator refer to the same object. Therefore, if you have two separate Date objects set to the same date, date1 == date2 returns false. In addition, a Date object set with only the date and not the time is initialized to midnight of that date. So if you compare one Date set without a specified time to Date.now, for example, you should be aware that the first Date is set to midnight and Date.now is not.</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Copying, Passing, and Comparing Data</p>
@@ -392,7 +392,7 @@
 							<li>Copying and passing strings by reference saves memory; but because you cannot change strings once they are created, it becomes possible to compare them by value. This lets you test whether two strings have the same content even if one was generated entirely separately from the other.</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Functions</p>
@@ -403,7 +403,7 @@
 							<li>The JavaScript language includes several built-in functions. Some let you handle expressions and special characters, while others convert strings to numeric values. The most famous you would know are the getDate Method that allows you to get the date, time, hour, minute, seconds, etc. For a complete list see this page.</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Objects and Arrays </p>
@@ -462,7 +462,7 @@
 							<p>where the dot notation cannot but is easier and cleaner to read.</p>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Intrinsic Objects</p>
@@ -510,7 +510,7 @@
 								// 555-0100</span>  </div>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Creating Objects</p>
@@ -539,7 +539,7 @@
 							};  </div>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Using Constructors to Define Types</p>
@@ -563,7 +563,7 @@
 							<div class="example-div"><span class="token">var</span> aCircle = <span class="token">new</span> Circle(5, 11, 99);</div>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Prototypes and Prototype Inheritance</p>
@@ -587,7 +587,7 @@
 							<p>The bicycle object has the properties <i>wheels, engine, color, and pedals</i>, and its prototype is Vehicle.prototype. The JavaScript engine finds the pedals property on bicycle, and it looks up the prototype chain to find the wheels, engine, and color properties on Vehicle.</p>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Data Properties and Accessor Properties</p>
@@ -661,7 +661,7 @@
 							    undefined</div>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 				<div class="method-div">
 					<p class="method-title">Variable Scope</p>
@@ -724,10 +724,9 @@
 						    <li>To avoid bugs, always declare all variables at the beginning of every scope.</li>
 						</ul> 
 					</div>
-				</div><br><!--   method div   -->
+				</div><!--   method div   -->
 
 		</div><!--  container  -->
 		<script src="../jquery.min.js"></script>
-		<script src="main.js"></script>
 	</body>
 	</html>

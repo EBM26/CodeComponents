@@ -31,7 +31,7 @@
 		.token{color: #07a;}
 		.keyword{color: #DD4A68;}
 		.integer{color: #990055;}
-		.comment{color: #708090;}
+		.comment{color: #b4b4b4;}
 		.string{color: #669900;}
 
 		.method-title{font-weight: bold; cursor: pointer; border-bottom: 2px solid; display: inline-block; 
@@ -187,7 +187,7 @@
 							
 							<p>The following example shows a statement that includes a variety of operators and resolves to "true":</p>
 							<div class="example-div"><span class="token">var</span> num = <span class="integer">10</span>;  
-								if(<span class="integer">5</span> == num / <span class="integer">2</span> &amp;&amp; (<span class="integer">2</span> + <span class="integer">2</span> * num).toString() === <span class="string">"22"</span>) {  
+								if(<span class="integer">5</span> == num / <span class="integer">2</span> &amp;&amp; (<span class="integer">2</span> + <span class="integer">2</span> * num).toString( ) === <span class="string">"22"</span>) {  
 								    document.<span class="keyword">write</span>(true);  
 								}  
 								   <span class="comment"> // Output:  
@@ -360,7 +360,7 @@
 							<li>You can use the <b>Date object</b> to perform common calendar and clock tasks, such as comparing dates and calculating elapsed time. When you create an instance of the Date object without specifying a date, it returns a value that represents the current date and time, including year, month, day, hour, minute, second, and millisecond. You can then read or modify this date and time.</li> 
 							<li>The following example shows how to instantiate a date without using any parameters and display it in the format mm-dd-yy:</li>
 							<div class="example-div"><span class="token">var</span> dt = <span class="token">new</span> <span class="keyword">Date</span>( );  
-							<span class="comment">// Display the month, day, and year. getMonth() returns a 0-based number. </span> 
+							<span class="comment">// Display the month, day, and year. getMonth( ) returns a 0-based number. </span> 
 							<span class="token">var</span> month = dt.<span class="keyword">getMonth</span>( )+1;  
 							<span class="token">var</span> day = dt.<span class="keyword">getDate</span>( );  
 							<span class="token">var</span> year = dt.<span class="keyword">getFullYear</span>( );  
@@ -375,11 +375,7 @@
 							<li>The time zone displayed in the date string corresponds to the time zone set on the local machine. JavaScript is flexible about the format of the string you use as the parameter. For example, you can input "8-24-2009", "August 24, 2009", or "24 Aug 2009".</li>
 							<li>You can use the <b>getX</b> and <b>setX</b> methods of the Date object to set specific dates and times. The following example shows how you can set a date to the previous day. Note that if necessary the month and year values are also changed:</li>
 							<li>The <b>getDay method</b> gets the day of the week as a number between 0 (Sunday) and 6 (Saturday). (This is not the same as the <b>getDate method</b>, which gets the day of the month as a number between 1 and 31).</li>
-							<div class="example-div"><span class="token">var</span> myDate = <span class="token">new</span> Date(<span class="string">"1/1/1990"</span>)  
-								myDate.<span class="keyword">setMonth</span>(myDate.<span class="keyword">getMonth</span>( ) + 1);  
-								myDate.<span class="keyword">setDate</span> (myDate.<span class="keyword">getDate</span>( ) - 1);  
-								document.<span class="keyword">write</span>(myDate);  
-								<span class="comment">// Output: Wed Jan 31 00:00:00 PST 1990</span>  </div>
+							All objects in JavaScript support expando properties and methods, which can be added and removed at run time. These properties and methods can have any name and can be identified by numbers. If the name of the property or method is a simple identifier, it can be written after the object name with a period, such as myObj.name, myObj.age, and myObj.getAge in the following code:
 							<li>When you compare dates in JavaScript, you should keep in mind that the == operator returns true only if the dates on both sides of the operator refer to the same object. Therefore, if you have two separate Date objects set to the same date, date1 == date2 returns false. In addition, a Date object set with only the date and not the time is initialized to midnight of that date. So if you compare one Date set without a specified time to Date.now, for example, you should be aware that the first Date is set to midnight and Date.now is not.</li>
 						</ul> 
 					</div>
@@ -394,6 +390,338 @@
 							<li>When comparing by reference, the two variables must refer to exactly the same entity for the comparison to succeed. For example, two distinct Array objects will always compare as unequal, even if they contain the same elements. One of the variables must be a reference to the other one for the comparison to succeed. </li>
 							<li><b>Strings</b> are copied and passed by reference, but are compared by value. Note that if you have two String objects (created with new String("something")), they are compared by reference, but if one or both of the values is a string value, they are compared by value.</li>
 							<li>Copying and passing strings by reference saves memory; but because you cannot change strings once they are created, it becomes possible to compare them by value. This lets you test whether two strings have the same content even if one was generated entirely separately from the other.</li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Functions</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript <b>functions</b> perform actions; they can also return values. Sometimes these are the results of calculations or comparisons. Functions are also called "global methods". Functions combine several operations under one name. This lets you streamline your code. You can write out a set of statements, name it, and then execute the entire set by calling it and passing to it any information it needs. </li>
+							<li>JavaScript supports two kinds of functions: those that are built into the language, and those you create yourself. </li>
+							<li>The JavaScript language includes several built-in functions. Some let you handle expressions and special characters, while others convert strings to numeric values. The most famous you would know are the getDate Method that allows you to get the date, time, hour, minute, seconds, etc. For a complete list see this page.</li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Objects and Arrays </p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript objects are collections of <p>properties</p> and <p>methods</p>. A method is a function that is a member of an object. A property is a value or set of values (in the form of an array or object) that is a member of an object.</li>
+							<li>JavaScript supports four kinds of objects:  
+								<ul class="ab-list">
+									<li><b>Intrinsic (or "built-in") objects</b>, such as Array and String</li>
+									<li>Objects you create</li>
+									<li><b>Host objects</b>, such as 'window' and 'document'</li>
+									<li><b>ActiveX objects</b> (An object that provides an interface to an Automation object)</li>
+								</ul>
+							</li>
+							<li>All objects in JavaScript support <b>expando properties and methods</b>, which can be added and removed at run time. These properties and methods can have any name and can be identified by numbers. If the name of the property or method is a simple identifier, it can be written after the object name with a period, such as myObj.name, myObj.age, and myObj.getAge in the following code:</li>
+							<div class="example-div"><span class="token">var</span> myObj = <span class="token">new</span> Object( );  
+							myObj.name = <span class="string">"Fred"</span>;  
+							myObj.age = 42;  
+							myObj.getAge =   
+							    <span class="token">function</span> ( ) {  
+							        return this.age;  
+							    };  
+							document.<span class="keyword">write</span>(myObj.name);  
+							document.<span class="keyword">write</span>(<span class="string">"<br/>"</span>);  
+							document.<span class="keyword">write</span>(myObj.age);  
+							document.<span class="keyword">write</span>("<br/>");  
+							document.<span class="keyword">write</span>(myObj.getAge( ));  
+							<span class="comment">// Output:  
+							// Fred  
+							// 42  
+							// 42  </span></div>
+							<p>If the name of the property or method is not a simple identifier or is unknown at the time you write the script, you can use an expression inside square brackets to index the property. The names of all expando properties in JavaScript are converted to strings before being added to the object.</p>
+							<div class="example-div"><span class="token">var</span> myObj = <span class="token">new</span> Object( );  
+							<span class="comment">// Add two expando properties that cannot be written in the  
+							// object.property syntax.  
+							// The first contains invalid characters (spaces), so must be  
+							// written inside square brackets. </span> 
+							myObj["not a valid identifier"] = "This is the property value";  
+							<span class="comment">// The second expando name is a number, so it also must  
+							// be placed inside square brackets </span> 
+							myObj[100] = <span class="string">"100"</span>;  </div>
+							<li>In JavaScript, objects and arrays are handled almost identically, because arrays are merely a special kind of object. Both objects and arrays can have properties and methods.</li>
+							<li>Arrays have a length property but objects do not. When you assign a value to an element of an array whose index is greater than its length (for example, myArray[100] = "hello"), the length property is automatically increased to the new length. Similarly, if you make the length property smaller, any element whose index is outside the length of the array is deleted.</li>
+							<li>JavaScript does not directly support <b>multi-dimensional arrays</b>, but you can get the behavior of multi-dimensional arrays by storing arrays within the elements of another array.</li>
+							<li>In JavaScript, objects and arrays are almost identical to each other. The two main differences are that non-array objects do not have an automatic length property, and arrays do not have the properties and methods of an object.</li>	
+							<li>There are two ways to accessing an object's properties:</li>
+							<p>1. <b>dot notation</b> (aka dot operator)</p>
+							<div class="example-div">myObject.aProperty</div>
+							<p>2. <b>bracket notation</b> (aka index operator)</p>
+							<div class="example-div">myObject[<span class="string">"aProperty"</span>] // Same as above.</div>
+							<p><b>Notice:</b> the important difference between the two ways of accessing object properties is that the bracket notation allows you to access properties by name stored in a variable:</p>
+							<div class="example-div">var obj = { <span class="string">"abc"</span> : <span class="string">"hello"</span> };
+								<span class="token">var</span> x = <span class="string">"abc"</span>;
+								<span class="token">var</span> y = obj[x];
+								console.log(y); <span class="comment">//output - hello</span></div>
+							<p>where the dot notation cannot but is easier and cleaner to read.</p>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Intrinsic Objects</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript provides <b>intrinsic (or "built-in") objects</b>. They are the <b>Array, Boolean, Date, Error, Function, Global (object whose purpose is to collect global functions and constants into one object), JSON, Math, Number, Object, RegExp, and String objects</b>. The intrinsic objects have associated methods, functions, properties, and constants.</li>
+							<li>The subscripts of an array can be thought of as properties of an object, and are referred to by their numeric index.</li>
+							<li>When you create an array using the <b>Array</b> keyword, JavaScript includes a length property, which records the number of entries. If you do not specify a number, the length is set to 0, and the array has no entries. If you specify a number, the length is set to that number. If you specify more than one parameter, the parameters are used as entries in the array. JavaScript automatically changes the value of length when you add elements to an array that you created with the Array keyword. Array indices in JavaScript always start at 0, not 1, so the length property is always one greater than the largest index in the array.</li>
+							<li>In JavaScript, you can treat strings (and numbers) as if they were objects. The string Object has certain built-in methods, which you can use with your strings. The methods can be found on this page.</li>
+							<li>The <b>Math object</b> has a number of predefined constants and functions. The constants are specific numbers. One of these specific numbers is the value of pi (approximately 3.14159...). This is the <b>Math.PI</b> constant, shown in the following example.</li>
+							<div class="example-div"><span class="token">var</span> radius = 5;  
+								<span class="token">var</span> circleArea = Math.PI * radius * radius; </div>
+							<li>One of the built-in functions of the Math object is the exponentiation method, or Math.pow, which raises a number to a specified power. The following example uses both pi and exponentiation to calculate the volume of a sphere:</li>
+							<div class="example-div"><span class="token">var</span> volume = (4/3)*(Math.PI*Math.pow(radius,3));</div>
+							<li>The Date object can be used to represent arbitrary dates and times, to get the current system date, and to calculate differences between dates. It has several properties and methods, all predefined. In general, the Date object provides the day of the week; the month, day, and year; and the time in hours, minutes, and seconds. This information is based on the number of milliseconds since January 1, 1970, 00:00:00.000 GMT, which is Greenwich Mean Time (the preferred term is UTC, or "Universal Coordinated Time," which refers to signals issued by the World Time Standard). JavaScript can handle dates that are in the approximate range 250,000 B.C. to 255,000 A.D.</li>
+							<li>To create a new Date object, use the new operator, as shown in the following example:</li>
+							<div class="example-div"><span class="token">var</span> toDay = <span class="token">new</span> Date( );    
+								<span class="token">var</span> thisYear = toDay.getFullYear( );  
+								<span class="token">var</span> thisMonth = theMonths[toDay.getMonth( )];  
+								<span class="token">var</span> thisDay = thisMonth  + " " + toDay.getDate( ) + ", " + thisYear;  </div>
+							<li>In addition to the special numeric constants (PI, for example) that are available in the Math object, several other constants are available in JavaScript through the <b>Number object:</b> 
+								<ul class="ab-list">
+									<li>Number.MAX_VALUE - Largest possible number, about 1.79E+308; can be positive or negative. (Value varies slightly from system to system.)</li>
+									<li>Number.MIN_VALUE - Smallest possible number, about 5.00E-324; can be positive or negative. (Value varies slightly from system to system.)</li>
+									<li>Number.NaN - Special nonnumeric value, "not a number."</li>
+									<li>Number.POSITIVE_INFINITY - Any positive value larger than the largest positive number (Number.MAX_VALUE) is automatically converted to this value; represented as infinity.</li>
+									<li>Number.NEGATIVE_INFINITY - Any value more negative than the largest negative number (-Number.MAX_VALUE) is automatically converted to this value; represented as -infinity.</li>
+								</ul>
+							</li>
+							<li>The <b>JSON Object</b> is a lightweight data-interchange format based on a subset of the object literal notation of the JavaScript language.</li>
+							<li>The JSON object provides two functions to convert to and from JSON text format. The <b>JSON.stringify function</b> serializes objects and arrays into JSON text. The <b>JSON.parse function</b> de-serializes JSON text to produce in-memory objects.</li>	
+							<div class="example-div">// strigify function
+								<span class="token">var</span> obj = { <span class="string">"name":"John", "age":30, "city":"New York"</span>};
+								<span class="token">var</span> myJSON = JSON.<span class="keyword">stringify</span>(obj);
+								document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>).innerHTML = myJSON;
+								<span class="comment">// Output:
+								//{"name":"John","age":30,"city":"New York"}
+								// parse function</span>
+								<span class="token">var</span> jsontext = <span class="string">'{"firstname":"Jesper","surname":"Aaberg","phone":["555-0100","555-0120"]}'</span>;  
+								<span class="token">var</span> contact = JSON.parse(jsontext);  
+								document.<span class="keyword">write</span>(contact.surname + ", " + contact.firstname);  
+								document.<span class="keyword">write</span>(contact.phone[1]);  
+								<span class="comment">// Output:  
+								// Aaberg, Jesper  
+								// 555-0100</span>  </div>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Creating Objects</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>There are a number of ways you can create your own objects in JavaScript. You can directly instantiate an <b>Object Object</b> ( = new Object( ); ) and then add your own properties and methods. Or you can use object literal notation to define your object. You can also use a constructor function to define an object.</li>
+							<li>The following code shows how to instantiate an object and add some properties. In this case only the pasta object has the grain, width, and shape properties.</li>
+							<div class="example-div"><span class="token">const</span> pasta = <span class="token">new</span> Object( );  
+							pasta.grain = <span class="string">"wheat"</span>;  
+							pasta.width = 0.5;  
+							pasta.shape = <span class="string">"round"</span>;  
+							pasta.getShape = <span class="token">function</span>( ) {   
+							    return this.shape;   
+							};  
+							document.<span class="keyword">write</span>(pasta.grain);  
+							document.<span class="keyword">write</span>(<span class="string">"<br/>"</span>);  
+							document.<span class="keyword">write</span>(pasta.getShape( ));  
+							<span class="comment">// Output:  
+							// wheat  
+							// round  </span></div>
+							<li>You can also use object literal notation when you want to create only one instance of an object. The following code shows how to instantiate an object by using object literal notation.</li>
+							<div class="example-div"><span class="token">const</span> pasta = {  
+							    grain: <span class="string">"wheat"</span>,  
+							    width: 0.5,  
+							    shape: <span class="string">"round"</span>  
+							};  </div>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Using Constructors to Define Types</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>A <b>constructor</b> is a function that instantiates a particular type of Object. You invoke a constructor with the new keyword. Here are a few examples of constructors with built-in JavaScript objects and custom objects.</li>
+							<div class="example-div">// Creates a generic object.  
+								<span class="token">var</span> myObject = <span class="token">new</span> Object( );  
+								<span class="comment">// Creates a Date object. </span> 
+								<span class="token">var</span> myBirthday = <span class="token">new</span> Date(1961, 5, 10);  
+								<span class="comment">// Creates a user defined object.</span>
+								<span class="token">var</span> myCar = <span class="token">new</span> Car( );</div>
+							<p>The constructor function contains the <b>this</b> keyword, which is a reference to a newly created empty object. It initializes the new object by creating properties and giving them initial values. The constructor returns a reference to the object it constructed.</p>
+							<li>You can create objects using the new operator in conjunction with predefined constructor functions such as Object( ), Date( ), and Function( ). You can also create custom constructor functions that define a set of properties and methods. Here is an example of a custom constructor.</li>
+							<div class="example-div"><span class="token">function</span> Circle (xPoint, yPoint, radius) {  
+							    this.x = xPoint;  <span class="comment">// The x component of the center of the circle. </span> 
+							    this.y = yPoint; <span class="comment"> // The y component of the center of the circle. </span>
+							    this.r = radius; <span class="comment"> // The radius of the circle. </span>
+							}  </div>
+							<p>When you invoke the <b>Circle constructor</b>, you supply values for the circle's center point and the radius. You end up with a Circle object that contains three properties. Here is how you would instantiate a Circle object.</p>
+							<div class="example-div"><span class="token">var</span> aCircle = <span class="token">new</span> Circle(5, 11, 99);</div>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Prototypes and Prototype Inheritance</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>In JavaScript, a <b>prototype</b> is a property of functions and of objects that are created by constructor functions. The prototype of a function or an object is itself an object. Objects created using an object literal, or with new Object( ), inherit from a prototype called <b>Object.prototype</b>.</li>
+							<li>In the example below, the prototype of the Vehicle function is the prototype of the Vehicle2 object that is instantiated with the Vehicle constructor.</li>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">Vehicle</span>(wheels, engine) {  
+								    this.wheels = wheels;  
+								    this.engine = engine;  
+								}  
+								<span class="token">var</span> Vehicle2 = new Vehicle("soft-wheels", "V6 engine")    </div>
+							<li>You can use the prototype property to add properties and methods to objects, even the ones that have already been created: </li>
+							<div class="example-div"><span class="token">var</span> testVehicle = <span class="token">new</span> Vehicle(2, false);  
+								Vehicle.prototype.color = <span class="string">"red"</span>;  
+								<span class="token">var</span> testColor = testVehicle.color;  </div>
+							<li>The prototype Object can be used to derive one object from another. For example, you can use the <b>Object.create</b> function to derive a new object Bicycle using the prototype of the Vehicle object we defined earlier (plus any new properties you need).</li>
+							<div class="example-div"><span class="token">var</span> bicycle = Object.<span class="keyword">create</span>(Object.<span class="keyword">getPrototypeOf</span>(Vehicle), {  
+							    <span class="string">"pedals"</span> :{value: true}  
+							});</div>
+							<p>The bicycle object has the properties <i>wheels, engine, color, and pedals</i>, and its prototype is Vehicle.prototype. The JavaScript engine finds the pedals property on bicycle, and it looks up the prototype chain to find the wheels, engine, and color properties on Vehicle.</p>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Data Properties and Accessor Properties</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>Properties determine the state of an object in JavaScript. JavaScript has three different kinds of properties: <b>named data properties, named accessor properties and internal properties.</b></li>
+							<li><b>Named properties</b> are "Normal" properties of objects map string names to values.</li>
+							<div class="example-div"> <span class="token">var</span> obj = {
+							        prop: 123
+							    };</div>
+							<li>Alternatively, getting and setting a property value can be handled via functions. Those functions are called accessor functions. A function that handles getting is called a <b>getter</b>. A function that handles setting is called a <b>setter:</b></li>
+							<div class="example-div"><span class="token">var</span> obj = {
+						        <span class="token">get</span> <span class="keyword">prop</span>( ) {
+						            return <span class="string">"Getter"</span>;
+						        },
+						        <span class="token">set</span> <span class="keyword">prop</span>(value) {
+						            console.log(<span class="string">"Setter: "</span>+value);
+						        }
+						    }</div>
+							<li>Some properties are only used by the specification. They are called internal, because they are not directly accessible via the language, but they do influence its behavior. Internal properties have special names that are written in double square brackets. Two examples:
+								<ul class="ab-list">
+									<li>The internal property <b>[[Prototype]]</b> points to the prototype of an object. It can be read via Object.getPrototypeOf( ). Its value can only be set by creating a new object that has a given prototype, e.g. via Object.create( ) or __proto__ [1].</li>
+									<li>The internal property <b>[[Extensible]]</b> determines whether or not one can add properties to an object. It can be read via Object.isExtensible( ). It can be set false via Object.preventExtensions( ). Once false, it cannot be become true again.</li>
+								</ul>
+							</li>
+							<li>There are 4 attributes for a data property.
+								<ul class="ab-list">
+									<li><b>value</b> is the current value of the property. It's default is set to undefined.</li>
+									<li><b>writable</b> determines if the property value can be modified. It can be set to either true or false with the default being false.</li>
+									<li><b>enumerable</b> determines if the property can be enumerated by a for...in statement. Its defualt is set to false.</li>
+									<li><b>configurable</b> determines if property attributes can be changed, and the property can be deleted. Its defualt is set to false.</li>
+								</ul>
+							</li>
+							<li>A <b>property descriptor</b> encodes the attributes of a property as an object. Each of the properties of that object corresponds to an attribute. For example, the following is the descriptor of a read-only property whose value is 123:</li>
+							<div class="example-div">    {
+						        value: 123,
+						        writable: false,
+						        enumerable: true,
+						        configurable: false
+						    }</div>
+							<p>You can achieve the same goal, immutability, via accessors. Then the descriptor looks as follows:</p>
+							<div class="example-div">    {
+						        <span class="token">get: function</span> ( ) { return 123 },
+						        enumerable: true,
+						        configurable: false
+						    }</div>
+						    <li>There are 4 functions allow you to work with property descriptors:</li>
+						    <p>A. <b>Object.defineProperty( )</b> - allows you to create or change a property of an object and return the modified object.</p>
+						    <div class="example-div"><span class="token">var</span> obj = Object.<span class="keyword">defineProperty</span>({}, <span class="string">"foo"</span>, {
+						        value: 123,
+						        enumerable: true
+						       <span class="comment"> // writable and configurable via defaults</span>
+						    });</div>
+						    <p>B. <b>Object.defineProperties( )</b> - is the batch version of Object.defineProperty( ). The names of the properties and their values tell Object.defineProperties what properties to create or change on obj.</p>
+						    <div class="example-div"><span class="token">var</span> obj = Object.<span class="keyword">defineProperties</span>({}, {
+						        foo: { value: 123, enumerable: true },
+						        bar: { value: <span class="string">"abc"</span>, enumerable: true }
+						    });</div>
+						    <p>C. <b>Object.create( )</b> - creates an object with a prototype. Then, if the optional parameter propDescObj has been specified, add properties to it – in the same manner as Object.defineProperties and then returns the result. </p>
+						    <div class="example-div"><span class="token">var</span> obj = Object.<span class="keyword">create</span>(Object.prototype, {
+						        foo: { value: 123, enumerable: true },
+						        bar: { value: <span class="string">"abc"</span>, enumerable: true }
+						    });</div>
+						    <p>4. <b>Object.getOwnPropertyDescriptor( )</b> - Returns the descriptor of the own (non-inherited) property of obj whose name is propName. If there is no such property, undefined is returned.</p>
+						    <div class="example-div">Object.<span class="keyword">getOwnPropertyDescriptor</span>(Object.prototype, <span class="string">"toString"</span>)
+							    { value: [Function: toString],
+							      writable: true,
+							      enumerable: false,
+							      configurable: true }
+							     Object.<span class="keyword">getOwnPropertyDescriptor</span>({}, <span class="string">"toString"</span>)
+							    undefined</div>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Variable Scope</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript has two scopes: <b>global</b> and <b>local</b>. A variable that is declared outside a function definition is a global variable, and its value is accessible and modifiable throughout your program. A variable that is declared inside a function definition is local. It is created and destroyed every time the function is executed, and it cannot be accessed by any code outside the function. </li>
+							<li>In JavaScript, variables are evaluated as if they were declared at the beginning of the scope they exist in. Sometimes this results in unexpected behavior, as shown here:</li>
+							<div class="example-div"><span class="token">var</span> aNumber = 100;  
+								tweak( );  
+								<span class="token">function</span> tweak( ){  
+								    <span class="comment">// This prints "undefined", because aNumber is also defined locally below.  </span>
+								    document.<span class="keyword">write</span>(aNumber);  
+								    if (false)  
+								    {  
+								        <span class="token">var</span> aNumber = 123;    
+								    }  
+								}  </div>
+							<li>JavaScript processes all variable declarations before executing any code, whether the declaration is inside a conditional block or other construct. Once JavaScript has found all the variables, it executes the code in the function. If a variable is implicitly declared inside a function - that is, if it appears on the left side of an assignment expression but has not been declared with var - it is created as a global variable.</li>
+							<li><b>Scope</b> refers to where variables and functions are accessible, and in what context it is being executed. Basically, a variable or function can be defined in a global or local scope. Variables have so-called function scope, and functions have the same scope as variables.</li>
+							<li>A <b>closure</b> gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. To use a closure, simply define a function inside another function and expose it. To expose a function, return it or pass it to another function. This is made possible by referencing it to its surrounding state (the lexical environment).</li>
+						    <p>Here is a good example of closure that is explained below:</p>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">numberGenerator</span>( ) {
+								 <span class="comment"> // Local "free" variable that ends up within the closure</span>
+								  <span class="token">var</span> num = 1;
+								  <span class="token">function</span> <span class="keyword">checkNumber</span>( ) { 
+								    console.log(num);
+								  }
+								  num++;
+								  return <span class="keyword">checkNumber</span>;
+								}
+								<span class="token">var</span> number = <span class="keyword">numberGenerator</span>( );
+								<span class="keyword">number</span>( ); <span class="comment">// 2</span></div>
+							<p>In the example above, the function numberGenerator creates a local "free" variable num (a number) and checkNumber (a function which prints num to the console). The function checkNumber doesn't have any local variables of its own — however, it does have access to the variables within the outer function, numberGenerator, because of a closure. Therefore, it can use the variable num declared in numberGenerator to successfully log it to the console even after numberGenerator has returned.</p>
+							<li>One of the most important and common uses of closure is to give objects <b>data privacy</b>. Data privacy is an essential property that helps us program to an interface, not an implementation. This is an important concept that helps us build more robust software because implementation details are more likely to change in breaking ways than interface contracts. In simple terms, this means that closure limits the scope of the information to each function range and therefore ensures that the data does not get mixed up with the other components of the program. </li>
+							<li>A closure is created when you define a function — not when you execute it. Then, every time you execute that function, its already-defined closure gives it access to all the function scopes available around it. On the contrast, scopes have a lifetime. When you call a function, you create a scope during the execution of that function. Then that scope goes away. When you call the function a second time, you create a new different scope during the second execution. Then this second scope goes away as well.</li>
+							<li>Another very important concept to understand when dealing with variables and scopes is <b>hoisting</b>. Hoisting is JavaScript's default behavior of moving declarations to the top. In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared:</li>
+							<p>Example 1 gives the same result as Example 2:</p>
+							<div class="example-div"><span class="comment">// Example 1</span>
+									x = 5; <span class="comment">// Assign 5 to x</span>
+									elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">//< Find an element </span>
+									elem.innerHTML = x;                     <span class="comment">//< Display x in the element</span>
+									<span class="token">var</span> x; <span class="comment">//< Declare x</span>
+									<span class="comment">//< Example 2</span>
+									<span class="token">var</span> x; <span class="comment">//< Declare x</span>
+									x = 5; <span class="comment">//< Assign 5 to x</span>
+									elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">//< Find an element 
+									elem.innerHTML = x;                     <span class="comment">//< Display x in the element</div>
+							<p>However, it should be noted that JavaScript only hoists declarations, not initializations. Meaning, that it hoists only declaring a variable without initializing it's value (making it equal to something).</p>
+							<p>In this instance, Example 1 does <b>not</b> give the same result as Example 2:</p>
+						    <div class="example-div"><span class="comment">// Example 1</span>
+								<span class="token">var</span> x = 5; <span class="comment">// Initialize x</span>
+								<span class="token">var</span> y = 7; <span class="comment">// Initialize y</span>
+								elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">// Find an element </span>
+								elem.innerHTML = x + " " + y;           <span class="comment">// Display x and y</span>
+								<span class="comment">// Example 2</span>
+								<span class="token">var</span> x = 5; <span class="comment">// Initialize x</span>
+								elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">// Find an element </span>
+								elem.innerHTML = x + " " + y;           <span class="comment">// Display x and y</span>
+								<span class="token">var</span> y = 7; <span class="comment">// Initialize y</span></div>
+						    <li>To avoid bugs, always declare all variables at the beginning of every scope.</li>
 						</ul> 
 					</div>
 				</div><br><!--   method div   -->

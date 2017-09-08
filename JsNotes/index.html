@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Work+Sans" rel="stylesheet">
+	<title>Eyal's Javascript Notes</title>
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 19px; font-weight: 300; background-color: #fff;  color: #000; font-family: 'Open Sans', sans-serif; letter-spacing: 1.1px;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+
+		header{padding: 20px 0; border-bottom: 1px solid; margin-bottom: 50px;}
+		header .container{text-align: center;}
+		.header-p{font-size: 2.5em; display: inline-block; vertical-align: 8px; margin-left: 30px;}
+		#logo-pic{width: 140px;}
+		
+		.subject{font-size: 2em; margin-bottom: 20px; color: blue; font-style: italic;}
+		.example-div{display: inline-block; padding: 10px; background: #fbfaf8; font-size: 19px; border: 1px solid #ccc;
+				  	 white-space: pre-line; margin-bottom: 13px; line-height: 1.7;}
+		.example-div p, .openMe p{margin-bottom: 13px;}
+
+		.token{color: #07a;}
+		.keyword{color: #DD4A68;}
+		.integer{color: #990055;}
+		.comment{color: #708090;}
+		.string{color: #669900;}
+
+		.openMe{display: none;}
+		.method-title{font-weight: bold; cursor: pointer; border-bottom: 2px solid; display: inline-block; 
+					  padding-bottom: 1px; margin-bottom: 15px;}
+		.method-div{margin-bottom: 5px; display: inline-block;}
+		.display{display: inline-block;}
+		.martop15{margin-top: 15px;}
+		.string-color{color: #690;}
+		.ab-list{margin-left: 38px;}
+		.ab-list li{list-style-type: upper-alpha !important;}
+		.one-two-list{margin-left: 20px;}
+		.one-two-list li{list-style-type: decimal; margin-bottom: 10px;}
+
+		@media (max-width: 980px) {
+			.container{width: auto; padding: 0 20px;}
+			.header-p, .subject{font-size: 1.2em;}
+		}
+
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<p class="header-p">Fundamentals of Javascript Notes</p>
+			</div>
+		</header>
+		<div class="container">
+				<p class="subject">Basics</p>
+
+				<div class="method-div">
+					<p class="method-title">Javascript Basics</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript is an interpreted, object-based scripting language.</li>
+							<li>The language supports various data types, including String, Number, Boolean, Object, and Array. </li>
+							<li>JavaScript is a <b>loosely typed language</b>, which means you do not declare what kind of data type each variable or object is. Meaning, you do not declare:</li>
+							<div class="example-div">Integer <span class="token">var</span> int = <span class="integer">13</span></div>
+							<p>but rather you just declare:</p>
+							<div class="example-div"><span class="token">var</span> int = <span class="integer">13</span></div>
+							<p>and the interpreter will know it is an integer.</p>
+							<li>Like many other programming languages, JavaScript is organized into <b>statements</b>, blocks consisting of related sets of statements, and comments. Within a statement you can use variables, strings, numbers, and expressions. So a JavaScript program is a collection of statements. JavaScript statements combine expressions in such a way that they carry out one complete task. Every line of code in a program is called a "statement".</li>
+							<li>A group of JavaScript statements surrounded by braces ({}) is called a block. Statements grouped into a block can generally be treated as a single statement. </li>
+							<li>Generally, blocks are used in functions and conditionals. Unlike other programming languages, JavaScript does not consider a block to be a new scope; ONLY functions create a new scope.</li>
+							<li>Javascript also has <b>expressions</b>. An expression is any valid unit of code that resolves to a value (meaning value is expected) , such as:</li>
+							<div class="example-div"><span class="token">var</span> x = <span class="integer">2</span> <span class="comment">// a very simple example of an expression</span></div>
+							<p>The vague difference a statement and an expression is that an expression expects a value whereas a statement performs an action such as a "for loop". Wherever JavaScript expects a statement, you can also write an expression. Such a statement is called an expression statement. The reverse does not hold: you cannot write a statement where JavaScript expects an expression. For example, an if statement cannot become the argument of a function.</p>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Varialbles</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>Javascript variables are data types that store data values.</li>
+							<li>JavaScript is a case-sensitive language. This means that a variable name such as myCounter is different from the variable name MYCounter.</li>
+							<li>The rules for creating legal variable names are as follows: 
+								<ul class="ab-list">
+									<li>The first character must be an ASCII letter (either uppercase or lowercase), or an underscore ( _ ) character. Note that a number cannot be used as the first character.</li>
+									<li>Following characters must be letters, numbers, or underscores ( _ ).</li>
+									<li>The variable name must not be a reserved word (break, default, function, return, var, case delete, if, switch, void, catch, do, in, this, while, const, else, instanceOf, throw, with, continue, finally, let, try, debugger, for, new, typeof)</li>
+								</ul>
+							</li>
+							<p>Here are some examples of valid variable names:</p>
+							<div class="example-div">_pagecount   
+							Part9   
+							Number_Items</div>
+							<p>Here are some examples of valid variable names:</p>
+							<div class="example-div"><span class="comment">// Cannot begin with a number.</span>   
+								99Balloons     
+								<span class="comment">// The ampersand (&amp;) character is not a valid character for variable names.   </span>
+								Alpha&amp;Beta</div>
+							<li><b>Coercion</b> is the process in which the JavaScript interpreter implicitly converts a data type to that of the other (since JS is a loosly typed language), then performs the operation. </li>
+							<li>The rules for coercion of string, number, and Boolean values are the following:
+								<ul class="ab-list">
+									<li>If you add a number and a string, the number is coerced to a string.</li>
+									<li>If you add a Boolean and a string, the Boolean is coerced to a string.</li>
+									<li>If you add a number and a Boolean, the Boolean is coerced to a number ( "true" is worth 1               whereas "false" is equal to 0 ).</li>
+								</ul>
+							</li>
+							<p>In the following example, a number added to a string results in a string:</p>
+							<div class="example-div"><span class="token">var</span> x = <span class="integer">2000</span>;  
+								<span class="token">var</span> y = "Hello";  
+								<span class="comment">// The number is coerced to a string.</span>  
+								x = x + y;  
+								document.<span class="keyword">write</span>(x);   
+								<span class="comment">// Output:
+									// 2000Hello  </span></div>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Data Types</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>In JavaScript, there are three primary data types, two composite data types, and two special data types.</li>
+							<li>The 3 primary (primitive, meaning they are built into the language) data types are: <b>String, Number, and Boolean</b>.</li>
+							<li>The 2 composite (reference, meaning they are stored in memory like variables) data types are: <b>Object and Array.</b></li>
+							<li>The special data types are: <b>Null and Undefined.</b></li>
+							<li><b>String Data Type</b>: A string value is a chain of zero or more Unicode characters (letters, digits, and punctuation marks). You use the string data type to represent text in JavaScript. You include string literals in your scripts by enclosing them in single or double quotation marks.</li>
+							<li><b>Number Data Type</b>: In JavaScript, there is no distinction between integer and floating-point values; a JavaScript number can be either (internally, JavaScript represents all numbers as floating-point values).</li>
+							<li>Additionally, JavaScript contains numbers with special values such as NaN (not a number). This is used when a mathematical operation is performed on inappropriate data, such as strings or the undefined value.</li>
+							<li>The <b>undefined</b> value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.</li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Operators</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>JavaScript has a full range of operators, including arithmetic, logical, bitwise, assignment, as well as some miscellaneous operators.</li>
+							<li><b>Computational Operators:</b> unary negation ( - ) , increment  ( + ) , decrement  ( -- ) , multiplication ( * ) , division ( / ) , modulus arithmetic ( % ) , addition ( + ) , subtraction ( - ) .</li>
+							<li><b>Bitwise Operators:</b> Bitwise NOT (  ~  ) , Bitwise Left Shift ( << ) , Bitwise Right Shift ( >> ) , Unsigned Right Shift	( >>> ) , Bitwise AND ( &amp; ) ,  Bitwise XOR ( ^ ) , Bitwise OR ( | ).</li>
+							<li>Assignment Operators:</b> Assignment	 ( = ) , Compound Assignment ( Operator= (such as += and &amp;= ) .</li>
+							<li><b>Miscellaneous Operators:</b> delete (deletes a property from an object, or removes an element from an array), typeof (returns a string that identifies the data type of an expression), void ( prevents an expression from returning a value ), instanceof ( returns a Boolean value that indicates whether or not an object is an instance of a particular class ), new ( Creates a new object ), in ( tests for the existence of a property in an object ).</li>
+							<li><b>Equality and Strict Equality:</b> The difference between == (equality) and === (strict equality) is that the equality operator will coerce (convert) values of different types before checking for equality. For example, comparing the string "1" with the number 1 will compare as true. The strict equality operator, on the other hand, will not coerce values to different types, and so the string "1" will not compare as equal to the number 1. So althought == checks the value to be equal whereas === checks value and data type. </li>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Operator Precedence</p>
+					<div class="openMe">
+					<p>Operator precedence describes the order in which operations are performed when an expression is evaluated. Operations with a higher precedence are performed before those with a lower precedence. For example, multiplication is performed before addition. Here is the list by order of precedence that are evaluated left to right:</p>
+						<ul class="one-two-list">
+							<li>.  Field access, array indexing, function calls, and expression grouping.</li>
+							<li>++ -- - ~ ! delete new typeof void Unary operators, return data type, object creation, undefined values.</li>
+							<li>* / %  Multiplication, division, modulo division.</li>
+							<li>+ - +  Addition, subtraction, string concatenation.</li>
+							<li><< >> >>  Bit shifting.</li>
+							<li>< <= > >= instanceof  Less than, less than or equal, greater than, greater than or equal, instanceof.</li>
+							<li>== != === !== Equality, inequality, strict equality, and strict inequality.</li>
+							<li>&amp; Bitwise AND.</li>
+							<li>^  Bitwise XOR.</li>
+							<li>|  Bitwise OR.</li>
+							<li>&amp;&amp;	Logical AND.</li>
+							<li>||	Logical OR.</li>
+							<li>?:	Conditional.</li>
+							<li>= OP=	Assignment, assignment with operation (such as += and &amp;=).</li>
+							<li>,  Multiple evaluation.</li>
+							<li>Parentheses are used to alter the order of evaluation determined by operator precedence. This means an expression within parentheses is fully evaluated before its value is used in the remainder of the expression. </li>
+								<div class="example-div"><span class="token">var</span> result = <span class="integer">78</span> * <span class="integer">96</span> + <span class="integer">3</span>;  
+								document.write(result);  
+								document.write("<br/>");  
+								result = <span class="integer">78</span> * (<span class="integer">9</span> + <span class="integer">3</span>);  
+								document.write(result);  
+								<span class="comment">// Output:  
+								// 7491  
+								// 936 </span> </div>
+							
+							<p>The following example shows a statement that includes a variety of operators and resolves to "true":</p>
+							<div class="example-div"><span class="token">var</span> num = <span class="integer">10</span>;  
+								if(<span class="integer">5</span> == num / <span class="integer">2</span> &amp;&amp; (<span class="integer">2</span> + <span class="integer">2</span> * num).toString() === <span class="string">"22"</span>) {  
+								    document.write(true);  
+								}  
+								   <span class="comment"> // Output:  
+								    // true </span> </div>
+							<p>The operators are evaluated in this order: ( ) for the grouping, *, + (within the grouping), "." for the function, ( ) for the function, /, ==, ===, and &amp;&amp;.</p>
+						</ul> 
+					</div>
+				</div><br><!--   method div   -->
+
+		</div><!--  container  -->
+		<script src="../jquery.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+	</html>

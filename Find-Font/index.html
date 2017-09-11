@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Find Font and Manipulate It</title>
+	<style>
+		*{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+		.padtop20{padding-top: 20px;}
+		p{padding: 10px 0; font-size: 19px;}
+
+		.code-div{display: inline-block; padding: 0px 20px 20px; background: #fbfaf8; font-size: 19px; border: 1px solid #ccc;
+				  white-space: pre-line; line-height: 1.4;}
+		.code-div p{padding: 2px 0;}
+		.red{color: red;}
+		.green{color: green;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="center padtop20">Finding Font and Manipulating It Through Javascript</h1>
+			<p>1. JavaScript is an interpreted, object-based scripting language.</p>
+			<p>2. The language supports various data types, including String, Number, Boolean, Object, and Array.</p>
+			<p>3. JavaScript is a loosely typed language, which means you do not declare what kind of data type each variable or object is. Meaning, you do not declare:</p>
+			<div class="code-div">
+				Integer var int = 13
+			</div>
+			<p>4. Lets try another one called var</p>
+			<div class="code-div">
+				var a = 1;
+				function createGlobal(){
+   				 b = 2;
+				} // b will be a global variable
+			</div>
+		</div>
+		<script src="../jquery.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+	</html>

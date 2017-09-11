@@ -43,6 +43,7 @@
 		.ab-list{margin-left: 28px; margin-top: 10px;}
 		.ab-list li{list-style-type: upper-alpha !important;}
 		.one-two-list{margin-left: 20px;}
+		.one-two-list a{color: blue; text-decoration: underline;}
 		.one-two-list li{list-style-type: decimal; margin-bottom: 10px;}
 
 		@media (max-width: 980px) {
@@ -85,7 +86,7 @@
 				</div><!--   method div   -->
 
 				<div class="method-div">
-					<p class="method-title">Varialbles</p>
+					<p class="method-title">Variables</p>
 					<div class="openMe">
 						<ul class="one-two-list">
 							<li>Javascript variables are data types that store data values.</li>
@@ -106,7 +107,7 @@
 								99Balloons     
 								<span class="comment">// The ampersand (&amp;) character is not a valid character for variable names.   </span>
 								Alpha&amp;Beta</div>
-							<li><b>Coercion</b> is the process in which the JavaScript interpreter implicitly converts a data type to that of the other (since JS is a loosly typed language), then performs the operation. </li>
+							<li><b>Coercion</b> is the process in which the JavaScript interpreter implicitly converts a data type to that of the other (since JS is a loosely typed language), then performs the operation. </li>
 							<li>The rules for coercion of string, number, and Boolean values are the following:
 								<ul class="ab-list">
 									<li>If you add a number and a string, the number is coerced to a string.</li>
@@ -151,7 +152,7 @@
 							<li><b>Bitwise Operators:</b> Bitwise NOT (  ~  ) , Bitwise Left Shift ( << ) , Bitwise Right Shift ( >> ) , Unsigned Right Shift	( >>> ) , Bitwise AND ( &amp; ) ,  Bitwise XOR ( ^ ) , Bitwise OR ( | ).</li>
 							<li>Assignment Operators:</b> Assignment	 ( = ) , Compound Assignment ( Operator= (such as += and &amp;= ) .</li>
 							<li><b>Miscellaneous Operators:</b> delete (deletes a property from an object, or removes an element from an array), typeof (returns a string that identifies the data type of an expression), void ( prevents an expression from returning a value ), instanceof ( returns a Boolean value that indicates whether or not an object is an instance of a particular class ), new ( Creates a new object ), in ( tests for the existence of a property in an object ).</li>
-							<li><b>Equality and Strict Equality:</b> The difference between == (equality) and === (strict equality) is that the equality operator will coerce (convert) values of different types before checking for equality. For example, comparing the string "1" with the number 1 will compare as true. The strict equality operator, on the other hand, will not coerce values to different types, and so the string "1" will not compare as equal to the number 1. So althought == checks the value to be equal whereas === checks value and data type. </li>
+							<li><b>Equality and Strict Equality:</b> The difference between == (equality) and === (strict equality) is that the equality operator will coerce (convert) values of different types before checking for equality. For example, comparing the string "1" with the number 1 will compare as true. The strict equality operator, on the other hand, will not coerce values to different types, and so the string "1" will not compare as equal to the number 1. So although == checks the value to be equal whereas === checks value and data type. </li>
 						</ul> 
 					</div>
 				</div><!--   method div   -->
@@ -402,6 +403,35 @@
 							<li>JavaScript <b>functions</b> perform actions; they can also return values. Sometimes these are the results of calculations or comparisons. Functions are also called "global methods". Functions combine several operations under one name. This lets you streamline your code. You can write out a set of statements, name it, and then execute the entire set by calling it and passing to it any information it needs. </li>
 							<li>JavaScript supports two kinds of functions: those that are built into the language, and those you create yourself. </li>
 							<li>The JavaScript language includes several built-in functions. Some let you handle expressions and special characters, while others convert strings to numeric values. The most famous you would know are the getDate Method that allows you to get the date, time, hour, minute, seconds, etc. For a complete list see this page.</li>
+							<li>You will often hear that <b>"Functions are first class Objects"</b>, that is, functions are of the type Object and they can be used in a first-class manner like any other object (String, Array, Number, etc.) since they are in fact objects themselves. They can be stored in variables, passed as arguments to functions, created within functions, have their own methods, and returned from functions.</li>
+							<li>A function that takes other functions as arguments or returns functions as its result is called a <b>higher-order function</b>, and the function that is passed as an argument is called a <b>callback function</b>. It's named "callback" because at some point in time it is "called back" by the higher-order function.</li>
+							<li><b>Callbacks</b> are heavily used in JavaScript libraries to provide generalization and re-usability. They allow the library methods to be easily customized and/or extended. Also, the code is easier to maintain, and much more concise and readable. Every time you need to transform your unnecessary repeated code pattern into more abstract/generic function, callbacks come to the rescue.</li>
+							<li>A good example of a callback function is when we attach an event listener to an element on a page. By doing that we're actually providing a pointer to a callback function that will be called when the event occurs:</li>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">showMessage</span>( ){
+								  alert(<span class="string">'Woohoo!'</span>);
+								}
+								<span class="token">var</span> el = document.<span class="keyword">getElementById</span>(<span class="string">"btn"</span>);
+								el.addEventListener(<span class="string">"click"</span>, <span class="keyword">showMessage</span>);
+							</div>
+							<li>An <b>Immediately-invoked function expression</b>, or <b>IIFE</b> (pronounced "iffy"), is a function expression (named or anonymous) that is executed right away after its creation.</li>
+							<li>There are two slightly different syntax variations of this pattern:</li>
+							<div class="example-div"><span class="comment">// variant 1</span>
+								(<span class="token">function</span> ( ) {
+								  alert(<span class="string">'Woohoo!'</span>);
+								})( );
+
+								<span class="comment">// variant 2</span>
+								(<span class="token">function</span> ( ) {
+								  alert(<span class="string">'Woohoo!'</span>);
+								}( ));
+							</div>
+							<li>To turn a regular function into an IIFE you need to perform two steps:
+								<ul class="ab-list">
+									<li>You need to wrap the whole function in parentheses. As the name suggests, an IIFE must be a function expression, not a function definition. So, the purpose of the enclosing parentheses is to transform a function definition into an expression. This is because, in JavaScript, everything in parentheses is treated as an expression.</li>
+									<li>You need to add a pair of parentheses at the very end (variant 1), or right after the closing curly brace (variant 2), which causes the function to be executed immediately.</li>
+								</ul>
+							</li>
+							<li>An IIFE is often used to create scope to <b>encapsulate modules</b>. Within the module there is a private scope that is self-contained and safe from unwanted or accidental modification. This technique, called the <b>module pattern</b>, is a powerful example of using closures to manage scope, and it's heavily used in many of the modern JavaScript libraries (jQuery and Underscore, for example).</li>
 						</ul> 
 					</div>
 				</div><!--   method div   -->
@@ -488,7 +518,7 @@
 								<ul class="ab-list">
 									<li>Number.MAX_VALUE - Largest possible number, about 1.79E+308; can be positive or negative. (Value varies slightly from system to system.)</li>
 									<li>Number.MIN_VALUE - Smallest possible number, about 5.00E-324; can be positive or negative. (Value varies slightly from system to system.)</li>
-									<li>Number.NaN - Special nonnumeric value, "not a number."</li>
+									<li>Number.NaN - Special non-numeric value, "not a number."</li>
 									<li>Number.POSITIVE_INFINITY - Any positive value larger than the largest positive number (Number.MAX_VALUE) is automatically converted to this value; represented as infinity.</li>
 									<li>Number.NEGATIVE_INFINITY - Any value more negative than the largest negative number (-Number.MAX_VALUE) is automatically converted to this value; represented as -infinity.</li>
 								</ul>
@@ -619,7 +649,7 @@
 									<li><b>value</b> is the current value of the property. It's default is set to undefined.</li>
 									<li><b>writable</b> determines if the property value can be modified. It can be set to either true or false with the default being false.</li>
 									<li><b>enumerable</b> determines if the property can be enumerated by a for...in statement. Its defualt is set to false.</li>
-									<li><b>configurable</b> determines if property attributes can be changed, and the property can be deleted. Its defualt is set to false.</li>
+									<li><b>configurable</b> determines if property attributes can be changed, and the property can be deleted. Its default is set to false.</li>
 								</ul>
 							</li>
 							<li>A <b>property descriptor</b> encodes the attributes of a property as an object. Each of the properties of that object corresponds to an attribute. For example, the following is the descriptor of a read-only property whose value is 123:</li>
@@ -681,6 +711,7 @@
 								    }  
 								}  </div>
 							<li>JavaScript processes all variable declarations before executing any code, whether the declaration is inside a conditional block or other construct. Once JavaScript has found all the variables, it executes the code in the function. If a variable is implicitly declared inside a function - that is, if it appears on the left side of an assignment expression but has not been declared with var - it is created as a global variable.</li>
+							<li>Another term for local scope is a <b>Lexical Environment</b>. A Lexical Environment is the environment of the function where it is written. That is, the static order/place where it is situated, regardless from where it is called from.</li>
 							<li><b>Scope</b> refers to where variables and functions are accessible, and in what context it is being executed. Basically, a variable or function can be defined in a global or local scope. Variables have so-called function scope, and functions have the same scope as variables.</li>
 							<li>A <b>closure</b> gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. To use a closure, simply define a function inside another function and expose it. To expose a function, return it or pass it to another function. This is made possible by referencing it to its surrounding state (the lexical environment).</li>
 						    <p>Here is a good example of closure that is explained below:</p>
@@ -734,9 +765,8 @@
 							<li>When a function is created, a keyword called "this" is created (behind the scenes), which links to the object in which the function operates. Said another way, this is available to the scope of its function, yet is a reference to the object of which that function is a property/method. We use "this" similar to the way we use pronouns in natural languages like English and French. We write, "John is running fast because he is trying to catch the train." The "this" keyword not only refers to the object but it also contains the value of the object.</li>
 							<li>What "this" refers to depends on where and how the function that is being executed is called. Identifying where the function is called (the "call-site") will help you determine what "this" refers to.<br> There are only four different scenarios to remember:
 								<ul class="ab-list">
-									<li><b>Default Binding:</b> When calling a function in a standard way, "this" will actually refer to the Global object! In the browser the Global object means the Window object. One exception to remember is if strict mode is enabled. By writing <b>"use-strict"</b> you can prevent anything from being declared on the global object.</li>
-									<div class="example-div">
-										<span class="token">function</span> <span class="keyword">foo</span>( ) {
+									<li><b>Default Binding:</b> When calling a function in a standard way, "this" will actually refer to the Global object. In the browser the Global object means the Window object. One exception to remember is if strict mode is enabled. By writing <b>"use-strict"</b> you can prevent anything from being declared on the global object.</li>
+									<div class="example-div"><span class="token">function</span> <span class="keyword">foo</span>( ) {
 											this.a = <span class="string">'foo'</span>
 											console.log(this);
 										}
@@ -744,8 +774,7 @@
 											<span class="comment">// this will log Window Object</span>
 									</div>
 									<li><b>Implicit Binding: </b>If the function is contained within an object then that object will will be referenced by "this". In the example below the object foo holds a reference to bar. foo will thus be logged out when bar writes "this" to the console.</li>
-									<div class="example-div">
-										<span class="token">function</span> <span class="keyword">bar</span>( ) {
+									<div class="example-div"><span class="token">function</span> <span class="keyword">bar</span>( ) {
 											console.log(<span class="keyword">this</span>);
 										}
 										<span class="token">var</span>	<span class="keyword">foo</span> = {
@@ -755,9 +784,8 @@
 										<span class="keyword">foo</span>.b( );
 										<span class="comment">// this will log the foo object</span> 
 									</div>
-									<li><b>Explicit Binding:</b> <b>bind, apply and call</b> are all methods that can be used to explicitly set the value of "this". The only difference between these methods is that apply and call can be used to pass parameters to the function, whereas bind is used purely to set the value of "this".</li>
-									<div class="example-div">
-										<span class="token">function</span> <span class="keyword">bar</span>( ) {
+									<li><b>Explicit Binding:</b> <b>bind, apply and call</b> are all methods that can be used to explicitly set the value of "this". The differences between these three methods will be explained below.</li>
+									<div class="example-div"><span class="token">function</span> <span class="keyword">bar</span>( ) {
 											console.log(<span class="keyword">this</span>);
 										}
 										<span class="token">var</span>	<span class="keyword">foo</span> = {
@@ -769,11 +797,10 @@
 										<span class="comment">// this will log the foo object</span>
 									</div>
 									<li><b>New Binding:</b> When an instance of an object is created using the <b>new</b> keyword, "this" is always set to that same instance. Therefore, in this example, an instance of foo called bar has foo referenced by "this"</li>
-									<div class="example-div">
-										<span class="token">function</span> <span class="keyword">foo</span>( ) {
+									<div class="example-div"><span class="token">function</span> <span class="keyword">foo</span>( ) {
 											<span class="keyword">this</span>.a = 'a';
 											<span class="keyword">this</span>.log = function ( ) { 
-											  console.log(this);
+											  console.log(<span class="keyword">this</span>);
 											}
 										}
 										<span class="token">var</span> bar = <span class="token">new</span> <span class="keyword">foo</span>( );
@@ -782,6 +809,111 @@
 									</div>
 								</ul>
 							</li>
+							<li>The <b>call.( ), apply.( ), and bind.( )</b> methods are very similar in that they all attach the scope of "this" to a function or object. The key differences are:
+								<ul class="ab-list">
+									<li><b>call.( )</b> attaches "this" into function and executes the function immediately:</li>
+										<div class="example-div"><span class="token">var</span> person = {  
+											  name: <span class="string">"James Smith"</span>,
+											  hello: <span class="token">function</span>(thing) {
+											    console.log(<span class="keyword">this</span>.name + " says hello " + thing);
+											  }
+											}
+
+											person.hello(<span class="string">"world"</span>);  <span class="comment">// output: "James Smith says hello world"</span>
+											person.hello.<span class="keyword">call</span>({ name: "Jim Smith" }, <span class="string">"world"</span>); <span class="comment">// output: "Jim Smith says hell</span>
+										</div>
+									<li><b>apply.( )</b> is similar to call.( ) except that it takes an array-like object instead of listing the arguments out one at a time:</li>
+									<div class="example-div"><span class="token">function</span> <span class="keyword">personContainer</span>( ) {
+										  <span class="token">var</span> person = {  
+										     name: <span class="string">"James Smith"</span>,
+										     hello: <span class="token">function</span>( ) {
+										       console.log(<span class="keyword">this</span>.name + " says hello " + arguments[1]);
+										     }
+										  }
+										  person.hello.<span class="keyword">apply</span>(person, arguments);
+										}
+										<span class="keyword">personContainer</span>(<span class="string">"world"</span>, <span class="string">"mars"</span>); <span class="comment">// output: "James Smith says hello mars", note: arguments[0] = "world" , arguments[1] = "mars"</span>
+									</div>
+									<li><b>bind.( )</b> attaches "this" into a function and it needs to be invoked separately (meaning the function is NOT called immediately, just gets set up) like this:</li>
+									<div class="example-div"><span class="token">var</span> person = {  
+										name: <span class="string">"James Smith"</span>,
+										hello: <span class="token">function</span>(thing) {
+										    console.log(<span class="keyword">this</span>.name + " says hello " + thing);
+										  }
+										}
+
+										person.hello(<span class="string">"world"</span>);  <span class="comment">// output: "James Smith says hello world"</span>
+										<span class="token">var</span> helloFunc = person.hello.<span class="keyword">bind</span>({ name: <span class="string">"Jim Smith"</span> });
+										<span class="keyword">helloFunc</span>(<span class="string">"world"</span>);  <span class="comment">// output: Jim Smith says hello world"</span>
+									</div>
+								</ul>
+							</li>
+							<li>When a function is used as an <b>event handler</b>, its "this" is set to the element the event fired from. This is very helpful for precision because it limits the event handlers function to the element called only. In this way, "this" is more effective than just DRY.</li>
+							<li><b>Function Currying</b>, also known as <b>partial function application</b>, is the use of a function (that accept one or more arguments) that returns a new function with some of the arguments already set. The function that is returned has access to the stored arguments and variables of the outer function. We can use the <b>bind.( )</b> curry (preset one or more of the parameters) a function:</li>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">greet</span> (gender, age, name) {
+					                <span class="token">var</span> salutation = gender === <span class="string">"male"</span> ? <span class="string">"Mr. "</span> : <span class="string">"Ms. "</span>;
+					​
+					                if (age > 25) {
+					                    return "Hello, " + salutation + name + ".";
+					                }
+					                else {
+					                    return "Hey, " + name + ".";
+					                }
+					            }
+						        <span class="token">var</span> greetAnAdultMale = greet.<span class="keyword">bind</span> (null, "male", 45);
+						​
+						        greetAnAdultMale ("John Hartlove"); <span class="comment">// "Hello, Mr. John Hartlove."​</span>
+						​
+						        <span class="token">var</span> greetAYoungster = greet.bind (null, "", 16);
+						        greetAYoungster (<span class="string">"Alex"</span>); <span class="comment">// "Hey, Alex."​</span>
+						        greetAYoungster (<span class="string">"Emma Waterloo"</span>); <span class="comment">// "Hey, Emma Waterloo."​</span>
+							</div>
+							<li>The bind.( ) method is also very useful in cases where the "this" is interrupted when a function is called within another function and creates a different scope within it's block. This is very common when using the <b>setTimeout function</b> inside a bigger function. This can be fixed with the bind.( )
+							 method and is referred to as "jumping scope", meaning that we access the lexical scope of the parent function. Example:</li>
+							 <div class="example-div">
+							 	<span class="token">var</span> obj = {};
+								obj.myMethod = <span class="token">function</span> ( ) {
+								  console.log(<span class="keyword">this</span>); <span class="comment">// this = obj</span>
+								    setTimeout(function ( ) {
+								        console.log(<span class="keyword">this</span>); <span class="comment">// this = obj</span>
+								    }.<span class="keyword">bind</span>(<span class="keyword">this</span>), 100); 
+								};
+								obj.myMethod( );
+							 </div>
+						</ul> 
+					</div>
+				</div><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Promise Object</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>A<b>Promise Object</b> Provides a mechanism to schedule work to be done on a value that has not yet been computed. It is an abstraction for managing interactions with asynchronous APIs. The syntax is as follows:</li>
+							<div class="example-div"><span class="token">var</span> promise = <span class="token">new</span> <span class="keyword">Promise</span>(<span class="token">function</span>(resolve, reject) { ... });  
+							</div>
+							<li>A promise object has three parameters:
+								<ul class="ab-list">
+									<li><b>promise</b> - Required. The variable name to which the promise is assigned.</li>
+									<li><b>resolve</b> - Required. A function that runs to indicate that the promise has completed successfully.</li>
+									<li><b>reject</b> - Optional. A function that runs to indicate that the promise has been rejected with an error.</li>
+								</ul>
+							</li>
+							<li>A Promise must either be completed with a value, or it must be rejected with a reason. The <b>then method</b> of the Promise object runs when the promise is completed or rejected, whichever occurs first. If the promise is completed successfully, the fulfillment handler function of the then method runs. If the promise is rejected, the error handler function of the then method (or the <b>catch method</b> which specifies work to be done on the rejection of a promise) runs.</li>
+							<li>The following example shows how to call a function (timeout) that returns a promise. The fulfillment handler of the then method runs after the 5000ms timeout period expires:</li>
+							<div class="example-div"><span class="token">function</span> timeout(duration) {  
+							    return <span class="token">new</span> <span class="keyword">Promise</span>(<span class="token">function</span>(resolve, reject) {  
+							        setTimeout(resolve, duration);  
+							    });  
+							}  
+
+							<span class="comment">// Note: This code uses arrow function syntax </span>
+							<span class="token">var</span> m = <span class="keyword">timeout</span>(5000).<span class="keyword">then</span>(( ) => {  
+							    console.log("done!");  
+							})  
+
+							<span class="comment">// Output (after 5 seconds):  
+							// done!  </span>
+							</div>
 						</ul> 
 					</div>
 				</div><!--   method div   -->

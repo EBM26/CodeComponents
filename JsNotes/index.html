@@ -21,7 +21,7 @@
 
 		header{padding: 20px 0; border-bottom: 1px solid; margin-bottom: 50px;}
 		header .container{text-align: center;}
-		.header-p{font-size: 2.5em; display: inline-block; vertical-align: 8px; margin-left: 30px;}
+		.header-p{font-size: 2.5em; display: inline-block; vertical-align: 8px; font-weight: bold;}
 
 		.subject{font-size: 2em; margin-bottom: 20px; color: blue; font-style: italic;}
 		.example-div{display: inline-block; padding: 10px 25px; background: #fbfaf8; font-size: 19px; border: 1px solid #ccc;
@@ -723,6 +723,65 @@
 								elem.innerHTML = x + " " + y;           <span class="comment">// Display x and y</span>
 								<span class="token">var</span> y = 7; <span class="comment">// Initialize y</span></div>
 						    <li>To avoid bugs, always declare all variables at the beginning of every scope.</li>
+						</ul> 
+					</div>
+				</div><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">"This" Keyword</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>When a function is created, a keyword called "this" is created (behind the scenes), which links to the object in which the function operates. Said another way, this is available to the scope of its function, yet is a reference to the object of which that function is a property/method. We use "this" similar to the way we use pronouns in natural languages like English and French. We write, "John is running fast because he is trying to catch the train." The "this" keyword not only refers to the object but it also contains the value of the object.</li>
+							<li>What "this" refers to depends on where and how the function that is being executed is called. Identifying where the function is called (the "call-site") will help you determine what "this" refers to.<br> There are only four different scenarios to remember:
+								<ul class="ab-list">
+									<li><b>Default Binding:</b> When calling a function in a standard way, "this" will actually refer to the Global object! In the browser the Global object means the Window object. One exception to remember is if strict mode is enabled. By writing <b>"use-strict"</b> you can prevent anything from being declared on the global object.</li>
+									<div class="example-div">
+										<span class="token">function</span> <span class="keyword">foo</span>( ) {
+											this.a = <span class="string">'foo'</span>
+											console.log(this);
+										}
+											<span class="keyword">foo</span>( );
+											<span class="comment">// this will log Window Object</span>
+									</div>
+									<li><b>Implicit Binding: </b>If the function is contained within an object then that object will will be referenced by "this". In the example below the object foo holds a reference to bar. foo will thus be logged out when bar writes "this" to the console.</li>
+									<div class="example-div">
+										<span class="token">function</span> <span class="keyword">bar</span>( ) {
+											console.log(<span class="keyword">this</span>);
+										}
+										<span class="token">var</span>	<span class="keyword">foo</span> = {
+											a: <span class="string">'foo'</span>,
+											b: bar
+										}
+										<span class="keyword">foo</span>.b( );
+										<span class="comment">// this will log the foo object</span> 
+									</div>
+									<li><b>Explicit Binding:</b> <b>bind, apply and call</b> are all methods that can be used to explicitly set the value of "this". The only difference between these methods is that apply and call can be used to pass parameters to the function, whereas bind is used purely to set the value of "this".</li>
+									<div class="example-div">
+										<span class="token">function</span> <span class="keyword">bar</span>( ) {
+											console.log(<span class="keyword">this</span>);
+										}
+										<span class="token">var</span>	<span class="keyword">foo</span> = {
+											a: <span class="string">'foo'</span>,
+										}
+										<span class="keyword">bar</span>.bind(foo)( );
+										<span class="keyword">bar</span>.call(foo);
+										<span class="keyword">bar</span>.apply(foo);
+										<span class="comment">// this will log the foo object</span>
+									</div>
+									<li><b>New Binding:</b> When an instance of an object is created using the <b>new</b> keyword, "this" is always set to that same instance. Therefore, in this example, an instance of foo called bar has foo referenced by "this"</li>
+									<div class="example-div">
+										<span class="token">function</span> <span class="keyword">foo</span>( ) {
+											<span class="keyword">this</span>.a = 'a';
+											<span class="keyword">this</span>.log = function ( ) { 
+											  console.log(this);
+											}
+										}
+										<span class="token">var</span> bar = <span class="token">new</span> <span class="keyword">foo</span>( );
+										<span class="keyword">bar</span>.log( );
+										<span class="comment">// this will log the foo object</span> 
+									</div>
+								</ul>
+							</li>
 						</ul> 
 					</div>
 				</div><!--   method div   -->

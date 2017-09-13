@@ -265,7 +265,7 @@
 						<ul class="one-two-list">
 							<li>JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page. </li> 
 							<li>Events are a part of the <b>Document Object Model</b> (DOM) Level 3 and every HTML element contains a set of events which can trigger JavaScript Code.</li>
-							<li>Each available event has an <b>event handler</b>, which is block of code (usually a user-defined JavaScript function) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are registering an event handler. Note that event handlers are sometimes called <b>event listeners</b> — they are pretty much interchangeable for our purposes, although strictly speaking they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.</li>
+							<li>Each available event has an <b>event handler</b>, which is block of code (usually a user-defined JavaScript function) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are registering an event handler. Note that event handlers are sometimes called <b>event listeners</b> &ndash; they are pretty much interchangeable for our purposes, although strictly speaking they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.</li>
 							<li>There are a number of different ways in which you can add event listener code to web pages so that it will be run when the associated event fires:</li>
 							<div class="example-div"><span class="comment">// Event handler properties</span>
 							<span class="token">var</span> btn = document.<span class="keyword">querySelector</span>(<span class="string">'button'</span>);
@@ -280,24 +280,24 @@
 								  document.body.style.backgroundColor = rndCol;
 								}
 								btn.onclick = bgChange;</div>
-							<p>Inline event handlers — (don't use these) :</p>
+							<p>Inline event handlers &ndash; (don't use these) :</p>
 							<div class="example-div"><span class="token">function</span> <span class="keyword">bgChange</span>( ) {
 									  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 									  document.body.style.backgroundColor = rndCol;
 									}</div>
-							<p>For a start, it is not a good idea to mix up your HTML and your JavaScript, as it becomes hard to parse — keeping your JavaScript all in one place is better; if it is in a separate file you can apply it to multiple HTML documents.  One button is OK, but what if you had 100 buttons? You'd have to add 100 attributes to the file; it would very quickly turn into a maintenance nightmare. <br>With JavaScript, you could easily add an event handler function to all the buttons on the page no matter how many there were, using something like this:</p>
+							<p>For a start, it is not a good idea to mix up your HTML and your JavaScript, as it becomes hard to parse &ndash; keeping your JavaScript all in one place is better; if it is in a separate file you can apply it to multiple HTML documents.  One button is OK, but what if you had 100 buttons? You'd have to add 100 attributes to the file; it would very quickly turn into a maintenance nightmare. <br>With JavaScript, you could easily add an event handler function to all the buttons on the page no matter how many there were, using something like this:</p>
 							<div class="example-div"><span class="token">var</span> buttons = document.<span class="keyword">querySelectorAll</span>(<span class="string">'button'</span>);
 							for (<span class="token">var</span> i = 0; i < buttons.length; i++) {
 							  buttons[i].onclick = bgChange;
 							}</div>
-							<p>The newest type of event mechanism is defined in the Document Object Model (DOM) Level 2 Events Specification, which provides browsers with a new function — <b>addEventListener( )</b>. This functions in a similar way to the event handler properties, but the syntax is obviously different. We could rewrite our random color example to look like this:</p>
+							<p>The newest type of event mechanism is defined in the Document Object Model (DOM) Level 2 Events Specification, which provides browsers with a new function &ndash; <b>addEventListener( )</b>. This functions in a similar way to the event handler properties, but the syntax is obviously different. We could rewrite our random color example to look like this:</p>
 							<div class="example-div"><span class="token">var</span> btn = document.<span class="keyword">querySelector</span>(<span class="string">'button'</span>);
 							<span class="token">function </span><span class="keyword">bgChange</span>( ) {
 							  <span class="token">var</span> rndCol = 'rgb(' + <span class="keyword">random</span>(255) + ',' + <span class="keyword">random</span>(255) + ',' + <span class="keyword">random</span>(255) + ')';
 							  document.body.style.backgroundColor = rndCol;
 							}   
 							btn.addEventListener('click', bgChange);</div>
-							<p>So inside the addEventListener( ) function, we specify two parameters — the name of the event we want to register this handler for, and the code that comprises the handler function we want to run in response to it. Note that it is perfectly appropriate to put all the code inside the addEventListener( ) function, in an anonymous function, like this:</p>
+							<p>So inside the addEventListener( ) function, we specify two parameters &ndash; the name of the event we want to register this handler for, and the code that comprises the handler function we want to run in response to it. Note that it is perfectly appropriate to put all the code inside the addEventListener( ) function, in an anonymous function, like this:</p>
 							<div class="example-div">btn.<span class="keyword">addEventListener</span>('click', <span class="token">function</span>( ) {
 							  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 							  document.body.style.backgroundColor = rndCol;
@@ -309,7 +309,7 @@
 								  console.log(e);
 								}  
 								btn.addEventListener('click', bgChange);</div>
-							<p>Here you can see that we are including an event object, e, in the function, and in the function setting a background color style on <b>e.target</b> — which is the button itself. The target property of the event object is always a reference to the element that the event has just occurred upon. So in this example we are setting a random background color on the button, not the page. e.target is incredibly useful when you want to set the same event handler on multiple elements, and do something to all of them when an event occurs on them. </p>
+							<p>Here you can see that we are including an event object, e, in the function, and in the function setting a background color style on <b>e.target</b> &ndash; which is the button itself. The target property of the event object is always a reference to the element that the event has just occurred upon. So in this example we are setting a random background color on the button, not the page. e.target is incredibly useful when you want to set the same event handler on multiple elements, and do something to all of them when an event occurs on them. </p>
 							<li><b>Event bubbling</b> and capturing are two mechanisms that describe what happens when two handlers of the same event type are activated on one element. The browsers then handle the conflicting situations in 1 of 2 different ways:
 								<ul class="ab-list">
 									<li><b>Capturing:</b> The browser checks to see if the element's outer-most ancestor (<html>) has an onclick event handler registered on it in the capturing phase, and runs it if so. Then it moves on to the next element inside "<html>" and does the same thing, then the next one, and so on until it reaches the element that was actually clicked on.</li>

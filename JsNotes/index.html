@@ -81,6 +81,7 @@
 							<li>Javascript also has <b>expressions</b>. An expression is any valid unit of code that resolves to a value (meaning value is expected) , such as:</li>
 							<div class="example-div"><span class="token">var</span> x = <span class="integer">2</span> <span class="comment">// a very simple example of an expression</span></div>
 							<p>The vague difference a statement and an expression is that an expression expects a value whereas a statement performs an action such as a "for loop". Wherever JavaScript expects a statement, you can also write an expression. Such a statement is called an expression statement. The reverse does not hold: you cannot write a statement where JavaScript expects an expression. For example, an if statement cannot become the argument of a function.</p>
+							<li>Javascript has the ability to run <b>Asynchronous programming</b>. In this type of programming, the engine runs in an event loop. On encountering a blocking operation, a request gets fired and the code keeps running without blocking for the result. When its execution completes, and the response is ready, it fires an interrupt, which causes an event handler to be run, where the control flow continues. In this way, a single program thread can handle many concurrent operations in an asynchronous programming. The user interface is asynchronous by nature and spends most of the time, waiting for user input to interrupt the event loop and trigger event handlers. This concept is important in JavaScript because it's suitable for user interface code and beneficial for maintaining the performance on the server.</li>
 						</ul> 
 					</div>
 				</div><!--   method div   -->
@@ -404,6 +405,7 @@
 						<ul class="one-two-list">
 							<li>JavaScript <b>functions</b> perform actions; they can also return values. Sometimes these are the results of calculations or comparisons. Functions are also called "global methods". Functions combine several operations under one name. This lets you streamline your code. You can write out a set of statements, name it, and then execute the entire set by calling it and passing to it any information it needs. </li>
 							<li>JavaScript supports two kinds of functions: those that are built into the language, and those you create yourself. </li>
+							<li><b>Anonymous</b> functions are functions that are dynamically declared at runtime. They're called anonymous functions because they don't have a name like normal functions.</li>
 							<li>The JavaScript language includes several built-in functions. Some let you handle expressions and special characters, while others convert strings to numeric values. The most famous you would know are the getDate Method that allows you to get the date, time, hour, minute, seconds, etc. For a complete list see this page.</li>
 							<li>You will often hear that <b>"Functions are first class Objects"</b>, that is, functions are of the type Object and they can be used in a first-class manner like any other object (String, Array, Number, etc.) since they are in fact objects themselves. They can be stored in variables, passed as arguments to functions, created within functions, have their own methods, and returned from functions.</li>
 							<li><b>Nested functions</b>: The functions, which are defined inside other functions, are called Nested functions. They are called 'everytime' the main function is invoked.</li>
@@ -443,8 +445,36 @@
 					<p class="method-title">Objects and Arrays </p>
 					<div class="openMe">
 						<ul class="one-two-list">
-							<li>JavaScript objects are collections of <b>properties</b> and <b>methods</b>. A method is a function that is a member of an object. A property is a value or set of values (in the form of an array or object) that is a member of an object.</li>
-							<li>JavaScript supports four kinds of objects:  
+							<li>JavaScript objects are collections of <b>properties</b> and <b>methods</b>. A property is a value or set of values (in the form of an array or object) that is a member of an object. A method is an object property that references a function.</li>
+							<div class="example-div"><span class="comment">// property example where the "user" object has the two properties, "name" and "age" with their respective values</span>
+								<span class="token">var</span> user = {    
+								  <span class="keyword">name</span>: <span class="string">"John"</span>,  
+								  <span class="keyword">age</span>: 30 
+								};
+								
+								<span class="comment">// method example</span>
+								<span class="token">var</span> obj = {
+								  <span class="keyword">helloWorld</span> : <span class="token">function</span>( ) {
+								    return <span class="string">"hello world, "</span> + this.name;
+								  },
+								  name: <span class="string">'John Carter'</span>
+								}
+								obj.<span class="keyword">helloWorld</span>( ); <span class="comment">// "hello world John Carter"</span>
+							</div>
+								<li>There are also <b>built-in methods</b> of built-in objects in Javascript like the methods you will find for the String, Number, and Array objects that can be called automatically on the respective object type:</li>
+								<div class="example-div"><span class="comment">// String Object Method</span>
+								<span class="token">var</span> txt = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;
+								<span class="token">var</span> str = txt.<span class="keyword">length</span>;
+								
+								<span class="comment">// Number Object Method</span>
+								<span class="token">var</span> x = 123;
+								x.<span class="keyword">toString</span>( ); <span class="comment"> // returns 123 from variable x</span>
+
+								<span class="comment">// Array Object Method</span>
+								<span class="token">var</span> arr = new Array(<span class="string">"4", "11", "2", "10", "3", "1"</span>);  
+								arr.<span class="keyword">splice</span>(2, 2, <span class="string">"21", "31"</span>);  
+								</div>
+								<li>JavaScript supports four kinds of objects:  
 								<ul class="ab-list">
 									<li><b>Intrinsic (or "built-in") objects</b>, such as Array and String</li>
 									<li>Objects you create</li>
@@ -961,6 +991,39 @@
 							<div class="example-div">if( Object.<span class="keyword">prototype</span>.toString.<span class="keyword">call</span>( arrayList ) === <span class="string">'[object Array]'</span> ) {
 								    console.log(<span class="string">'Array!'</span>);
 								}
+							</div>
+							<li>Write a function called deepClone which takes an object and creates a object copy of it.</li>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">deepClone</span>(object){
+								<span class="token">var</span> newObject = {};
+								for(<span class="token">var</span> key in object){
+									if(<span class="keyword">typeof</span> object[key] === <span class="string">'object'</span>){
+									 newObject[key] = <span class="keyword">deepClone</span>(object[key]);
+									}else{
+									 newObject[key] = object[key];
+									}
+								}
+								return newObject;
+							}</div>
+							<li>Write code for merge two JavaScript Objects dynamically.</li>
+							<div class="example-div"><span class="comment">// Method 1: Using the ES6 Object assign method</span>
+									<span class="token">function</span> <span class="keyword">merge</span>(toObj,fromObj){
+									return Object.assign(object1,object2);
+								}
+
+								<span class="comment">// Method 2: Without using in-built function</span>
+								<span class="token">function</span> <span class="keyword">merge</span>(toObj, fromObj) {
+							  	if (typeof toObj === 'object' &amp;&amp; typeof fromObj === <span class="string">'object'</span>) {
+							    for (<span class="token">var</span> pro in fromObj) {
+							      <span class="comment">// Assign only own properties not inherited properties</span>
+							      if (fromObj.hasOwnProperty(pro)) {
+							       <span class="comment"> // Assign property and value</span>
+							        toObj[pro] = fromObj[pro];
+							      }
+							    }
+							  }else{
+							  	throw <span class="string">"Merge function can apply only on object"</span>;
+							  }
+							}
 							</div>
 						</ul> 
 					</div>

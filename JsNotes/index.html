@@ -89,14 +89,14 @@
 					<p class="method-title">Variables</p>
 					<div class="openMe">
 						<ul class="one-two-list">
-							<li>Javascript variables are data types that store data values. All variables in the JavaScript are object data types.</li>
+							<li>Javascript <b>variables</b> are data types that store data values. All variables in the JavaScript are object data types.</li>
 							<li>JavaScript is a case-sensitive language. This means that a variable name such as myCounter is different from the variable name MYCounter.</li>
 							<li>Variable typing is used to assign a number to a variable and the same variable can be assigned to a string.</li>
 							<div class="example-div">i = 10;
  							i = <span class="string">"string";</span></div>
 							<li>The rules for creating legal variable names are as follows: 
 								<ul class="ab-list">
-									<li>The first character must be an ASCII letter (either uppercase or lowercase), or an underscore ( _ ) character. Note that a number cannot be used as the first character.</li>
+									<li>The first character must be an ASCII (American Standard Code for Information Interchange) letter (either uppercase or lowercase), or an underscore ( _ ) character. Note that a number cannot be used as the first character.</li>
 									<li>Following characters must be letters, numbers, or underscores ( _ ).</li>
 									<li>The variable name must not be a reserved word (break, default, function, return, var, case delete, if, switch, void, catch, do, in, this, while, const, else, instanceOf, throw, with, continue, finally, let, try, debugger, for, new, typeof)</li>
 								</ul>
@@ -105,7 +105,7 @@
 							<div class="example-div">_pagecount   
 							Part9   
 							Number_Items</div>
-							<p>Here are some examples of valid variable names:</p>
+							<p>Here are some examples of invalid variable names:</p>
 							<div class="example-div"><span class="comment">// Cannot begin with a number.</span>   
 								99Balloons     
 								<span class="comment">// The ampersand (&amp;) character is not a valid character for variable names.   </span>
@@ -140,7 +140,7 @@
 							<li>The special data types are: <b>Null and Undefined.</b></li>
 							<li><b>String Data Type</b>: A string value is a chain of zero or more Unicode characters (letters, digits, and punctuation marks). You use the string data type to represent text in JavaScript. You include string literals in your scripts by enclosing them in single or double quotation marks.</li>
 							<li><b>Number Data Type</b>: In JavaScript, there is no distinction between integer and floating-point values; a JavaScript number can be either (internally, JavaScript represents all numbers as floating-point values).</li>
-							<li>Additionally, JavaScript contains numbers with special values such as NaN (not a number). This is used when a mathematical operation is performed on inappropriate data, such as strings or the undefined value.</li>
+							<li>Additionally, JavaScript contains numbers with special values such as <b>NaN (not a number)</b>. This is used when a mathematical operation is performed on inappropriate data, such as strings or the undefined value. Even though NaN is not a number, it is still considered a Number Object.</li>
 							<li>The <b>undefined</b> value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.</li>
 						</ul> 
 					</div>
@@ -183,7 +183,6 @@
 							<li>Parentheses are used to alter the order of evaluation determined by operator precedence. This means an expression within parentheses is fully evaluated before its value is used in the remainder of the expression. </li>
 								<div class="example-div"><span class="token">var</span> result = <span class="integer">78</span> * <span class="integer">96</span> + <span class="integer">3</span>;  
 								document.<span class="keyword">write</span>(result);  
-								document.<span class="keyword">write</span>("<br/>");  
 								result = <span class="integer">78</span> * (<span class="integer">9</span> + <span class="integer">3</span>);  
 								document.<span class="keyword">write</span>(result);  
 								<span class="comment">// Output:  
@@ -208,11 +207,11 @@
 						<ul class="one-two-list">
 							<li>Normally, statements in a JavaScript script are executed one after the other, in the order in which they are written. This is called <b>sequential execution</b>, and is the default direction of program flow.</li>
 							<li>An alternative to sequential execution transfers the program flow to another part of your script. That is, instead of executing the next statement in the sequence, another statement is executed instead.  There are two main kinds of program structures that accomplish this. </li>
-							<li>The first is the selection structure. You use it to specify alternate courses of program flow, creating a junction in your program (like a fork in a road). There are four selection structures available in JavaScript. 
+							<li>The first is the <b>selection structure</b>. You use it to specify alternate courses of program flow, creating a junction in your program (like a fork in a road). There are four selection structures available in JavaScript. 
 							<ul class="ab-list">
 									<li>the single-selection structure (<b>if)</b></li>
 									<li>the double-selection structure (<b>if/else)</b></li>
-									<li>the inline ternary operator <b>?:</b></li>
+									<li>the inline ternary operator <b>?: (aka conditional operator)</b></li>
 									<li>the multiple-selection structure (<b>switch)</b></li>
 								</ul>
 							</li>
@@ -407,6 +406,7 @@
 							<li>JavaScript supports two kinds of functions: those that are built into the language, and those you create yourself. </li>
 							<li>The JavaScript language includes several built-in functions. Some let you handle expressions and special characters, while others convert strings to numeric values. The most famous you would know are the getDate Method that allows you to get the date, time, hour, minute, seconds, etc. For a complete list see this page.</li>
 							<li>You will often hear that <b>"Functions are first class Objects"</b>, that is, functions are of the type Object and they can be used in a first-class manner like any other object (String, Array, Number, etc.) since they are in fact objects themselves. They can be stored in variables, passed as arguments to functions, created within functions, have their own methods, and returned from functions.</li>
+							<li><b>Nested functions</b>: The functions, which are defined inside other functions, are called Nested functions. They are called 'everytime' the main function is invoked.</li>
 							<li>A function that takes other functions as arguments or returns functions as its result is called a <b>higher-order function</b>, and the function that is passed as an argument is called a <b>callback function</b>. It's named "callback" because at some point in time it is "called back" by the higher-order function.</li>
 							<li><b>Callbacks</b> are heavily used in JavaScript libraries to provide generalization and re-usability. They allow the library methods to be easily customized and/or extended. Also, the code is easier to maintain, and much more concise and readable. Every time you need to transform your unnecessary repeated code pattern into more abstract/generic function, callbacks come to the rescue.</li>
 							<li>A good example of a callback function is when we attach an event listener to an element on a page. By doing that we're actually providing a pointer to a callback function that will be called when the event occurs:</li>
@@ -736,14 +736,14 @@
 							<p>Example 1 gives the same result as Example 2:</p>
 							<div class="example-div"><span class="comment">// Example 1</span>
 									x = 5; <span class="comment">// Assign 5 to x</span>
-									elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">//< Find an element </span>
-									elem.innerHTML = x;                     <span class="comment">//< Display x in the element</span>
-									<span class="token">var</span> x; <span class="comment">//< Declare x</span>
-									<span class="comment">//< Example 2</span>
-									<span class="token">var</span> x; <span class="comment">//< Declare x</span>
-									x = 5; <span class="comment">//< Assign 5 to x</span>
-									elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">//< Find an element 
-									elem.innerHTML = x;                     <span class="comment">//< Display x in the element</div>
+									elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">// Find an element </span>
+									elem.innerHTML = x;                     <span class="comment">// Display x in the element</span>
+									<span class="token">var</span> x; <span class="comment">// Declare x</span>
+									<span class="comment">// Example 2</span>
+									<span class="token">var</span> x; <span class="comment">// Declare x</span>
+									x = 5; <span class="comment">// Assign 5 to x</span>
+									elem = document.<span class="keyword">getElementById</span>(<span class="string">"demo"</span>); <span class="comment">// Find an element</span>
+									elem.<span class="keyword">innerHTML</span> = x;                     <span class="comment">// Display x in the element</span></div>
 							<p>However, it should be noted that JavaScript only hoists declarations, not initializations. Meaning, that it hoists only declaring a variable without initializing it's value (making it equal to something).</p>
 							<p>In this instance, Example 1 does <b>not</b> give the same result as Example 2:</p>
 						    <div class="example-div"><span class="comment">// Example 1</span>
@@ -916,6 +916,51 @@
 
 							<span class="comment">// Output (after 5 seconds):  
 							// done!  </span>
+							</div>
+						</ul> 
+					</div>
+				</div><!--   method div   -->
+
+				<div class="method-div">
+					<p class="method-title">Common Code Exercises</p>
+					<div class="openMe">
+						<ul class="one-two-list">
+							<li>Write a sum method which will work properly when invoked using either syntax below:</li>
+							<div class="example-div">console.log(<span class="keyword">sum</span>(2,3));   <span class="comment">// Outputs 5</span>
+							console.log(<span class="keyword">sum</span>(2)(3));  <span class="comment">// Outputs 5</span>  
+							</div>
+							<p>One method would be:</p>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">sum</span>(x) {
+							  if (arguments.length == 2) {
+							    return arguments[0] + arguments[1];
+							  } else {
+							    return <span class="token">function</span>(y) { return x + y; };
+							  }
+							}</div>
+							<p>Another method would be:</p>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">sum</span>(x, y) {
+							  if (y !== undefined) {
+							    return x + y;
+							  } else {
+							    return <span class="token">function</span>(y) { return x + y; };
+							  }
+							}</div>
+							<li>Write a mul function which will produce the following outputs when invoked:</li>
+							<div class="example-div">console.log(<span class="keyword">mul</span>(2)(3)(4));   <span class="comment">// Output: 24</span>
+							console.log(<span class="keyword">mul</span>(4)(3)(4));  <span class="comment">// Outputs 48</span>  
+							</div>
+							<div class="example-div"><span class="token">function</span> <span class="keyword">mul</span> (x) {
+								       return <span class="token">function</span> (y) { <span class="comment">// anonymous function</span>
+								        return <span class="token">function</span> (z) { <span class="comment">// anonymous function </span>
+								            return x * y * z; 
+								        };
+								    };
+								}
+							</div>
+							<li>How do you check if an object is an array or not (without using the isArray( ) function)?</li>
+							<div class="example-div">if( Object.<span class="keyword">prototype</span>.toString.<span class="keyword">call</span>( arrayList ) === <span class="string">'[object Array]'</span> ) {
+								    console.log(<span class="string">'Array!'</span>);
+								}
 							</div>
 						</ul> 
 					</div>

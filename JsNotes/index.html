@@ -347,6 +347,62 @@
 									<li>Finding HTML elements by CSS selectors (for this you would use the css selectors in the parenthesis such as "." or "#") <b>document.querySelector( )</b> or <b>document.querySelectorAll( )</b> to grab all elements with that selector.</li>
 								</ul>
 							</li>
+							<li>Another very important problem when attaching event listeners to DOM elements is that your event may fire thousands of times within the span of 3 seconds and this can cause some serious performance issues. Classic examples include window resizing and scrolling events that can triggers event listeners multiple times a second. <br>There are two famous ways to tackle this issue: <b>debouncing</b> and <b>throttling</b></li>
+							<li><b>Debouncing</b> is enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."</li>
+							<div class="example-div"><span class="comment">// debounce function that will wrap our event</span>
+								function <span class="keyword">debounce</span>(fn, delay) {
+								  <span class="comment">// maintain a timer</span>
+								  <span class="token">let</span> timer = null;
+								  <span class="comment">// closure function that has access to timer</span>
+								  return <span class="token">function</span>( ) {
+								   <span class="comment"> // get the scope and parameters of the function via 'this' and 'arguments'</span>
+								    <span class="token">let</span> context = this;
+								    <span class="token">let</span> args = arguments;
+								    <span class="comment">// if event is called, clear the timer and start over</span>
+								    <span class="keyword">clearTimeout</span>(timer);
+								    timer = <span class="keyword">setTimeout</span>(<span class="token">function</span>( ) {
+								      fn.apply(context, args);
+								    }, delay);
+								  }
+								}
+								
+								<span class="comment">// function to be called when user scrolls</span>
+								function <span class="keyword">foo</span>( ) {
+								  console.log(<span class="string">'You are scrolling!'</span>);
+								}
+
+								<span class="comment">// wrap our function in a debounce to fire once 2 seconds have gone by</span>
+								<span class="token">let</span> elem = document.getElementById('container');
+								elem.addEventListener('scroll', debounce(foo, 2000));
+							</div>
+							<li><b>Throttling</b> enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."</li>
+							<div class="example-div"><span class="token">var</span> throttle = <span class="token">function</span>(func, limit) {
+									  <span class="token">var</span> inThrottle,
+									    lastFunc,
+									    lastRan;
+									  return <span class="token">function</span>( ) {
+									    <span class="token">var</span> context = this,
+									      args = arguments;
+									    if (!inThrottle) {
+									      func.apply(context, args);
+									      lastRan = Date.now( )
+									      inThrottle = true;
+									    } else {
+									      <span class="keyword">clearTimeout</span>(lastFunc)
+									      lastFunc = setTimeout(function( ) {
+									        if ((Date.now( ) - lastRan) >= limit) {
+									          func.apply(context, args)
+									          lastRan = Date.now( )
+									        }
+									      }, limit - (Date.now( ) - lastRan))
+									    }
+									  };
+									};
+
+									throttleBtn.addEventListener(<span class="string">'click'</span>, throttle(<span class="token">function</span>( ) {
+								  return console.log(<span class="string">Hey! It is'</span>, new Date( ).toUTCString( ));
+								}, 1000));
+							</div>
 						</ul> 
 					</div>
 				</div><!--   method div   -->
@@ -1051,7 +1107,7 @@
 							  <span class="comment">// pass in the variable i so that each function </span>
 							 <span class="comment"> // has access to the correct index</span>
 							  <span class="keyword">setTimeout</span>(<span class="token">function</span>(i_local) {
-							    return <span class="token">function</span>() {
+							    return <span class="token">function</span>( ) {
 							      console.log(<span class="string">'The index of this number is: '</span> + i_local);
 							    }
 							  }(i), 3000);

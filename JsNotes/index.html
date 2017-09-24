@@ -233,7 +233,7 @@
 									<li><b>For-In Loops:</b> When you are iterating over the properties of an object.</li>
 									<li><b>For-Each:</b> When you want to iterate over the values of an object's properties.</li>
 									<li><b>While Loops:</b> When you may be unsure of the number of times to loop. When you want to loop while some condition is true.</li>
-									<li><b>Do-While</b> Loops: When you want it to loop at least once before checking if the condition is true.</li>
+									<li><b>Do-While Loops:</b> When you want it to loop at least once before checking if the condition is true.</li>
 								</ul>
 							</li>
 						</ul> 
@@ -265,7 +265,7 @@
 						<ul class="one-two-list">
 							<li>JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page. </li> 
 							<li>Events are a part of the <b>Document Object Model</b> (DOM) Level 3 and every HTML element contains a set of events which can trigger JavaScript Code.</li>
-							<li>Each available event has an <b>event handler</b>, which is block of code (usually a user-defined JavaScript function) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are registering an event handler. Note that event handlers are sometimes called <b>event listeners</b> &ndash; they are pretty much interchangeable for our purposes, although strictly speaking they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.</li>
+							<li>Each available event has an <b>event handler</b>, which is a block of code (usually a user-defined JavaScript function) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are registering an event handler. Note that event handlers are sometimes called <b>event listeners</b> &ndash; they are pretty much interchangeable for our purposes, although strictly speaking they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.</li>
 							<li>There are a number of different ways in which you can add event listener code to web pages so that it will be run when the associated event fires:</li>
 							<div class="example-div"><span class="comment">// Event handler properties</span>
 							<span class="token">var</span> btn = document.<span class="keyword">querySelector</span>(<span class="string">'button'</span>);
@@ -297,7 +297,8 @@
 							  document.body.style.backgroundColor = rndCol;
 							}   
 							btn.addEventListener('click', bgChange);</div>
-							<p>So inside the addEventListener( ) function, we specify two parameters &ndash; the name of the event we want to register this handler for, and the code that comprises the handler function we want to run in response to it. Note that it is perfectly appropriate to put all the code inside the addEventListener( ) function, in an anonymous function, like this:</p>
+							<p>So inside the addEventListener( ) function, we specify two parameters &ndash; the name of the event we want to register this handler for, and the code that comprises the handler function we want to run in response to it. The third parameter is optional; it is a Boolean value that specifies whether the event should be executed in the capturing or in the bubbling phase. Possible values: <b>true</b> - The event handler is executed in the capturing phase.<br>
+							<b>false</b>- Default. The event handler is executed in the bubbling phase<br>Note that it is perfectly appropriate to put all the code inside the addEventListener( ) function, in an anonymous function, like this:</p>
 							<div class="example-div">btn.<span class="keyword">addEventListener</span>('click', <span class="token">function</span>( ) {
 							  <span class="token">var</span> rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 							  document.body.style.backgroundColor = rndCol;

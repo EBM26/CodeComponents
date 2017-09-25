@@ -456,6 +456,11 @@
 							<span class="comment">// Output: Wed Jan 31 00:00:00 PST 1990 </span> </div>
 							<li>The time zone displayed in the date string corresponds to the time zone set on the local machine. JavaScript is flexible about the format of the string you use as the parameter. For example, you can input "8-24-2009", "August 24, 2009", or "24 Aug 2009".</li>
 							<li>You can use the <b>getX</b> and <b>setX</b> methods of the Date object to set specific dates and times. The following example shows how you can set a date to the previous day. Note that if necessary the month and year values are also changed:</li>
+							<div class="example-div"><span class="token">var</span> myDate = <span class="keyword">new Date</span>(<span class="string">"1/1/1990"</span>);  
+							<span class="token">var</span> dayOfMonth = myDate.<span class="keyword">getDate</span>( );  
+							myDate.<span class="keyword">setDate</span>(dayOfMonth - 1);  
+							document.<span class="keyword">write</span>(myDate);  
+							<span class="comment">// Output: Sun Dec 31 00:00:00 PST 1989</span>  </div>
 							<li>The <b>getDay method</b> gets the day of the week as a number between 0 (Sunday) and 6 (Saturday). (This is not the same as the <b>getDate method</b>, which gets the day of the month as a number between 1 and 31).</li>
 							All objects in JavaScript support expando properties and methods, which can be added and removed at run time. These properties and methods can have any name and can be identified by numbers. If the name of the property or method is a simple identifier, it can be written after the object name with a period, such as myObj.name, myObj.age, and myObj.getAge in the following code:
 							<li>When you compare dates in JavaScript, you should keep in mind that the == operator returns true only if the dates on both sides of the operator refer to the same object. Therefore, if you have two separate Date objects set to the same date, date1 == date2 returns false. In addition, a Date object set with only the date and not the time is initialized to midnight of that date. So if you compare one Date set without a specified time to Date.now, for example, you should be aware that the first Date is set to midnight and Date.now is not.</li>

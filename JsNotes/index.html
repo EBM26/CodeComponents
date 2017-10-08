@@ -792,7 +792,7 @@
 						        foo: { value: 123, enumerable: true },
 						        bar: { value: <span class="string">"abc"</span>, enumerable: true }
 						    });</div>
-						    <p>C. <b>Object.create( )</b> - creates an object with a prototype. Then, if the optional parameter propDescObj has been specified, add properties to it – in the same manner as Object.defineProperties and then returns the result. </p>
+						    <p>C. <b>Object.create( )</b> - creates an object with a prototype. Then, if the optional parameter propDescObj has been specified, add properties to it &ndash; in the same manner as Object.defineProperties and then returns the result. </p>
 						    <div class="example-div"><span class="token">var</span> obj = Object.<span class="keyword">create</span>(Object.prototype, {
 						        foo: { value: 123, enumerable: true },
 						        bar: { value: <span class="string">"abc"</span>, enumerable: true }
@@ -841,9 +841,9 @@
 								}
 								<span class="token">var</span> number = <span class="keyword">numberGenerator</span>( );
 								<span class="keyword">number</span>( ); <span class="comment">// 2</span></div>
-							<p>In the example above, the function numberGenerator creates a local "free" variable num (a number) and checkNumber (a function which prints num to the console). The function checkNumber doesn't have any local variables of its own — however, it does have access to the variables within the outer function, numberGenerator, because of a closure. Therefore, it can use the variable num declared in numberGenerator to successfully log it to the console even after numberGenerator has returned.</p>
+							<p>In the example above, the function numberGenerator creates a local "free" variable num (a number) and checkNumber (a function which prints num to the console). The function checkNumber doesn't have any local variables of its own &ndash; however, it does have access to the variables within the outer function, numberGenerator, because of a closure. Therefore, it can use the variable num declared in numberGenerator to successfully log it to the console even after numberGenerator has returned.</p>
 							<li>One of the most important and common uses of closure is to give objects <b>data privacy</b>. Data privacy is an essential property that helps us program to an interface, not an implementation. This is an important concept that helps us build more robust software because implementation details are more likely to change in breaking ways than interface contracts. In simple terms, this means that closure limits the scope of the information to each function range and therefore ensures that the data does not get mixed up with the other components of the program. </li>
-							<li>A closure is created when you define a function — not when you execute it. Then, every time you execute that function, its already-defined closure gives it access to all the function scopes available around it. On the contrast, scopes have a lifetime. When you call a function, you create a scope during the execution of that function. Then that scope goes away. When you call the function a second time, you create a new different scope during the second execution. Then this second scope goes away as well.</li>
+							<li>A closure is created when you define a function &ndash; not when you execute it. Then, every time you execute that function, its already-defined closure gives it access to all the function scopes available around it. On the contrast, scopes have a lifetime. When you call a function, you create a scope during the execution of that function. Then that scope goes away. When you call the function a second time, you create a new different scope during the second execution. Then this second scope goes away as well.</li>
 							<li>Another very important concept to understand when dealing with variables and scopes is <b>hoisting</b>. Hoisting is JavaScript's default behavior of moving declarations to the top. In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared:</li>
 							<p>Example 1 gives the same result as Example 2:</p>
 							<div class="example-div"><span class="comment">// Example 1</span>
@@ -967,7 +967,6 @@
 							<li><b>Function Currying</b>, also known as <b>partial function application</b>, is the use of a function (that accept one or more arguments) that returns a new function with some of the arguments already set. The function that is returned has access to the stored arguments and variables of the outer function. We can use the <b>bind.( )</b> curry (preset one or more of the parameters) a function:</li>
 							<div class="example-div"><span class="token">function</span> <span class="keyword">greet</span> (gender, age, name) {
 					                <span class="token">var</span> salutation = gender === <span class="string">"male"</span> ? <span class="string">"Mr. "</span> : <span class="string">"Ms. "</span>;
-					​
 					                if (age > 25) {
 					                    return "Hello, " + salutation + name + ".";
 					                }
@@ -976,12 +975,10 @@
 					                }
 					            }
 						        <span class="token">var</span> greetAnAdultMale = greet.<span class="keyword">bind</span> (null, "male", 45);
-						​
-						        greetAnAdultMale ("John Hartlove"); <span class="comment">// "Hello, Mr. John Hartlove."​</span>
-						​
-						        <span class="token">var</span> greetAYoungster = greet.bind (null, "", 16);
-						        greetAYoungster (<span class="string">"Alex"</span>); <span class="comment">// "Hey, Alex."​</span>
-						        greetAYoungster (<span class="string">"Emma Waterloo"</span>); <span class="comment">// "Hey, Emma Waterloo."​</span>
+						​		 greetAnAdultMale ("John Hartlove"); <span class="comment">// "Hello, Mr. John Hartlove."​</span>
+						​		<span class="token">var</span> greetAYoungster = greet.bind (null, "", 16);
+						        greetAYoungster (<span class="string">"Alex"</span>) <span class="comment">// "Hey, Alex."​</span>
+						        greetAYoungster (<span class="string">"Emma Waterloo"</span>) <span class="comment">// "Hey, Emma Waterloo."​</span>
 							</div>
 							<li>The bind.( ) method is also very useful in cases where the "this" is interrupted when a function is called within another function and creates a different scope within it's block. This is very common when using the <b>setTimeout function</b> inside a bigger function. This can be fixed with the bind.( )
 							 method and is referred to as "jumping scope", meaning that we access the lexical scope of the parent function. Example:</li>

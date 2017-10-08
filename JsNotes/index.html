@@ -974,11 +974,7 @@
 					                    return "Hey, " + name + ".";
 					                }
 					            }
-						        <span class="token">var</span> greetAnAdultMale = greet.<span class="keyword">bind</span> (null, "male", 45);
-						​		 greetAnAdultMale ("John Hartlove"); <span class="comment">// "Hello, Mr. John Hartlove."​</span>
-						​		<span class="token">var</span> greetAYoungster = greet.bind (null, "", 16);
-						        greetAYoungster (<span class="string">"Alex"</span>) <span class="comment">// "Hey, Alex."​</span>
-						        greetAYoungster (<span class="string">"Emma Waterloo"</span>) <span class="comment">// "Hey, Emma Waterloo."​</span>
+						        <span class="token">var</span> greetAnAdultMale = greet.<span class="keyword">bind</span> (null, "male", 45); <br>greetAnAdultMale (<span class="string">"John Hartlove"</span>); <span class="comment">// "Hello, Mr. John Hartlove."​</span> <br><span class="token">var</span> greetAYoungster = greet.bind (null, "", 16);<br>greetAYoungster (<span class="string">"Alex"</span>) <span class="comment">// "Hey, Alex."​</span><br>greetAYoungster (<span class="string">"Emma Waterloo"</span>) <span class="comment">// "Hey, Emma Waterloo."​</span>
 							</div>
 							<li>The bind.( ) method is also very useful in cases where the "this" is interrupted when a function is called within another function and creates a different scope within it's block. This is very common when using the <b>setTimeout function</b> inside a bigger function. This can be fixed with the bind.( )
 							 method and is referred to as "jumping scope", meaning that we access the lexical scope of the parent function. Example:</li>

@@ -978,8 +978,7 @@
 							</div>
 							<li>The bind.( ) method is also very useful in cases where the "this" is interrupted when a function is called within another function and creates a different scope within it's block. This is very common when using the <b>setTimeout function</b> inside a bigger function. This can be fixed with the bind.( )
 							 method and is referred to as "jumping scope", meaning that we access the lexical scope of the parent function. Example:</li>
-							 <div class="example-div">
-							 	<span class="token">var</span> obj = {};
+							 <div class="example-div"><span class="token">var</span> obj = {};
 								obj.myMethod = <span class="token">function</span> ( ) {
 								  console.log(<span class="keyword">this</span>); <span class="comment">// this = obj</span>
 								    setTimeout(function ( ) {
@@ -1006,6 +1005,17 @@
 									<li><b>reject</b> - Optional. A function that runs to indicate that the promise has been rejected with an error.</li>
 								</ul>
 							</li>
+							<li>Here is a basic example of a promise object using reject and resolve:</li>
+							<div class="example-div"><span class="token">var</span> p = <span class="token">new</span> <span class="keyword">Promise</span>(<span class="token">function</span>(<span class="keyword">resolve</span>, <span class="keyword">reject</span>) {
+										<span class="comment">// Do an async task async task and then...</span>
+										if(true condition) {
+											<span class="keyword">resolve</span>(<span class="string">'Success!'</span>);
+										}
+										else {
+											<span class="keyword">reject</span>(<span class="string">'Failure!'</span>);
+										}
+									});
+							</div>
 							<li>A Promise must either be completed with a value, or it must be rejected with a reason. The <b>then method</b> of the Promise object runs when the promise is completed or rejected, whichever occurs first. If the promise is completed successfully, the fulfillment handler function of the then method runs. If the promise is rejected, the error handler function of the then method (or the <b>catch method</b> which specifies work to be done on the rejection of a promise) runs.</li>
 							<li>The following example shows how to call a function (timeout) that returns a promise. The fulfillment handler of the then method runs after the 5000ms timeout period expires:</li>
 							<div class="example-div"><span class="token">function</span> timeout(duration) {  
@@ -1021,6 +1031,18 @@
 
 							<span class="comment">// Output (after 5 seconds):  
 							// done!  </span>
+							</div>
+							<li>Here is a basic example structure of a Promise function that uses 'then' and 'catch':</li>
+							<div class="example-div">doSomething().<span class="keyword">then</span>(<span class="token">function</span>(result) {
+								  return doSomethingElse(result);
+								})
+								.<span class="keyword">then</span>(<span class="token">function</span>(newResult) {
+								  return doThirdThing(newResult);
+								})
+								.<span class="keyword">then</span>(<span class="token">function</span>(finalResult) {
+								  console.log(<span class="string">'Got the final result: '</span> + finalResult);
+								})
+								.<span class="keyword">catch</span>(failureCallback);
 							</div>
 						</ul> 
 					</div>
@@ -1111,6 +1133,13 @@
 							    }
 							  }(i), 3000);
 							}
+							</div>
+							<li>The famous reverse string problem:</li>
+							<div class="example-div"><span class="token">function</span> solution(<span class="keyword">str</span>){
+  								return <span class="keyword">str</span>.split(<span class="string">' '</span>).reverse().join(<span class="string">' '</span>);  
+								}
+								<span class="comment">// or in ES6 arrow function</span>
+								<span class="token">const</span> solution = <span class="keyword">str</span> => <span class="keyword">str</span>.split(<span class="string">' '</span>).reverse( ).join(<span class="string">' '</span>);
 							</div>
 						</ul> 
 					</div>

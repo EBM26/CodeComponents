@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no"> -->
+	<link rel="icon" type="image/x-icon" href="../../mp-favicon.ico" />
+	<title>Carousel Slider Third Example</title>
+  <!-- taken from this example http://www.my-html-codes.com/easy-jquery-carousel   -->
+	<style>
+		.container{width: 1100px; margin: auto; margin-top: 300px;}
+
+		/*  snippet CSS  */
+		#carousel {width: 600px; overflow:hidden; margin: auto;}
+    #carousel ul {width: 1920px; padding: 0; margin: 0;}
+    #carousel ul li {width:600px; text-align: center; height: 280px; list-style: none; float: left;}
+    #button{background: lightblue; border: 1px solid; border-radius: 5px; padding: 7px; text-align: center; cursor: pointer; 
+            width: 30%; margin: 30px auto; letter-spacing: .5px;}
+    #button:hover{opacity: .7;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+        <div id="carousel">
+          <ul>
+            <li><img src="images/panther1.jpg" /></li>
+            <li><img src="images/panther2.jpg" /></li>
+            <li><img src="images/panther3.jpg" /></li>
+          </ul>
+       </div>
+       <div id="button">Click Here For Next Photo</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script>
+      $(document).ready(function(){
+      $("#button").click(function() {
+
+          $("#carousel ul").animate({marginLeft:-600},1000,function(){
+          $(this).find("li:last").after($(this).find("li:first"));
+          $(this).css({marginLeft:0});
+        })
+
+    })
+});
+
+		</script>
+	</body>
+	</html>

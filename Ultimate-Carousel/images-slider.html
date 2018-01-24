@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no"> -->
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+  <title>Ultimate Carousel Slider Code</title>
+  <!--   taken from this GitHub project  https://github.com/craftykate/odin-project/tree/master/Chapter_06-JavaScript_and_jQuery/slider -->
+	<style>
+		.container{width: 1100px; margin: auto; margin-top: 300px;}
+    *{text-decoration: none; margin: 0; padding: 0;}
+    html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #000;}
+    img{border: none;}
+    li{list-style-type: none;}
+    div{display: block; margin: 0; padding: 0;}
+    u{text-decoration: underline;}
+    s{text-decoration: line-through;}
+    i{font-style: italic;}
+    b{font-weight: bold;}
+    a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+    .Fright{float: right;}
+    .Fleft{float: left;}
+    .clear{clear: both;}
+    .container{width: 1100px; margin: auto; margin-top: 200px}
+
+    /* actual component code */
+
+    #slider{ position: relative; margin: 40px auto 20px auto; height: 300px; border: 1px solid black; width: 89.66%;
+         -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 7px 1px;
+          overflow: hidden;}
+    #slider .img{position: absolute;}
+    #slider .nav {position: absolute; width: 100px; height: 300px; background-repeat: no-repeat;
+                  background-position: center; cursor: pointer;}
+    #slider .nav.previous {left: 0; background-image: url(images/left-arrow.png);}
+    #slider .nav.next {right: 0; background-image: url(images/right-arrow.png);}
+    #dots ul {text-align: center;}
+    #dots ul li {display: inline-block; margin: 0 5px; width: 20px; height: 20px; background-color: #e8ebd6; 
+                  border: 1px solid #adb870; border-radius: 50%; cursor: pointer;}
+    #dots ul li:hover {background-color: #d4dab4;}
+    #dots ul li.active {background-color: #c1c992;}
+
+    /*image preview css code */
+    .preview {position: absolute; width: 100px; height: 100px; top: 100px; overflow: hidden; border-radius: 50%;}
+    .preview img{width: 100px;}
+    .preview.previous-image {left: 100px;}
+    .preview.next-image{right: 100px;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+
+			<div id="slider" class="span">
+				<div class="img image-1"><img src="images/panther1.jpg" alt="" style="margin-top: -140px;"></div>
+				<div class="img image-2"><img src="images/panther2.jpg" alt="" style="margin-top: -50px;"></div>
+				<div class="img image-3"><img src="images/panther3.jpg" alt="" style="margin-top: -100px;"></div>
+				<div class="nav previous"></div>
+				<div class="nav next"></div>
+        <div class="previews">
+          <div class="preview previous-image"></div>
+          <div class="preview next-image"></div>
+        </div>
+			</div>
+			<div id="dots">
+				<ul></ul>
+			</div>
+		
+		</div> <!-- container -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+		<script>
+// SLIDER
+var slider = function() {
+
+	// Set time delay of slider
+	var delay = 5000;
+
+	// Set variables
+	var numImages = $('.img').length;
+	var previousImage = numImages;
+	var currentImage = 1;
+	var nextImage = 2;
+	var previewHover = false;
+
+	// Find width of container div
+	var sliderWidth = $("#slider").width() + 2;
+
+	// Give images same width as slider
+	var sizeImages = function() {
+		$("img").width(sliderWidth);
+	};
+	sizeImages();
+
+	// Create as many navigation dots as there are pictures
+	for (var i = 1; i <= numImages; i++) {
+		$('#dots').find('ul').append($('<li class="dot ' + i + '""></li>'));
+	}
+
+	// Set initial position of images
+	var resetImages = function() {
+		$('.img').css({"left": sliderWidth+"px"});
+		$('.img').first().css({"left": "0px"});
+		$('.1').addClass("active");
+	};
+	resetImages();
+
+	// Slide to next image
+	var slideNextImageLeft = function() {
+		$('.image-' + nextImage).css({"left": sliderWidth+"px"});
+		$('.image-' + currentImage).animate({left: sliderWidth * -1}, 1000);
+		$('.image-' + nextImage).animate({left: "0px"}, 1000);
+		currentImage = nextImage;
+		increaseImages();
+	};
+
+	// Slide to the previous image
+	var slidePreviousImageRight = function() {
+		$('.image-' + previousImage).css({"left": (sliderWidth * -1)+"px"});
+		$('.image-' + currentImage).animate({left: sliderWidth}, 1000);
+		$('.image-' + previousImage).animate({left: "0px"}, 1000);
+		currentImage = previousImage;
+		increaseImages();
+	};
+
+	// Shift which images are next and previous
+	var increaseImages = function() {
+		if(currentImage === numImages) {
+			nextImage = 1;
+			previousImage = currentImage - 1;
+		} else {
+			nextImage = currentImage + 1;
+			if(currentImage === 1) {
+				previousImage = numImages;
+			} else {
+				previousImage = currentImage - 1;
+			}
+		}
+		// Change dots status
+		$('#dots').find('li').removeClass("active");
+		$('#dots').find('.' + currentImage).addClass("active");
+		// If hovering over preview buttons, change picture in preview
+		if(previewHover !== false) {
+			showPreview();
+		}
+	};
+
+	// Set initial slider interval
+	moveImages = setInterval(function() {
+		slideNextImageLeft();
+	}, delay);
+
+	// When next button is clicked
+	$('.next').click(function() {
+		clearInterval(moveImages);
+		moveImages = setInterval(function() {
+			slideNextImageLeft();
+		}, delay);
+		slideNextImageLeft();
+	});
+
+	// When previous button is clicked
+	$('.previous').click(function() {
+		clearInterval(moveImages);
+		moveImages = setInterval(function() {
+			slideNextImageLeft();
+		}, delay);
+		slidePreviousImageRight();
+	});
+
+	// When a navigation dot is clicked
+	$('.dot').click(function() {
+		buttonPressed = $('li').index(this) + 1;
+		if(buttonPressed !== currentImage) {
+			clearInterval(moveImages);
+			moveImages = setInterval(function() {
+				slideNextImageLeft();
+			}, delay);
+			if(currentImage < buttonPressed) {
+				nextImage = buttonPressed;
+				slideNextImageLeft();
+			} else {
+				previousImage = buttonPressed;
+				slidePreviousImageRight();
+			}
+		}
+	});
+
+
+  // Show a preview of next or previous image on hover
+  $('.nav').on('mouseenter', function() {
+    previewHover = $('.nav').index(this) + 1;
+    showPreview();
+  }).on('mouseleave', function() {
+    previewHover = false;
+    $(".preview").css({"background-image": "none"});
+  });
+
+  var showPreview = function() {
+    var whichSide = previewHover;
+    var miniWidth = 100;
+    var whichImage;
+    if(whichSide === 1) {
+      whichImage = previousImage;
+    } else {
+      whichImage = nextImage;
+    }
+    var previewImage = $('.image-' + whichImage).find('img').attr("src");
+    $(".preview:nth-child(" + whichSide + ")").css({"background-image": "url(" + previewImage + ")", "background-size": "cover"});
+  };
+
+};
+
+$(document).ready(function() {
+
+	slider();
+
+});
+		</script>
+	</body>
+	</html>

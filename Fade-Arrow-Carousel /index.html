@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Fade Carousel with Arrows</title>
+<!-- 	this is the code tutorial origin https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
+-->
+<style>
+	body {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 16px; color: #333333; margin: 0; padding: 0;}
+	#slideshow { height: 700px; /* Update to your slider height */ position: relative; overflow: hidden; }
+
+	#slideshow > div {position: absolute;  top: 0;  left: 0;  width: 100%; background-size: cover !important; height: 700px;
+	                  z-index: -999;}
+	#slide-1 {background: url("images/drsinai.jpg") no-repeat;}
+	#slide-2 {background: url("images/office-pic2.jpg") no-repeat;}
+	#slide-3 {background: url("images/danny-patient.jpg") no-repeat;}
+	#slide-4 {background: url("images/neurons-resized.jpg") no-repeat;}
+	#left-arrow,  #right-arrow{width: 20px;}
+	.arrow-div-1, .arrow-div-2{position: absolute; background: #333; top: -400px; padding: 10px; border-radius: 3px; 
+								margin-left: 30px; opacity: .1;}
+	.arrow-div-2{left: 890px; margin-left: 0;}
+	.slider:hover .show{display: block;}
+	.show:hover {opacity: 1;}
+	.show-me {display: block !important;}
+	.clear {clear: both;}
+	.slide-divs{position: relative;}
+	.container{width: 960px; margin: auto;}
+	.arrows{position: relative; width: 1300px; margin: auto;}
+</style>
+</head>
+<body>
+	<div class="container">
+	<div class="slider">
+		<div id="slideshow">
+			<div class="slide-divs" id="slide-1"></div>
+			<div class="slide-divs" id="slide-2"></div>
+			<div class="slide-divs" id="slide-3"></div>
+			<div class="slide-divs" id="slide-4"></div>
+		</div>
+		<div class="arrows">
+		<div class="arrow-div-1 show"><img src="images/left_arrow.png" alt="" id="left-arrow"></div>
+		<div class="arrow-div-2 show"><img src="images/right_arrow.png" alt="" id="right-arrow"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	</div>
+	<script src="../jquery.min.js"></script>
+	<script>
+		 $(document).ready(function(){ 
+
+	$("#slideshow > div:gt(0)").hide(); 
+
+
+	var intrvl = function() { 
+		$('#slideshow > div:first')
+		.fadeOut(1000)
+		.next()
+		.fadeIn(1000)
+		.end()
+		.appendTo('#slideshow');
+	}
+
+	var SlideTimer = setInterval(intrvl, 3000);
+
+	$(".arrow-div-2").click(function(){
+		clearInterval(SlideTimer);
+		$('#slideshow > div:first')
+		.fadeOut(1000)
+		.next()
+		.fadeIn(1000)
+		.end()
+		.appendTo('#slideshow');
+
+		SlideTimer = setInterval(intrvl, 6000)
+			
+	}) 
+
+	$(".arrow-div-1").click(function(){
+		clearInterval(SlideTimer);
+		$('#slideshow > div:first')
+		.fadeOut(1000);
+		$("#slideshow > div:last")
+		.fadeIn(1000)
+		.prependTo('#slideshow');
+
+		SlideTimer = setInterval(intrvl, 6000)
+	})
+
+
+
+}) 
+	</script>
+</body>
+</html>

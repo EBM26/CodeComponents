@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Grabbing Url Parameter Using JQuery</title>
+	<style>
+		*{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+		header{padding: 10px; box-shadow: 0px 5px 10px -4px rgba(0,0,0,0.37); background-color: #fff;}
+		footer{padding: 25px 0; border-top: 2px solid #62676b; background-color: #fff; font-size: 14px;}
+		h1{font-size: 35px; text-align: center; margin: 20px 0;}
+		.container p{margin: 30px 0;}
+		#logo{width: 21%;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<p class="Fright">Hours 9 - 5 Erry Day</p>
+				<img src="http://m.princetonnutrients.com/img/princeton-logo.svg" id="logo" alt="">
+				<div class="clear"></div>
+			</div>
+		</header>
+		<div class="container">
+			<h1>This is the Heading You Have Been Waiting For</h1>
+			<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quod totam tenetur similique obcaecati! Recusandae eaque quod deleniti odio beatae maiores omnis commodi cupiditate officiis? Eligendi, mollitia aliquid dolores dicta.</span>
+			<span>Omnis ut quisquam vero quibusdam velit totam fuga. Omnis iusto, nulla corrupti commodi aliquid minus ad suscipit mollitia animi cumque veritatis tenetur dolorem sequi dicta, dolor ducimus. Corporis, sed nostrum.</span>
+			<span>Perferendis expedita consequatur ipsum, nisi enim officiis explicabo eveniet quae ducimus debitis velit voluptatibus recusandae, tempore in, dicta culpa tenetur? Facilis labore voluptates eum excepturi impedit non quos nam fuga!</span>
+			<span>Omnis in consequatur quos corporis sapiente rem quibusdam nesciunt obcaecati, ipsa, distinctio officia nam reiciendis optio libero deleniti molestias non reprehenderit illo fugit natus, aliquid minima ratione. Repudiandae, est, delectus?</span>
+			<span>Placeat, consequatur alias autem nulla ut, odit hic perferendis dignissimos. Repellat, nostrum veritatis asperiores sequi, et eveniet optio assumenda rem at molestiae architecto voluptatem dignissimos aliquam, nisi doloribus nemo possimus.</span>
+			<span>Autem deleniti repudiandae officia qui quis, omnis recusandae mollitia repellendus, eos ipsum consectetur nesciunt laudantium ab sit excepturi possimus explicabo tempora! In reprehenderit minus nulla non eum voluptas illum, sit.</span>
+			<span>Ullam assumenda veritatis recusandae unde laudantium numquam nostrum repudiandae suscipit dolorum deleniti tempora, itaque facere, consequuntur. Impedit debitis, totam pariatur, itaque repudiandae maiores rerum beatae, blanditiis, nostrum sequi possimus deleniti!</span>
+			<span>Odit aliquam temporibus harum a molestiae enim, eveniet numquam architecto suscipit necessitatibus repudiandae, corporis cumque cum et delectus in molestias nesciunt, illo doloremque quas dolore quos cupiditate minus! Possimus, consequuntur.</span></p>
+			<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum alias labore aut tenetur dolore molestias amet facilis minus consectetur provident. Aliquam eveniet quos ratione enim. Distinctio dolorem, est reiciendis nulla?</span>
+			<span>Et autem vel consequuntur quod corporis voluptates necessitatibus dicta, dolorem doloribus. Aliquid expedita magni, voluptatibus vitae earum, eveniet, sequi ut et ullam dignissimos fugit tempore. Aliquam excepturi, temporibus aut sunt.</span>
+			<span>Laborum ut ipsum asperiores alias incidunt commodi atque ex temporibus optio explicabo cupiditate, nam quas animi voluptatibus aliquam eveniet numquam assumenda deserunt. Tempore, quisquam dolor distinctio iste iure error ducimus!</span>
+			<span>Eaque quod consequuntur officia id voluptate hic autem beatae unde placeat praesentium perferendis sapiente tempora voluptates eveniet, eius quam? At molestias quos aliquid ex totam est, consequuntur quae ad unde.</span>
+			<span>Nesciunt sed numquam dolores recusandae error fuga perspiciatis totam quam, eaque rem, fugiat ex molestiae. Facilis non doloribus nesciunt sequi ea soluta vitae quisquam fugit possimus dignissimos delectus, vel. Recusandae.</span>
+			<span>Excepturi illo modi eaque obcaecati consectetur quo distinctio, eum cupiditate commodi accusamus, velit, nihil quos! Tempora deserunt architecto asperiores tempore amet omnis nihil, laudantium corporis accusantium pariatur, nam voluptatibus, quis.</span>
+			<span>Laudantium, fuga sit. A laborum odit perferendis numquam ex non maiores officiis tempora illum! Iusto amet aut expedita delectus sunt! Accusantium neque, deleniti iure eius tenetur nihil expedita, placeat enim!</span>
+			<span>Totam sed enim iste error, nihil eveniet atque modi. Atque temporibus fugit deleniti mollitia assumenda velit. Adipisci, excepturi! Cum culpa deleniti eos provident reprehenderit. Beatae at distinctio soluta voluptatem laudantium.</span>
+			<span>Deserunt repellat commodi nulla consequatur labore illum et numquam facere, dolor inventore, reiciendis recusandae quod eligendi debitis, perspiciatis nam obcaecati autem architecto. Asperiores, dolores quis eligendi cum, incidunt id tenetur.</span>
+			<span>Nisi, temporibus natus iure! Reiciendis officia vel ipsum deleniti at alias dignissimos debitis minus odit explicabo, facere pariatur dolor quia. Quidem temporibus reprehenderit odit quia impedit tenetur, eaque sapiente dolorum!</span></p>
+			<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quia architecto, voluptates non beatae nemo amet, ut, eligendi sint molestias rerum quas recusandae. Architecto quas quis illo molestiae ipsum nisi?</span>
+			<span>Voluptatibus dicta voluptatum doloribus, laborum facilis explicabo at culpa iste vitae, dolor eius. Iste, quia! Odio eaque, similique optio accusamus, natus vero ut esse. Illo, ipsa. Iste vitae nulla ipsa.</span>
+			<span>Ut, vel tempora facilis dignissimos eligendi porro voluptate, optio quas fugiat reiciendis voluptatibus autem eum exercitationem eos dolorum itaque nemo? Nesciunt beatae quam itaque minima, sunt dolore, ratione nihil! Doloribus.</span>
+			<span>Magni, laborum omnis vitae odit impedit porro itaque reprehenderit necessitatibus laboriosam sequi voluptatum accusamus eaque quisquam voluptatem. Ipsam, vero debitis dicta dolores magnam sequi error maiores enim minus corporis neque!</span>
+			<span>Ex et repellat aspernatur placeat quis molestias ut perspiciatis, temporibus praesentium dolore eaque doloremque dignissimos impedit repellendus animi error. Iure rerum laboriosam tempora doloremque, autem qui consectetur. Ex, repudiandae, est!</span></p>
+		</div>
+		<footer>
+			<div class="container">
+				The information on this website has not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.
+
+				&copy; Gundry MD 2016. All Rights Reserved Terms &amp; Conditions | Privacy Policy | 9465 Wilshire Boulevard, Suite 300 Beverly Hills, California, 90212
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+				$(document).ready(function() {
+
+
+				$.extend({
+					  getUrlVars: function(){
+					    var vars = [], hash;
+					    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+					    for(var i = 0; i < hashes.length; i++)
+					    {
+					      hash = hashes[i].split('=');
+					      vars.push(hash[0]);
+					      vars[hash[0]] = hash[1];
+					    }
+					    return vars;
+					  },
+					  getUrlVar: function(name){
+					    return $.getUrlVars()[name];
+					  }
+					});
+				
+					var byName = $.getUrlVar('name');
+					
+					if (byName == 'post1') {
+						$('body').css("background", 'red')
+					}
+
+ 			}); // end of document ready function
+		</script>
+	</body>
+	</html>

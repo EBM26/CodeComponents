@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>CSS Shapes</title>
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+		.martop100{margin-top: 100px;}
+		
+		#curved-line-upper-left{position: relative;}
+		#curved-line-upper-left:before{position: absolute; background-color: #393092; content: ""; height: 2px; bottom: 0; left: 15px; right: 0;
+							 z-index: 1;  width: 200px}
+		#curved-line-upper-left:after{background-color: #393092; bottom: 12px; content: ""; height: 2px; left: -2px; position: absolute; 
+						   transform-origin: bottom; transform: rotate(-120deg); width: 25px; z-index: 1;}
+
+		#curved-line-lower-right{position: relative;}
+		#curved-line-lower-right:before{position: absolute; background-color: #393092; content: ""; height: 2px; bottom: 0; left: 15px; right: 0;
+							 z-index: 1;  width: 200px}
+		#curved-line-lower-right:after{background-color: #393092; top: 8px; content: ""; height: 2px; left: 207px; position: absolute; 
+						   transform-origin: bottom; transform: rotate(60deg); width: 25px; z-index: 1;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container martop100">
+			<!-- curved line at the upper left end -->
+			<div id="curved-line-upper-left"></div>
+			<br><br><br><br><br><br>
+			<!-- curved line at the lower right end -->
+			<div id="curved-line-lower-right"></div>
+		</div>
+
+		<script src="../jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	</body>
+	</html>

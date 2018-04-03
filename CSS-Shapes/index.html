@@ -41,6 +41,10 @@
 							 z-index: 1;  width: 200px}
 		#curved-line-lower-right:after{background-color: #393092; top: 8px; content: ""; height: 2px; left: 207px; position: absolute; 
 						   transform-origin: bottom; transform: rotate(60deg); width: 25px; z-index: 1;}
+
+		.title{font-size: 30px; padding-left: 40px;}
+		.first-title{padding-bottom: 5px;}
+		.second-title{padding-top: 5px;}
 	</style>
 		<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -49,10 +53,12 @@
 	<body>
 		<div class="container martop100">
 			<!-- curved line at the upper left end -->
+			<p class="title first-title">First title</p>
 			<div id="curved-line-upper-left"></div>
 			<br><br><br><br><br><br>
 			<!-- curved line at the lower right end -->
 			<div id="curved-line-lower-right"></div>
+			<p class="title second-title">Second title</p>
 		</div>
 
 		<script src="../jquery.min.js"></script>

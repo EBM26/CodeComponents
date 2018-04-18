@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Mobile Hamburger Menu</title>
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+
+		header{padding: 10px 0; border-bottom: 1px solid #3377d6; margin-bottom: 20px; padding-top: 20px;}
+		header img{max-width: 60px;}
+		.desktop-hide{display: none;}
+		/* mobile navbar css */
+		.mobile-nav{float: right; padding-top: 15px;}
+		#hamburger{width: 30px;}
+		#hamburger div{border-top: 2px solid #3377d6;}
+		.middle-ham{margin: 10px 0;}
+		#mobile-menu{position: absolute; background: #fff; right: 2px; padding: 0 20px 5px; border: 2px solid #3377d6; border-top: 0; top: 42px; display: none;}
+		#mobile-menu ul li{list-style: none; font-size: 14px; color: #3377d6; margin-bottom: 5px; text-transform: uppercase;}
+		.transition-in{transform: rotate(90deg); transition-timing-function: ease-in; transition-duration: .5s;}
+		.transition-out{transform: rotate(-0deg); transition-timing-function: ease-in; transition-duration: .5s;}
+
+		/*. media query for mobile devices. */
+		@media only screen and (max-width: 768px) {
+				.desktop-hide{display: block;}
+				.row{margin: 0 15px;}
+				.container{width: 100%;}
+		}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="row">
+			<div class="container relative">
+				<img src="images/HHD-LOGO.png" alt="">
+				<img src="images/HFD_LOGO_words.png" alt="">
+				<!-- mobile navbar	 -->
+				<div class="mobile-nav desktop-hide">
+					<div id="hamburger">
+						<div></div>
+						<div class="middle-ham"></div>
+						<div></div>
+					</div>
+				</div>
+				<div id="mobile-menu">
+					<ul>
+					   <li><a href="">home</a></li>
+					   <li><a href="">men's health</a></li>
+					   <li><a href="">women's health</a></li>
+					   <li><a href="">child health</a></li>
+					   <li><a href="">water health</a></li>
+					   <li><a href="">air health</a></li>
+					</ul>
+				</div>
+			</div>
+			</div>
+			<div class="clear"></div>
+		</header>
+		<script src="../jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<script>
+			
+
+//  new year
+now = new Date;
+theYear=now.getYear();
+if (theYear < 1900)
+	theYear=theYear+1900
+$("#date").html(theYear);
+
+
+// JQuery Codes
+$(document).ready(function($){
+
+	// hamburger rotate code
+	function openMenu() {
+		$('#hamburger').removeClass('transition-out');
+		$('#hamburger').addClass('transition-in'); 
+		$("#mobile-menu").slideDown("slow");
+	}
+
+	function closeMenu() {
+		$('#hamburger').removeClass('transition-in');
+		$('#hamburger').addClass('transition-out');  	
+		$("#mobile-menu").slideUp("slow");
+	}
+
+
+	$('#hamburger').click(function() { 
+			return (this.tog = !this.tog) ? openMenu() : closeMenu();
+	});
+
+}); // end of document ready function
+
+
+
+
+
+
+		</script>
+	</body>
+	</html>
+

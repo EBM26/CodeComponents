@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Search Box</title>
+	<!-- http://stackoverflow.com/questions/11717681/jquery-search-doesnt-work-as-expected?noredirect=1&lq=1 -->
+	<style>
+		*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+		body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		img{border: 0;}
+		.container{margin: auto; padding: 0; width: 960px; margin-top: 200px;}
+		.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+		.Lfloat{float: left;}
+		.Rfloat{float: right;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+
+		.search-box{width: 800px; margin: auto; text-align: center;}
+		#txt-search{font-size: 20px; border: 1px solid; padding: 10px; width: 50%; vertical-align: 5px; padding-left: 8px;}
+		#txt-search:focus{outline: none;}
+		.search-text{display: inline-block; margin-left: 20px;}
+		#filter-records{padding: 30px; max-width: 400px; margin: auto;}
+		#filter-records p{text-align: left; margin-top: 10px;}
+		.result-box{margin-bottom: 30px;}
+		.name, .date{font-weight: bold;}
+		.name{font-size: 20px;}
+		.date{font-size: 14px;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+						<div class="search-box">
+							<input type="input" class="form-control input-lg" id="txt-search" placeholder="Type your search character">
+							<div id="filter-records"></div>
+						</div>
+					
+		</div>
+		<script src="../jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				var data = [  
+				   {  
+				      "article_name":"Is Your Home Making You Sick",
+				      "article_date":"March 23, 2018",
+				      "article_description":"According to the Environmental Protection Agency (EPA), your indoor air could be up to 100 times more polluted than outdoor air.",
+				      "profile_image":"images/image1.jpg"
+				   },
+				   {  
+				      "article_name":"How Safe Is Your Water",
+				      "article_date":"February 12, 2017",
+				      "article_description":"And that doesn't even include common airborne toxins like mold, pet dander, pollen...even germs and viruses...all floating blissfully through the air – just waiting to be sucked into the lungs of both you and your loved ones.",
+				      "profile_image":"images/image2.jpg"
+				   },
+				   {  
+				      "article_name":"Air Health Inside and Out",
+				      "article_date":"April 6, 2017",
+				      "article_description":"When we think of air pollution, we often visualize big industrial plants bellowing out noxious plumes of smoke. What we don't think of is toxic pollution inside our own homes.",
+				      "profile_image":"images/image3.jpg"
+				   },
+				   {  
+				      "article_name":"The New Way to Get Energy",
+				      "article_date":"August 13, 2018",
+				      "article_description":"By the way...if you have furniture in your home that you bought before 2006, they are likely to be outgassing PBDE's...which are the same toxic chemicals used in flame retardant.",
+				      "profile_image":"images/image4.jpg"
+				   }
+				];
+
+				$('#txt-search').keyup(function(){
+					var searchField = $(this).val();
+					if(searchField === '')  {
+						$('#filter-records').html('');
+						return;
+					}
+
+					var regex = new RegExp(searchField, "i");
+					var output = '<div class="row">';
+					var count = 1;
+					$.each(data, function(key, val){
+						if ((val.article_date.search(regex) != -1) || (val.article_name.search(regex) != -1)) {
+							output += '<div class="result-box">';
+							output += '<div class=""><img class="" src="'+val.profile_image+'" alt="'+ val.article_name +'" /></div>';
+							output += '<div class="">';
+							output += '<p class="name">' + val.article_name + '</p>';
+							output += '<p class="date">' + val.article_date + '</p>';
+							output += '<p class="description">' + val.article_description + '</p>';
+							output += '</div>';
+							output += '</div>';
+							count++;
+						}
+					});
+					output += '</div>';
+					$('#filter-records').html(output);
+				});
+
+		}); // end document ready
+</script>
+	</body>
+	</html>

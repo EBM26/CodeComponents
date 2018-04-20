@@ -81,7 +81,7 @@
 					var output = '<div class="row">';
 					var count = 1;
 					$.each(data, function(key, val){
-						if ((val.article_date.search(regex) != -1) || (val.article_name.search(regex) != -1)) {
+						if ((val.article_description.search(regex) != -1) || (val.article_name.search(regex) != -1)) {
 							output += '<div class="result-box">';
 							output += '<div class=""><img class="" src="'+val.profile_image+'" alt="'+ val.article_name +'" /></div>';
 							output += '<div class="">';

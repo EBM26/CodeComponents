@@ -16,7 +16,7 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 .inline{display: inline;}
 .inline-block{display: inline-block;}
 .uppercase{text-transform: uppercase;}
-.center{text-align: center;}
+.center{text-align: center !important;}
 .relative{position: relative;}
 .hidden{display: none;}
 .padmobile{padding: 0 15px;}
@@ -38,9 +38,9 @@ header img{width: 70px; vertical-align: middle; margin-right: 20px;}
 
 .title-image{vertical-align: bottom;}
 .info-p{display: none;}
-.info-p p{color: #000; margin: 10px 0; text-align: left}
+.info-p p{color: #000; margin-top: 10px; text-align: left}
 .transition{transform: rotate(90deg); transition-timing-function: ease-in;}
-.info-box{margin-top: 20px; background: #fff; padding: 20px; cursor: pointer; border: 1px solid #333;
+.info-box{margin-top: 20px; background: #fff; padding: 20px 30px; cursor: pointer; border: 1px solid #333;
 			  text-align: center; width: 100%; box-shadow: 1px 2px 1px #333}
 .info-box:hover{box-shadow: 1px 1px 4px #333 inset;}
 h2{font-size: 23px;}
@@ -50,5 +50,5 @@ footer{padding: 30px 0; font-size: 12px; color: #333; border-top: 1px solid; mar
 @media only screen and (max-width: 960px) {
 	.mobile-center{text-align: center;}
 	.mobile-display-block{display: block;}
-	.info-box{width: 100%;}
+	.info-box{width: 100%; padding: 15px;}
 }

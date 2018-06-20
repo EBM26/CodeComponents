@@ -5,16 +5,13 @@
 					if(!$(this).hasClass("active")) {
 						$(".info-box").removeClass("active")
 						$(".info-p").slideUp("slow");
-						$(".triangle-right").removeClass("transition");
 						$(this).addClass("active");
 						$(this).find(".info-p").slideDown("slow")
-						$(this).find(".triangle-right").addClass("transition");
 						}
 
 					    else if($(this).hasClass("active")) {
 							$(this).removeClass("active")
 							$(".info-p").slideUp("slow");
-							$(".triangle-right").removeClass("transition");
 						  }
 
 				}) // click function

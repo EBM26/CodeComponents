@@ -1,5 +1,5 @@
 *{text-decoration: none; max-width: 100%; margin: 0; padding: 0;}
-html,body{margin: 0; padding: 0; font-family: sans-serif; color: #47a3f2; font-size: 20px; letter-spacing: .5px; background: #fff;}
+html,body{margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #47a3f2; font-size: 20px; letter-spacing: .5px; background: #fff;}
 img{border: none;}
 li{list-style-type: none;}
 div{display: block; margin: 0; padding: 0;}
@@ -11,7 +11,7 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 .Fright{float: right;}
 .Fleft{float: left;}
 .clear{clear: both;}
-.container{width: 100%; margin: auto; background: #fff; max-width: 1600px;}
+.container{width: 100%; margin: auto; background: #fff; max-width: 1024px;}
 .align-left{text-align: left;}
 .inline{display: inline;}
 .inline-block{display: inline-block;}
@@ -27,24 +27,24 @@ a:link, a:visited, a:active{text-decoration: none; color: inherit;}
 .green{color: #00bc04;}
 .marg30{margin: 30px 0;}
 .pad30{padding: 30px;}
+.pad20{padding: 20px;}
 .font17{font-size: 17px;}
-.row{margin: 0 15px; display: flex; -webkit-flex-flow: row wrap; justify-content: space-around;}
-.gold{color: #d8b13b;}
+.row{margin: 0 15px;}
+.gold{color: #f6c682;}
 .cursor{cursor: pointer;}
 
-header{border-bottom: 1px solid #47a3f2;}
+header{}
 header .container{padding: 15px 0;}
 header img{width: 70px; vertical-align: middle; margin-right: 20px;}
 .logo-text{display: inline-block; font-size: 30px; font-weight: bold;}
 
-.title-image{vertical-align: bottom;}
-.info-p{display: none;}
-.info-p p{color: #000; margin-top: 10px; text-align: left}
+.title-image{width: 60px; margin-right: 10px; margin-bottom: -15px;}
+.info-p p{color: #333; margin-top: 10px; text-align: left; line-height: 1.5;}
 .transition{transform: rotate(90deg); transition-timing-function: ease-in;}
-.info-box{margin-top: 20px; background: #fff; padding: 20px 30px; cursor: pointer; border: 1px solid #333;
-			  text-align: center; width: 100%; box-shadow: 1px 2px 1px #333}
-.info-box:hover{box-shadow: 1px 1px 4px #333 inset;}
-h2{font-size: 23px;}
+.info-box{margin-top: 20px;}
+h2{font-size: 23px; text-align: left;}
+.svg-icon{width: 40px; margin-bottom: -10px;}
+.big-letter{float: left; font-size: 60px; margin-right: 5px; margin-bottom: -10px; line-height: 1; font-family: cursive;}
 
 /*	social share css */
 .social-share{text-align: center; max-width: 240px; margin: 30px auto 0; padding: 10px; padding-bottom: 5px; border: 1px solid #333;}

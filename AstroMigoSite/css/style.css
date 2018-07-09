@@ -38,13 +38,14 @@ header .container{padding: 15px 0;}
 header img{width: 70px; vertical-align: middle; margin-right: 20px;}
 .logo-text{display: inline-block; font-size: 30px; font-weight: bold;}
 
+/*  shared css on pages  */
 .title-image{width: 60px; margin-right: 10px; margin-bottom: -15px;}
 .info-p p{color: #333; margin-top: 20px; text-align: left; line-height: 1.5;}
 .transition{transform: rotate(90deg); transition-timing-function: ease-in;}
 .info-box{margin-top: 30px;}
 h2{font-size: 23px; text-align: left;}
 .svg-icon{width: 40px; margin-bottom: -10px;}
-.big-letter{float: left; font-size: 60px; margin-right: 5px; margin-bottom: -10px; line-height: 1; font-family: cursive;}
+.big-letter{float: left; font-size: 60px; margin-right: 5px; margin-bottom: -10px; line-height: 1;}
 .quote{color: #47a3f2 !important; text-align: center !important; font-size: 1.5em; line-height: 1.2 !important; font-style: italic;}
 .quote-left{width: 30px; margin-right: 15px;}
 .quote-right{width: 30px; margin-left: 15px;}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Percentage Progress Bar</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+
+		#progressBar{width: 400px;height: 22px;border: 1px solid #111;background-color: #292929; margin: 200px auto 0;}
+		#progressBar div{height: 100%;color: #fff;text-align: right;line-height: 22px;width: 0; background-color: #0099ff;}
+		#percent{padding-right: 15px;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div id="progressBar"><div><span id="percent"></span></div></div>
+		</div>
+		<script src="../jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<script>
+			$("document").ready(function(){ 
+				function progress(percent, $element) {
+ 			    var progressBarWidth = percent * $element.width() / 100;
+    			$element.find('div').animate({ width: progressBarWidth }, 500)
+    				$("#percent").html(percent + "% ");
+				}
+			    progress(100, $('#progressBar'));
+			})
+		</script>
+	</body>
+	</html>

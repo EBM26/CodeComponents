@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<title>Pip Slider Option</title>
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: 'Raleway', Arial, Helvetica, sans-serif; color: #212529; font-size: 16px;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+		.martop100{margin-top: 100px;}
+		
+		.order-box{box-shadow: 0px 0px 10px #8C8C83; width: 330px; background: #fff; margin: auto;}
+		.box-title{background: #2793e0; color: #fff; font-size: 22px; font-weight: bold; text-align: center; padding: 15px 0;
+				   text-transform: uppercase; letter-spacing: 1px;}
+		.down-triangle{width: 0; height: 0; border-left: 28px solid transparent; border-right: 28px solid transparent;
+					   border-top: 20px solid #2793e0; margin: auto;}
+		.main-box-content{padding: 25px 15px;}
+		.second-box .main-box-content{padding: 10px 15px 30px;}
+		.second-box{width: 440px;}
+		.option-box{float: left; padding: 5px 5px 0; font-size: 20px; width: 113px; cursor: pointer;}
+		.box3{width: 130px; margin: 0 10px;}
+		.active{font-weight: bold; color: #2793e0;}
+		.big-price{font-size: 40px; font-weight: bold; color: #2793e0; margin: 10px 0;}
+		.CTA{font-size: 25px; letter-spacing: 1.2px; color: #fff; padding: 10px 0; margin-top: 25px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #e47925;
+			 box-shadow: 1px 2px 1px #333; cursor: pointer;
+			background: rgba(245,188,64,1);
+			background: -moz-linear-gradient(top, rgba(245,188,64,1) 0%, rgba(243,170,60,1) 36%, rgba(240,150,55,1) 65%, rgba(240,144,54,1) 77%, rgba(238,124,49,1) 100%);
+			background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,188,64,1)), color-stop(36%, rgba(243,170,60,1)), color-stop(65%, rgba(240,150,55,1)), color-stop(77%, rgba(240,144,54,1)), color-stop(100%, rgba(238,124,49,1)));
+			background: -webkit-linear-gradient(top, rgba(245,188,64,1) 0%, rgba(243,170,60,1) 36%, rgba(240,150,55,1) 65%, rgba(240,144,54,1) 77%, rgba(238,124,49,1) 100%);
+			background: -o-linear-gradient(top, rgba(245,188,64,1) 0%, rgba(243,170,60,1) 36%, rgba(240,150,55,1) 65%, rgba(240,144,54,1) 77%, rgba(238,124,49,1) 100%);
+			background: -ms-linear-gradient(top, rgba(245,188,64,1) 0%, rgba(243,170,60,1) 36%, rgba(240,150,55,1) 65%, rgba(240,144,54,1) 77%, rgba(238,124,49,1) 100%);
+			background: linear-gradient(to bottom, rgba(245,188,64,1) 0%, rgba(243,170,60,1) 36%, rgba(240,150,55,1) 65%, rgba(240,144,54,1) 77%, rgba(238,124,49,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5bc40', endColorstr='#ee7c31', GradientType=0 );}
+		.CTA:hover{box-shadow: 1px 1px 4px #333 inset;}
+		.rush{display: inline-block; color: #2793e0; font-weight: bold; vertical-align: 8px; margin-top: 15px; margin-left: 10px;}
+		.box-div{max-height: 100px;}
+		.monthly{font-size: 16px; vertical-align: middle;}
+		.terms-link{font-size: 12px; display: block; padding-top: 5px; color: blue;}
+		.marg40{margin: 40px auto;}
+		hr{border: none; border-top: 1px solid; width: 50px; margin: 15px auto;}
+
+		/*  slider module css  */
+		.slider{width: 70%; margin: 0px auto 40px; background: #ccc; height: 5px; border-radius: 5px; position: relative; cursor: pointer;}
+		.ball{width: 20px; height: 20px; border-radius: 50%; border: 1px solid #000; position: absolute; top: -9px; cursor: pointer;
+			  background: #ccc;}
+		#sliding-ball{background: #2793e0;  right: 47%; cursor: pointer;}
+		#left-corner{right: 94%;}
+		#middle{right: 47%;}
+		#right-corner{right: 0%;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<div class="container martop100">
+			<div class="order-box">
+							<div class="order-box second-box">
+								<div class="box-title">
+									<p>Choose Your Supply</p>
+								</div>
+								<div class="down-triangle"></div>
+								<div class="main-box-content center">
+									<div class="box-div marg40">
+										<div class="option-box box1">
+											<p>1 BOTTLE</p>
+										</div>
+										<div class="option-box box3 active">
+											<p>2 BOTTLES</p>
+										</div>
+										<div class="option-box box6">
+											<p>3 BOTTLES</p>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="slider"><div id="left-corner" class="ball"></div><div id="middle" class="ball"></div><div id="right-corner" class="ball"></div><div id="sliding-ball" class="ball"></div></div>
+									<p class="font20 bold martop5 red">Instant SAVINGS: <span class="savings">$150.10 (58%)</span></p>
+									<hr class="marg15">
+									<p class="big-price">$109.90  / <span class='monthly'>Every 2 Months</span></p>
+									<p class="shipping">(Includes VIP benefits)</p>
+									<a href="#" class="terms-link">terms &amp; conditions apply</a>
+									<a href="#" id="CTALink"><div class="CTA">Order Now</div></a>
+								</div>
+							</div>
+			</div>
+		</div>
+		<script src="../jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<script>
+			$(document).ready(function() {
+
+					// variable functions
+					var six_jar_reg = function() {
+					    	$(".savings").html("$210.15 (59%)");
+					    	$(".big-price").html("$149.85 / <span class='monthly'>Every 3 Months");
+					    	$('#CTALink').attr('href','checkout.php?pid=3');
+					    	$('.shipping').html('(Includes VIP benefits)')
+					    	$('.rush').html('(FREE SHIPPING)');
+					    	$("#product-image").attr("src","images/beyond3bottle.png");
+					    	$(".product-image-div").css({'width': '42%', 'right': '-80px'});
+					};
+
+					var three_jar_reg = function() {
+					    	$(".savings").html("$150.10 (58%)");
+					    	$(".big-price").html("$109.90 / <span class='monthly'>Every 2 Months");
+					    	$('#CTALink').attr('href','checkout.php?pid=2');
+					    	$('.shipping').html('(Includes VIP benefits)')
+					    	$('.rush').html('(FREE SHIPPING)');
+					    	$(".product-image-div").css({'width': '32%', 'right': '30px'});
+					    	$("#product-image").attr("src","images/beyond2bottle.png");;
+					};
+
+					var one_jar_reg = function() {
+					    	$(".savings").html("$40.05 (41%)");
+					    	$(".big-price").html("$59.95 / <span class='monthly'>1 Time Payment");
+					    	$('#CTALink').attr('href','checkout.php?pid=1');
+					    	$('.shipping').html('(Includes FREE gifts)')
+					    	$('.rush').html('(+4.95 SHIPPING)');
+					    	$(".product-image-div").css({'width': '23%', 'right': '80px'});
+					    	$("#product-image").attr("src","images/beyond1bottle.png");
+					};
+
+					$("#left-corner").click(function(){
+						$("#sliding-ball").animate({right: "94%"})
+						$(".option-box").removeClass("active");
+						$(".box1").addClass("active");
+						one_jar_reg();
+						console.log('1 jar selected')
+					});
+
+					$("#middle").click(function(){
+						$("#sliding-ball").animate({right: "47%"})
+						$(".option-box").removeClass("active");
+						$(".box3").addClass("active");
+						three_jar_reg();
+						console.log('3 jar selected')
+					});
+
+					$("#right-corner").click(function(){
+						$("#sliding-ball").animate({right: "0%"})
+						$(".option-box").removeClass("active");
+						$(".box6").addClass("active");
+						six_jar_reg();
+						console.log('6 jar selected')
+					});
+
+			}); // end of document function
+		</script>
+	</body>
+	</html>

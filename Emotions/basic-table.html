@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<title>Prime Emotions Table</title>
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: sans-serif;color: #000;  letter-spacing: .3px; background: #efefef;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		sup{vertical-align: middle; color: red;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+		.martop100{margin-top: 100px;}
+		p{margin-bottom: 15px;}
+
+		/*  responsive table css   */
+		table{border: 1px solid #ccc; border-collapse: collapse; margin: 20px auto 40px; padding: 0; width: 100%; table-layout: fixed;}
+		table caption{font-size: 1.5em; margin: .5em 0 .75em;}
+		table tr{background-color: #fff; border: 1px solid #56beeb; padding: .35em; }
+		table th, table td{padding: .5em; text-align: center; border-right: 1px solid #56beeb; font-size: 1.1em;}
+		table th:last-child, table td:last-child{border-right: 0;}
+		table th{font-size: .85em; letter-spacing: .1em; text-transform: uppercase;}
+
+		@media screen and (max-width: 768px) {
+	      .row{margin: 0 15px;}
+		  .container{width: 100%; margin: auto;}
+		  table{border: 0;}
+		  table caption{font-size: 1.3em;}
+		  table thead{border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;}
+		  table tr{border-bottom: 3px solid #56beeb; display: block; margin-bottom: .625em;}
+		  table td{border-bottom: 1px solid #56beeb; display: block; text-align: center; border-right: 0;}
+	      table td::before{content: attr(data-label); font-weight: bold; text-transform: uppercase; display: block; color: #56beeb;
+	      				   margin-bottom: .3em; font-size: .9em;}
+		  table td:last-child{border-bottom: 0;}
+		}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container martop100">
+			<div class="row">
+			<table>
+				<caption><u>The Uncomfortable Prime Emotions</u></caption>
+				<thead>
+					<tr>
+						<th scope="col">Emotion</th>
+						<th scope="col">Triggering Thoughts</th>
+						<th scope="col">Adaptive Purpose</th>
+						<th scope="col">Unhealthy Response</th>
+						<th scope="col">Healthy Response</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td data-label="Emotion">Fear</td>
+						<td data-label="Triggering Thoughts">Threats and dangers</td>
+						<td data-label="Adaptive Purpose">Protect the self</td>
+						<td data-label="Unhealthy Response">Avoiding the fear</td>
+						<td data-label="Healthy Response">Facing the fear</td>
+					</tr>
+					<tr>
+						<td scope="row" data-label="Emotion">Sadness</td>
+						<td data-label="Triggering Thoughts">Loss</td>
+						<td data-label="Adaptive Purpose">Teaches meaning of that which was lost</td>
+						<td data-label="Unhealthy Response">Depression or avoidance of the sadness</td>
+						<td data-label="Healthy Response">Mourn the loss then let go and move on with life</td>
+					</tr>
+					<tr>
+						<td scope="row" data-label="Emotion">Anger</td>
+						<td data-label="Triggering Thoughts">Rules of self broken by others. They "should" act in a certain way</td>
+						<td data-label="Adaptive Purpose">Expressing our dislike. "I want it to be different than it is"</td>
+						<td data-label="Unhealthy Response">Aggression<sup>*</sup> or avoidance of the anger</td>
+						<td data-label="Healthy Response">Assertiveness<sup>**</sup> or avoidance</td>
+					</tr>
+					<tr>
+						<td scope="row" data-label="Emotion">Guilt</td>
+						<td data-label="Triggering Thoughts">Rules of self broken by self. I "should" have acted in a certain way</td>
+						<td data-label="Adaptive Purpose">Moral compass of the self</td>
+						<td data-label="Unhealthy Response">Self blame or avoidance of the guilt</td>
+						<td data-label="Healthy Response">Take responsibility / learn from mistakes / self-forgiveness</td>
+					</tr>
+					<tr>
+						<td scope="row" data-label="Emotion">Shame</td>
+						<td data-label="Triggering Thoughts">Pointing out flaws of the self. I "should" be better</td>
+						<td data-label="Adaptive Purpose">Teach us self-love and acceptance</td>
+						<td data-label="Unhealthy Response">Self-loathing / secrecy / judgment of others</td>
+						<td data-label="Healthy Response">Self-love / self-acceptance / self-compassion</td>
+					</tr>
+				</tbody>
+		</table>
+		<p><sup>*</sup><u>Aggressiveness</u> - external control. Trying to force someone give us what we want.</p>
+		<p><sup>**</sup><u>Assertiveness</u> - internal control. Controlling on the emotions and actions of the self.</p>
+		<p>The "should" mentality is what makes people very rigid, controlling, and full of fear. Learn to be flexible with life's situations, outcomes, and others' behaviors and simply "mourn" the loss of outcomes that are different that what you expected.</p>
+		<p>The root of all these emotions is fear. We are afraid of the loss that might occur to us that we can't let go of. In the root of fear lies shame; where judgment of self and others comes from. Learn to accept, love, and have compassion towards yourself and others.</p>
+		</div>
+		</div>
+	</body>
+	</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Button Icon Hover</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright{float: right;}
+		.Fleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto; margin-top: 200px}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.padmobile{padding: 0 15px;}
+		.white{color: #fff;}
+
+		button{border: none; background: #3a7999; color: #f2f2f2; padding: 10px; font-size: 18px; border-radius: 5px; 
+			 position: relative; box-sizing: border-box; transition: all 500ms ease;  padding: 10px 35px; overflow: hidden;
+			  cursor: pointer; margin-bottom: 30px; display: block;}
+		button:focus{outline: none;}
+
+		#cart-right:before{font-family: FontAwesome; content:"\f07a"; position: absolute; top: 11px; left: -30px; 
+					  transition: all 200ms ease;}
+		#cart-right:hover:before {left: 7px;}
+
+		#cart-down{background: #3a7999; color: #fff; font-size: 18px;
+					overflow: hidden;
+					-webkit-backface-visibility: hidden;
+					-moz-backface-visibility: hidden;
+					backface-visibility: hidden;}
+		#cart-down:before{font-family: FontAwesome; content:"\f07a"; position: absolute; height: 100%; width: 100%; 
+						  font-size: 160%; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;
+						   left: 0; top: -100%;}
+		#cart-down span {display: inline-block;width: 100%;
+						-webkit-transition: all 0.3s;
+						-webkit-backface-visibility: hidden;
+						-moz-transition: all 0.3s;
+						-moz-backface-visibility: hidden;
+						transition: all 0.3s;
+						backface-visibility: hidden;}
+
+		#cart-down:hover span{-webkit-transform: translateY(300%);
+			-moz-transform: translateY(300%);
+			-ms-transform: translateY(300%);
+			transform: translateY(300%);}
+		#cart-down:hover:before {top: 5px;}
+
+		#cart-right-flip{background: #3a7999; color: #fff; font-size: 18px;
+					overflow: hidden;
+					-webkit-backface-visibility: hidden;
+					-moz-backface-visibility: hidden;
+					backface-visibility: hidden;}
+		#cart-right-flip:before{font-family: FontAwesome; content:"\f07a"; position: absolute; height: 100%; width: 100%; 
+						  font-size: 160%; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;
+						   left: -100%;top: 5px;}
+		#cart-right-flip span {display: inline-block;width: 100%;
+						-webkit-transition: all 0.3s;
+						-webkit-backface-visibility: hidden;
+						-moz-transition: all 0.3s;
+						-moz-backface-visibility: hidden;
+						transition: all 0.3s;
+						backface-visibility: hidden;}
+
+		#cart-right-flip:hover span{-webkit-transform: translateY(300%);
+			-webkit-transform: translateX(200%);
+			-moz-transform: translateX(200%);
+			-ms-transform: translateX(200%);
+			transform: translateX(200%);}
+		#cart-right-flip:hover:before {left: 0;}
+
+		#delete-down{background: #3a7999; color: #fff; font-size: 18px;
+					overflow: hidden;
+					-webkit-backface-visibility: hidden;
+					-moz-backface-visibility: hidden;
+					backface-visibility: hidden;}
+		#delete-down:before{font-family: FontAwesome; content:"\f014"; position: absolute; height: 100%; width: 100%; 
+						  font-size: 160%; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;
+						   left: 0; top: -100%;}
+		#delete-down span {display: inline-block;width: 100%;
+						-webkit-transition: all 0.3s;
+						-webkit-backface-visibility: hidden;
+						-moz-transition: all 0.3s;
+						-moz-backface-visibility: hidden;
+						transition: all 0.3s;
+						backface-visibility: hidden;}
+
+		#delete-down:hover span{-webkit-transform: translateY(300%);
+			-moz-transform: translateY(300%);
+			-ms-transform: translateY(300%);
+			transform: translateY(300%);}
+		#delete-down:hover:before {top: 5px;}
+
+		#delete-right{background: #3a7999; color: #fff; font-size: 18px;
+					overflow: hidden;
+					-webkit-backface-visibility: hidden;
+					-moz-backface-visibility: hidden;
+					backface-visibility: hidden;}
+		#delete-right:before{font-family: FontAwesome; content:"\f014"; position: absolute; height: 100%; width: 100%; 
+						  font-size: 160%; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;
+						   left: -100%;top: 5px;}
+		#delete-right span {display: inline-block;width: 100%;
+						-webkit-transition: all 0.3s;
+						-webkit-backface-visibility: hidden;
+						-moz-transition: all 0.3s;
+						-moz-backface-visibility: hidden;
+						transition: all 0.3s;
+						backface-visibility: hidden;}
+
+		#delete-right:hover span{-webkit-transform: translateY(300%);
+			-webkit-transform: translateX(200%);
+			-moz-transform: translateX(200%);
+			-ms-transform: translateX(200%);
+			transform: translateX(200%);}
+		#delete-right:hover:before {left: 0;}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<button id="cart-right">Hover Me</button>
+			<button id="cart-down"><span>Add to cart</span></button>
+			<button id="cart-right-flip"><span>Add to cart</span></button>
+			<button id="delete-down"><span>DELETE</span></button>
+			<button id="delete-right"><span>DELETE</span></button>
+		</div>
+
+	</body>
+	</html>

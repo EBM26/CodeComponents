@@ -1,0 +1,80 @@
+*{margin: 0; padding: 0; max-width: 100%; -webkit-backface-visibility: hidden;}
+body{font-size: 17px; font-weight: 300; background-color: #fff;  color: #333; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; letter-spacing: 1.2px;}
+li{list-style-type: none;}
+div{display: block; margin: 0; padding: 0;}
+img{border: 0;}
+.container{margin: auto; padding: 0; width: 960px;}
+.clear{clear: both; height: 1px; line-height: 1px; margin-bottom: -1px; overflow: hidden;}
+.Lfloat{float: left;}
+.Rfloat{float: right;}
+a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+.center{text-align: center;}
+
+#tabbed-box {
+    margin: 50px auto;
+    width: 660px;
+    text-align: center;
+}
+
+ .tab {
+    background:#fff;
+    color:#000;
+    padding:8px 10px 8px 10px;
+    text-decoration:none;
+    font-size:15px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    text-transform:uppercase;
+    border:1px solid #000; 
+    text-align: center;
+    float: left;
+    width: 30%;
+    cursor: pointer;
+  }
+
+
+
+.tab:hover {
+    color: #fff;
+    background: #000;
+}
+
+.tab.active {
+    background-color:#000;
+    color:#fff;
+    border:1px solid #000; 
+}
+
+#content_2, #content_3 { display:none;}
+
+
+.content {
+    margin:0px;
+    padding:0px 20px 0px 20px;
+}
+
+#mid-tab{border-right: 0; border-left: 0;}
+
+.inside-info {
+    display: inline-block;
+    margin: 20px 17px;
+    text-align: center;
+}
+
+.percentage{font-size: 30px; font-weight: bold;}
+
+.underline {padding-bottom: 10px; border-bottom: 1px solid;}
+.plus{display: none;}
+.mobile-tab{display: none;}
+
+@media (max-width: 736px) {
+    #tabbed-box{width: auto; margin: auto;}
+    .tab{border: 0; border-bottom: 1px solid #000; float: none; width: 100%; text-align: left;}
+    .plus{display: inline; float: right; font-weight: 100; margin-right: 30px;}
+    .inside-info{margin: 20px 10px;}
+    .percentage{font-size: 24px;}
+    .tab.active{background-color:#fff; color:#000; border: 0;}
+    .mobile-hide{display: none;}
+    .mobile-tab{display: block;}
+    .content{padding: 20px; padding-top: 0;}
+}

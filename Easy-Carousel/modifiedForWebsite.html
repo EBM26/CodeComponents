@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Easy Carousel</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright, .constantFright{float: right;}
+		.Fleft, .constantFleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto; padding: 150px; margin-top: 200px; background: url('https://mojonow.blob.core.windows.net/cmr/t1594/opt/7ff7e10a593442c7ab6fd274b8a16e6b_1.png') no-repeat center;}
+		.row{padding: 0 40px;}
+		.flex-container{display: flex;}
+		.flex1{flex: 1;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.font12{font-size: 12px;}
+		.font14{font-size: 14px;}
+		.font20{font-size: 20px;}
+		.font22{font-size: 22px;}
+		.font24{font-size: 24px;}
+		.font16{font-size: 16px;}
+		.font18{font-size: 18px;}
+		.font26{font-size: 26px;}
+		.font28{font-size: 28px;}
+		.font36{font-size: 36px;}
+
+		*{text-decoration: none; margin: 0; padding: 0; max-width: 100%;}
+		.clear{clear: both;}
+		.slider > div {display:block; width:100%; padding: 50px 0; background-color: rgba(0,102,177,0.8); text-align: center;           border: 3px solid #fff; box-shadow: 0 0 20px 0 rgba(0,0,0,0.75); max-width: 960px; margin: auto;
+					   padding: 30px 30px 60px;}
+		.slider-nav {margin-left: 65px; margin-top: -35px;}
+		.sliding-slide{display:inline-block; width:80px; height: 80px; margin: 0 5px; text-align: center;                cursor: pointer; border: 5px solid #fff;}
+		.nav-img img{max-width: 100%;}
+		.ImageSection{max-width: 520px; text-align: center; float: left;}
+		.blobSection{float: left; color: #fff; text-align: left; padding: 0 20px; max-width: 400px;}
+		.firstTitle{font-family: Roboto; font-size: 36px; margin-bottom: 20px;}
+		.secondTitle{font-family: Lato; font-size: 26px; margin-bottom: 20px;}
+		.blob-p{font-family: Lato; font-size: 20px;}
+
+		/* ipad and mobile styling rules */
+		@media only screen and (max-width: 1099px) {
+			.container{width: auto;}
+			.row{padding: 0 10px;}
+			.flex-container, .desktopHide{display: block;}
+			.Fright, .Fleft{float: none;}
+			
+		}
+		
+		/* mobile ONLY styling rules */
+		@media only screen and (max-width: 736px) {
+		
+		}
+		
+		/* mobile LANDSCAPE ONLY styling rules */
+		@media only screen and (max-width: 736px) and (orientation: landscape) {
+			
+		}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class='slider'>
+			  <div class="sliding-slide">
+			  	<div class="ImageSection">
+			  		<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/928255ebd1e14ccaafe52fee71a8bd41_1.png" alt="">
+			  	</div>
+			  	<div class="blobSection">
+			  		<p class="firstTitle">Percy Rodriguez</p>
+			  		<p class="secondTitle">BAR TENDER</p>
+			  		<p class="blob-p">"Since I started using Superthotics my foot and calf pain is completely gone. By the end of the day, my feet feel so comfortable - it's as if I've been sitting all day. It's been an incredible relief."</p>
+			  	</div>
+			  	<div class="clear"></div>
+			  </div>
+			   <div  class="sliding-slide">
+			  	<div class="ImageSection">
+			  		<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/3fc899e10b3a4dc6bb0c49e6a46f5b1d_1.png" alt="">
+			  	</div>
+			  	<div class="blobSection">
+			  		<p class="firstTitle">Percy Rodriguez</p>
+			  		<p class="secondTitle">BAR TENDER</p>
+			  		<p class="blob-p">"Since I started using Superthotics my foot and calf pain is completely gone. By the end of the day, my feet feel so comfortable - it's as if I've been sitting all day. It's been an incredible relief."</p>
+			  	</div>
+			  	<div class="clear"></div>
+			  </div>
+			   <div class="sliding-slide">
+			  	<div class="ImageSection">
+			  		<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/9390d033cd374499adae0f5fb5994889_1.png" alt="">
+			  	</div>
+			  	<div class="blobSection">
+			  		<p class="firstTitle">Percy Rodriguez</p>
+			  		<p class="secondTitle">BAR TENDER</p>
+			  		<p class="blob-p">"Since I started using Superthotics my foot and calf pain is completely gone. By the end of the day, my feet feel so comfortable - it's as if I've been sitting all day. It's been an incredible relief."</p>
+			  	</div>
+			  	<div class="clear"></div>
+			  </div>
+			</div>
+
+		<div class='slider-nav'>
+		  <div class="nav-img"><img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/c1ba78c1124840d7ac27f4f22519a35a_1.png" alt=""></div>
+		  <div class="nav-img"><img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/0f792158efc04afca7297010321c0757_1.png" alt=""></div>
+		  <div class="nav-img"><img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/674bf817f2e74648bd04370600ccf7c3_1.png" alt=""></div>
+		</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script>
+			$('.slider').slick({
+			  arrows:false, dots: false, infinite:true, speed:500,
+			  autoplay:true, autoplaySpeed: 3000, slidesToShow:1, slidesToScroll:1
+			});
+			$('.sliding-slide').click(function() {
+				$('.slider').slick('slickGoTo',$(this).index());
+			})
+		</script>
+	</body>
+	</html>

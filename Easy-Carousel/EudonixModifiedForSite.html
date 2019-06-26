@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<meta name="format-detection" content="telephone=no">
+		<!-- taken from this site https://www.eduonix.com/dashboard/Learn-jQuery-by-making-a-Content-Slider -->
+		<title>jQuery Content Slider</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<style>
+			*{margin:0; padding:0; max-width: 100%;}
+			#container{width:980px; margin:40px auto; position: relative;}
+			#slider{width:980px; height:410px; position:relative; overflow:hidden; float:left; background-color: rgba(0,102,177,0.8); text-align: center; border: 3px solid #fff; box-shadow: 0 0 20px 0 rgba(0,0,0,0.75); max-width: 960px; margin: auto; padding: 30px;}
+			#slider img{height:350px;}
+			.slide{position:absolute;}
+			.ImageSection{max-width: 520px; text-align: center; float: left; }
+			.blobSection{float: left; color: #fff; text-align: left; padding: 0 20px; max-width: 390px;}
+			.firstTitle{font-family: Roboto; font-size: 36px; margin: 0; margin-bottom: 20px;}
+			.secondTitle{font-family: Lato; font-size: 26px; margin-bottom: 20px; text-transform: uppercase;}
+			.blob-p{font-family: Lato; font-size: 20px;}
+			.clear{clear: both;}
+			#prev, #next{ cursor:pointer; position:absolute; z-index:100; top: 170px;}
+			#prev{left:-10px;}
+			#next{right: 8px;}
+
+		@media only screen and (max-width: 1024px) {
+			#container, #slider{width: 350px; }
+			#slider img{width: 100%;}
+			#slider{padding: 0px; height: 700px;}
+			.ImageSection{float: none; padding: 10px;}
+			.blobSection{float: none; padding: 0 15px 15px;}
+			#next{right: -16px;}
+			
+		}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/3f5f769262a140028a88d6c9e799d5cf_1.png" alt="Prev" id="prev">
+			<div id="slider">
+				<div class="slide">
+					<div class="ImageSection">
+				  		<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/928255ebd1e14ccaafe52fee71a8bd41_1.png" alt="">
+				  	</div>
+				  	<div class="blobSection">
+				  		<p class="firstTitle">Percy Rodriguez</p>
+				  		<p class="secondTitle">BAR TENDER</p>
+				  		<p class="blob-p">"Since I started using Superthotics my foot and calf pain is completely gone. By the end of the day, my feet feel so comfortable - it's as if I've been sitting all day. It's been an incredible relief."</p>
+				  	</div>
+				  	<div class="clear"></div>
+				</div>
+				
+				<div class="slide">
+					<div class="ImageSection">
+				  		<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/3fc899e10b3a4dc6bb0c49e6a46f5b1d_1.png" alt="">
+				  	</div>
+				  	<div class="blobSection">
+				  		<p class="firstTitle">Barbara Olsen</p>
+				  		<p class="secondTitle">ACTIVE RETIREE</p>
+				  		<p class="blob-p">“I may be retired, but I don’t sit home on the couch. Superthotics are a dream come true. They’re fantastic. It’s like nature giving you a new pair of feet! My feet feel great. My back is good. I’ve got my confidence back. I can be as spry and perky as the next one!”</p>
+				  	</div>
+				  	<div class="clear"></div>
+				</div>
+				
+				<div class="slide">
+					<div class="ImageSection">
+				  		<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/9390d033cd374499adae0f5fb5994889_1.png" alt="">
+				  	</div>
+				  	<div class="blobSection">
+				  		<p class="firstTitle">Daniel Prok</p>
+				  		<p class="secondTitle">Fitness Enthusiast</p>
+				  		<p class="blob-p">“I love Superthotics. I really didn’t know I needed them until I tried them, but they’re awesome. It really helps distribute the weight that I’ve been putting on my feet for years in a way that supports my feet and my active lifestyle.”</p>
+				  	</div>
+				  	<div class="clear"></div>
+				</div>
+				
+			</div>
+			<img src="https://mojonow.blob.core.windows.net/cmr/t1594/src/9ba1f63ab79d43daa7784d7680f4b2a7_1.png" alt="Next" id="next">
+			<div class="clear"></div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+	// Set Options
+	var speed = 500;			// Fade speed
+	var autoswitch = true;		// Auto slider options
+	var autoswitch_speed = 4000;	// Auto slider speed
+	
+	// Add initial active class
+	$('.slide').first().addClass('active');
+	
+	// Hide all slides
+	$('.slide').hide();
+	
+	// Show first slide
+	$('.active').show();
+	
+	// Next Handler
+	$('#next').on('click', nextSlide);
+	
+	// Prev Handler
+	$('#prev').on('click', prevSlide);
+	
+	// Auto Slider Handler
+	if(autoswitch == true){
+		setInterval(nextSlide,autoswitch_speed);
+	}
+	
+	// Switch to next slide
+	function nextSlide(){
+		$('.active').removeClass('active').addClass('oldActive');
+		if($('.oldActive').is(':last-child')){
+			$('.slide').first().addClass('active');
+		} else {
+			$('.oldActive').next().addClass('active');
+		}
+		$('.oldActive').removeClass('oldActive');
+		$('.slide').fadeOut(speed);
+		$('.active').fadeIn(speed);
+	};
+	
+	// Switch to prev slide
+	function prevSlide(){
+		$('.active').removeClass('active').addClass('oldActive');
+		if($('.oldActive').is(':first-child')){
+			$('.slide').last().addClass('active');
+		} else {
+			$('.oldActive').prev().addClass('active');
+		}
+		$('.oldActive').removeClass('oldActive');
+		$('.slide').fadeOut(speed);
+		$('.active').fadeIn(speed);
+	};
+});
+	</script>
+</html>

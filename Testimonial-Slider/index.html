@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="../mp-favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Sliding Testimonial</title>
+	<!-- taken from this page  https://github.com/CodyHouse/client-testimonials-carousel  -->
+	<style>
+		*{text-decoration: none; margin: 0; padding: 0;}
+		html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+		img{border: none; max-width: 100%;}
+		li{list-style-type: none;}
+		div{display: block; margin: 0; padding: 0;}
+		u{text-decoration: underline;}
+		s{text-decoration: line-through;}
+		i{font-style: italic;}
+		b{font-weight: bold;}
+		a:link, a:visited, a:active{text-decoration: none; color: inherit;}
+		.Fright, .constantFright{float: right;}
+		.Fleft, .constantFleft{float: left;}
+		.clear{clear: both;}
+		.container{width: 1100px; margin: auto;}
+		.row{padding: 0 40px;}
+		.flex-container{display: flex;}
+		.flex1{flex: 1;}
+		.align-left{text-align: left;}
+		.inline{display: inline;}
+		.inline-block{display: inline-block;}
+		.uppercase{text-transform: uppercase;}
+		.center{text-align: center;}
+		.relative{position: relative;}
+		.hidden{display: none;}
+		.font12{font-size: 12px;}
+		.font14{font-size: 14px;}
+		.font20{font-size: 20px;}
+		.font22{font-size: 22px;}
+		.font24{font-size: 24px;}
+		.font16{font-size: 16px;}
+		.font18{font-size: 18px;}
+		.font26{font-size: 26px;}
+		.font28{font-size: 28px;}
+		.font36{font-size: 36px;}
+		
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+ .cd-testimonials-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 768px;
+  background-color: #39393c;
+  margin: 2em auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 20px 40px 70px;
+  z-index: 1;
+}
+.cd-testimonials-wrapper::after {
+  /* quotation mark */
+  content: '\201C';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  padding-top: 8px;
+  margin-left: -25px;
+  background: rgba(32, 32, 34, 0.9);
+  font-family: "Georgia", serif;
+  color: #ffffff;
+  font-size: 70px;
+  font-size: 4.375rem;
+  text-align: center;
+  /* visible on big devices only */
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .cd-testimonials-wrapper {
+    margin: 4em auto;
+    padding: 64px 50px 114px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-testimonials-wrapper::after {
+    /* quotation mark visible */
+    display: block;
+  }
+}
+
+.cd-testimonials {
+  color: #ffffff;
+  text-align: center;
+}
+.cd-testimonials::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.cd-testimonials > li {
+  position: absolute;
+  opacity: 0;
+}
+.cd-testimonials > li:first-child {
+  position: relative;
+  opacity: 1;
+}
+.cd-testimonials p {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  padding: 0 14px;
+}
+@media only screen and (min-width: 768px) {
+  .cd-testimonials p {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-testimonials p {
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.6;
+  }
+}
+
+.cd-author img, .cd-author .cd-author-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cd-author img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.cd-author .cd-author-info {
+  text-align: left;
+  line-height: 1.2;
+}
+.cd-author .cd-author-info li:first-child {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.cd-author .cd-author-info li:last-child {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #6b6b70;
+}
+@media only screen and (min-width: 768px) {
+  .cd-author img {
+    width: 50px;
+    height: 50px;
+  }
+  .cd-author .cd-author-info {
+    line-height: 1.4;
+  }
+  .cd-author .cd-author-info li:first-child {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-author .cd-author-info li:last-child {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+.flex-direction-nav li {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  top: 0;
+}
+.flex-direction-nav li:first-child {
+  left: 0;
+}
+.flex-direction-nav li:last-child {
+  right: 0;
+}
+.flex-direction-nav li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.no-touch .flex-direction-nav li a:hover {
+  background-color: #323234;
+}
+.flex-direction-nav li a::before, .flex-direction-nav li a::after {
+  /* left and right arrows in css only */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 13px;
+  background-color: #ffffff;
+}
+.flex-direction-nav li a::before {
+  -webkit-transform: translateY(-35px) rotate(45deg);
+  -moz-transform: translateY(-35px) rotate(45deg);
+  -ms-transform: translateY(-35px) rotate(45deg);
+  -o-transform: translateY(-35px) rotate(45deg);
+  transform: translateY(-35px) rotate(45deg);
+}
+.flex-direction-nav li a::after {
+  -webkit-transform: translateY(-27px) rotate(-45deg);
+  -moz-transform: translateY(-27px) rotate(-45deg);
+  -ms-transform: translateY(-27px) rotate(-45deg);
+  -o-transform: translateY(-27px) rotate(-45deg);
+  transform: translateY(-27px) rotate(-45deg);
+}
+.flex-direction-nav li:last-child a::before {
+  -webkit-transform: translateY(-35px) rotate(-45deg);
+  -moz-transform: translateY(-35px) rotate(-45deg);
+  -ms-transform: translateY(-35px) rotate(-45deg);
+  -o-transform: translateY(-35px) rotate(-45deg);
+  transform: translateY(-35px) rotate(-45deg);
+}
+.flex-direction-nav li:last-child a::after {
+  -webkit-transform: translateY(-27px) rotate(45deg);
+  -moz-transform: translateY(-27px) rotate(45deg);
+  -ms-transform: translateY(-27px) rotate(45deg);
+  -o-transform: translateY(-27px) rotate(45deg);
+  transform: translateY(-27px) rotate(45deg);
+}
+@media only screen and (min-width: 768px) {
+  .flex-direction-nav li {
+    width: 50px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .flex-direction-nav li a::before, .flex-direction-nav li a::after {
+    background-color: #5e5e63;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  .flex-direction-nav li a:hover::before, .flex-direction-nav li a:hover::after {
+    background-color: #ffffff;
+  }
+}
+
+.cd-see-all {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #252527;
+  text-align: center;
+  text-transform: uppercase;
+  color: #6b6b70 !important;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 0.75rem;
+  -webkit-transition: color, 0.2s;
+  -moz-transition: color, 0.2s;
+  transition: color, 0.2s;
+}
+.no-touch .cd-see-all:hover {
+  color: #79b6e4;
+}
+
+.cd-testimonials-all {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-testimonials-all .cd-testimonials-all-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.cd-testimonials-all .cd-testimonials-all-wrapper > ul {
+  width: 90%;
+  max-width: 1170px;
+  margin: 4em auto;
+}
+.cd-testimonials-all .cd-testimonials-all-wrapper > ul::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.cd-testimonials-all .cd-testimonials-item {
+  margin-bottom: 2em;
+  opacity: 0;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translate3d(0, 0, 0) scale(0.4);
+  -moz-transform: translate3d(0, 0, 0) scale(0.4);
+  -ms-transform: translate3d(0, 0, 0) scale(0.4);
+  -o-transform: translate3d(0, 0, 0) scale(0.4);
+  transform: translate3d(0, 0, 0) scale(0.4);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .3s, opacity .3s;
+  -moz-transition: -moz-transform .3s, opacity .3s;
+  transition: transform .3s, opacity .3s;
+}
+.cd-testimonials-all p {
+  position: relative;
+  background: #79b6e4;
+  color: #ffffff;
+  padding: 2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  border-radius: 0.25em;
+  margin-bottom: 1em;
+}
+.cd-testimonials-all p::after {
+  /* creating the triangle in css */
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 2em;
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  border-top-color: #79b6e4;
+}
+.cd-testimonials-all .cd-author {
+  text-align: left;
+  margin-left: 1.5em;
+}
+.cd-testimonials-all .cd-author img {
+  box-shadow: 0 0 0 transparent;
+}
+.cd-testimonials-all.is-visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-testimonials-all.is-visible .cd-testimonials-all-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
+.cd-testimonials-all.is-visible .cd-testimonials-item {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  -moz-transform: translate3d(0, 0, 0) scale(1);
+  -ms-transform: translate3d(0, 0, 0) scale(1);
+  -o-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+@media only screen and (min-width: 768px) {
+  .cd-testimonials-all .cd-testimonials-item {
+    width: 46%;
+    margin: 0 2% 3em;
+  }
+  .cd-testimonials-all .cd-author {
+    margin-left: 1em;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-testimonials-all .cd-testimonials-item {
+    width: 30%;
+    margin: 0 1.6666% 3em;
+  }
+}
+
+.close-btn {
+  position: fixed;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 5%;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.close-btn::before, .close-btn::after {
+  /* close icon in css */
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  top: 8px;
+  left: 19px;
+  background-color: #39393c;
+}
+.close-btn::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-btn::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+		}
+	</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+<div class="cd-testimonials-wrapper cd-container">
+	<ul class="cd-testimonials">
+		<li>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<div class="cd-author">
+				<img src="img/avatar-1.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>MyName</li>
+					<li>CEO, AmberCreative</li>
+				</ul>
+			</div>
+		</li>
+
+		<li>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ea, perferendis error repudiandae numquam dolor fuga temporibus. Unde omnis, consequuntur.</p>
+			<div class="cd-author">
+				<img src="img/avatar-2.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>MyName</li>
+					<li>Designer, CodyHouse</li>
+				</ul>
+			</div>
+		</li>
+
+		<li>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam totam nulla est, illo molestiae maxime officiis, quae ad, ipsum vitae deserunt molestias eius alias.</p>
+			<div class="cd-author">
+				<img src="img/avatar-3.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>MyName</li>
+					<li>CEO, CompanyName</li>
+				</ul>
+			</div>
+		</li>
+		
+	</ul> <!-- cd-testimonials -->
+
+	<a href="#0" class="cd-see-all">See all</a>
+</div> <!-- cd-testimonials-wrapper -->
+
+<div class="cd-testimonials-all">
+	<div class="cd-testimonials-all-wrapper">
+		<ul>
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam saepe iste maiores neque animi molestias nihil illum nisi temporibus.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-1.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nostrum nisi, doloremque error hic nam nemo doloribus porro impedit perferendis. Tempora, distinctio hic suscipit. At ullam eaque atque recusandae modi fugiat voluptatem laborum laboriosam rerum, consequatur reprehenderit omnis, enim pariatur nam, quidem, quas vel reiciendis aspernatur consequuntur. Commodi quasi enim, nisi alias fugit architecto, doloremque, eligendi quam autem exercitationem consectetur.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-2.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quibusdam eveniet, molestiae laborum voluptatibus minima hic quasi accusamus ut facere, eius expedita, voluptatem? Repellat incidunt veniam quaerat, qui laboriosam dicta. Quidem ducimus laudantium dolorum enim qui at ipsum, a error.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-3.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero voluptates officiis tempore quae officia! Beatae quia deleniti cum corporis eos perferendis libero reiciendis nemo iusto accusamus, debitis tempora voluptas praesentium repudiandae laboriosam excepturi laborum, nisi optio repellat explicabo, incidunt ex numquam. Ullam perferendis officiis harum doloribus quae corrupti minima quia, aliquam nostrum expedita pariatur maxime repellat, voluptas sunt unde, inventore.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-4.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam saepe iste maiores neque animi molestias nihil illum nisi temporibus.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-5.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quia quas, quis illo adipisci voluptate ex harum iste commodi nulla dolor. Eius ratione quod ab!</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-6.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dignissimos iure rem fugiat consequuntur officiis.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-1.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At temporibus tempora necessitatibus reiciendis provident deserunt maxime sit id. Dicta aut voluptatibus placeat quibusdam vel, dolore.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-2.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iusto sapiente, excepturi velit, beatae possimus est tenetur cumque fugit tempore dolore fugiat! Recusandae, vel suscipit? Perspiciatis non similique sint suscipit officia illo, accusamus dolorum, voluptate vitae quia ea amet optio magni voluptatem nemo, natus nihil.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-3.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quasi officiis pariatur, fugit minus omnis animi ut assumenda quod commodi, ad a alias maxime unde suscipit magnam, voluptas laboriosam ipsam quibusdam quidem, dolorem deleniti id.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-4.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At temporibus tempora necessitatibus reiciendis provident deserunt maxime sit id. Dicta aut voluptatibus placeat quibusdam vel, dolore.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-5.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque tempore ipsam, eos suscipit nostrum molestias reprehenderit, rerum amet cum similique a, ipsum soluta delectus explicabo nihil repellat incidunt! Minima magni possimus mollitia deserunt facere, tempore earum modi, ea ipsa dicta temporibus suscipit quidem ut quibusdam vero voluptatibus nostrum excepturi explicabo nulla harum, molestiae alias. Ab, quidem rem fugit delectus quod.</p>
+				
+				<div class="cd-author">
+					<img src="img/avatar-6.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+		</ul>
+	</div>	<!-- cd-testimonials-all-wrapper -->
+
+	<a href="#0" class="close-btn">Close</a>
+</div> <!-- cd-testimonials-all -->
+
+
+
+		<script src="../jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.0/jquery.flexslider.js"></script>
+
+		<script>
+			jQuery(document).ready(function($){
+				//create the slider
+				$('.cd-testimonials-wrapper').flexslider({
+					selector: ".cd-testimonials > li",
+					animation: "slide",
+					controlNav: false,
+					slideshow: false,
+					smoothHeight: true,
+					start: function(){
+						$('.cd-testimonials').children('li').css({
+							'opacity': 1,
+							'position': 'relative'
+						});
+					}
+				});
+
+				//open the testimonials modal page
+				$('.cd-see-all').on('click', function(){
+					$('.cd-testimonials-all').addClass('is-visible');
+				});
+
+				//close the testimonials modal page
+				$('.cd-testimonials-all .close-btn').on('click', function(){
+					$('.cd-testimonials-all').removeClass('is-visible');
+				});
+				$(document).keyup(function(event){
+					//check if user has pressed 'Esc'
+			    	if(event.which=='27'){
+			    		$('.cd-testimonials-all').removeClass('is-visible');	
+				    }
+			    });
+			    
+				//build the grid for the testimonials modal page
+				$('.cd-testimonials-all-wrapper').children('ul').masonry({
+			  		itemSelector: '.cd-testimonials-item'
+				});
+			});
+		</script>
+	</body>
+	</html>

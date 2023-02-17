@@ -1,0 +1,52 @@
+*{text-decoration: none; margin: 0; padding: 0;}
+html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+img{border: none;}
+li{list-style-type: none;}
+div{display: block; margin: 0; padding: 0;}
+u{text-decoration: underline;}
+s{text-decoration: line-through;}
+i{font-style: italic;}
+b{font-weight: bold;}
+.Fright, .constantFright{float: right;}
+.Fleft, .constantFleft{float: left;}
+.clear{clear: both;}
+.container{width: 1200px; margin: auto; padding: 30px 15px;}
+.row{padding: 0 40px;}
+.flex-container{display: flex;}
+.flex1{flex: 1;}
+.align-left{text-align: left;}
+.inline{display: inline;}
+.inline-block{display: inline-block;}
+.uppercase{text-transform: uppercase;}
+.center{text-align: center;}
+.relative{position: relative;}
+.hidden{display: none;}
+.font12{font-size: 12px;}
+.font14{font-size: 14px;}
+.font20{font-size: 20px;}
+.font22{font-size: 22px;}
+.font24{font-size: 24px;}
+.font16{font-size: 16px;}
+.font18{font-size: 18px;}
+.font26{font-size: 26px;}
+.font28{font-size: 28px;}
+.font36{font-size: 36px;}
+
+/* ipad and mobile styling rules */
+@media only screen and (max-width: 1023px) {
+	.container{width: auto;}
+	.row{padding: 0 10px;}
+	.flex-container, .desktopHide{display: block;}
+	.Fright, .Fleft{float: none;}
+			
+}
+		
+/* mobile ONLY styling rules */
+@media only screen and (max-width: 767px) {
+		
+}
+		
+/* mobile LANDSCAPE ONLY styling rules */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+			
+}

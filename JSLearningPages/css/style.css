@@ -1,7 +1,7 @@
 *{text-decoration: none; margin: 0; padding: 0;}
-html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919;}
+html,body{margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;color: #191919; line-height: 24px; font-size: 18px;}
 img{border: none;}
-li{list-style-type: none;}
+li{list-style-type: none; margin-bottom: 15px;}
 div{display: block; margin: 0; padding: 0;}
 u{text-decoration: underline;}
 s{text-decoration: line-through;}
@@ -10,7 +10,7 @@ b{font-weight: bold;}
 .Fright, .constantFright{float: right;}
 .Fleft, .constantFleft{float: left;}
 .clear{clear: both;}
-.container{width: 1200px; margin: auto; padding: 30px 15px;}
+.container{width: 900px; margin: auto; padding: 30px 15px; position: relative;}
 .row{padding: 0 40px;}
 .flex-container{display: flex;}
 .flex1{flex: 1;}
@@ -31,6 +31,23 @@ b{font-weight: bold;}
 .font26{font-size: 26px;}
 .font28{font-size: 28px;}
 .font36{font-size: 36px;}
+.martop30{margin-top: 30px;}
+h1{margin-bottom: 40px}
+p, h3{margin-bottom: 15px;}
+
+/* unique styling rules */
+#search{width: 280px; padding: 4px; border-radius: 3px;}
+#search:focus{outline: none;}
+.search-text{display: inline-block; margin-left: 20px;}
+#result{max-width: 960px; margin: 30px auto;}
+.searchDiv, .return{position: fixed; right: 5%; top: 5%;}
+.return{left: 5%;}
+.grayFont{color: #5A5A5A;}
+.exampleDiv{padding: 5px 25px; background: #fbfaf8; border: 1px solid #ccc;
+				  	 white-space: pre-line; margin-bottom: 13px;}
+.exampleDiv p{margin-bottom: 0;}
+.keyword{color: #DD4A68; font-weight: bold;}
+
 
 /* ipad and mobile styling rules */
 @media only screen and (max-width: 1023px) {

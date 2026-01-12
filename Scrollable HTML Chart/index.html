@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      
+        .chart-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        #myTable {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+            table-layout: fixed;
+        }
+
+       #myTable th, #myTable td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        #myTable th:last-child, #myTable td:last-child {
+            border-right: none;
+        }
+
+        .feature-label {
+            width: 150px;
+            text-align: left;
+            background-color: #f8f9fa;
+            font-weight: bold;
+            position: sticky;
+            left: 0;
+            z-index: 2;
+        }
+
+        /* --- LOGO ALIGNMENT FIX --- */
+        .brand-header {
+            background-color: #fff;
+            vertical-align: top; /* Align headers to top for consistent text start */
+            padding-top: 20px;
+        }
+
+        .brand-logo-wrapper {
+            height: 80px; /* Force a consistent height for all logo areas */
+            display: flex;
+            align-items: center; /* Vertically centers the logo */
+            justify-content: center; /* Horizontally centers the logo */
+            margin-bottom: 15px;
+        }
+
+        .brand-logo-wrapper img {
+            max-width: 80%; /* Prevents logos from touching edges */
+            max-height: 100%; /* Ensures logos don't exceed the wrapper height */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        /* -------------------------- */
+
+        .brand-name {
+            font-size: 1.1rem;
+            color: #333;
+            display: block;
+            font-weight: 600;
+        }
+
+       #myTable tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .chart-wrapper::after {
+                content: "← Scroll to see more →";
+                display: block;
+                text-align: center;
+                font-size: 12px;
+                color: #888;
+                padding: 10px;
+            }
+
+            .brand-name{font-size: 16px;}
+            .brand-logo-wrapper {height: 50px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chart-wrapper">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th class="feature-label">Model</th>
+                    <th class="brand-header">
+                        <div class="brand-logo-wrapper">
+                            <img src="https://cdn.builder.io/api/v1/image/assets%2F907dedd21ad54876a62d88580a060f2b%2F3fe39641c88c4b8eae30dc513e2f825e" alt="Brand A">
+                        </div>
+                        <span class="brand-name">EcoFlow Pro</span>
+                    </th>
+                    <th class="brand-header">
+                        <div class="brand-logo-wrapper">
+                            <img src="https://cdn.builder.io/api/v1/image/assets%2F907dedd21ad54876a62d88580a060f2b%2F8ea4597e0458470980df83ec551e508b" alt="Brand B">
+                        </div>
+                        <span class="brand-name">VoltMax 500</span>
+                    </th>
+                    <th class="brand-header">
+                        <div class="brand-logo-wrapper">
+                            <img src="https://cdn.builder.io/api/v1/image/assets%2F907dedd21ad54876a62d88580a060f2b%2Fb7637bd9a17b45d2a5cf12942d5ebefa" alt="Brand C">
+                        </div>
+                        <span class="brand-name">SolarGen X</span>
+                    </th>
+                    <th class="brand-header">
+                        <div class="brand-logo-wrapper">
+                            <img src="https://cdn.builder.io/api/v1/image/assets%2F907dedd21ad54876a62d88580a060f2b%2F37e827e9889f4c6ca1fc9a167104bb7c" alt="Brand D">
+                        </div>
+                        <span class="brand-name">PowerPulse</span>
+                    </th>
+                    <th class="brand-header">
+                        <div class="brand-logo-wrapper">
+                            <img src="https://cdn.builder.io/api/v1/image/assets%2F907dedd21ad54876a62d88580a060f2b%2Fd913e3985532423e9a33029912dab8bd" alt="Brand E">
+                        </div>
+                        <span class="brand-name">Titan Cell</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                    <td class="feature-label">Price</td>
+                    <td>$499</td>
+                    <td>$550</td>
+                    <td>$475</td>
+                    <td>$599</td>
+                    <td>$520</td>
+                </tr>
+                <tr>
+                    <td class="feature-label">Battery Life</td>
+                    <td>12 Hours</td>
+                    <td>15 Hours</td>
+                    <td>10 Hours</td>
+                    <td>18 Hours</td>
+                    <td>14 Hours</td>
+                </tr>
+                <tr>
+                    <td class="feature-label">Fast Charging</td>
+                    <td class="check-mark">✓</td>
+                    <td class="check-mark">✓</td>
+                    <td class="cross-mark">✕</td>
+                    <td class="check-mark">✓</td>
+                    <td class="check-mark">✓</td>
+                </tr>
+                <tr>
+                    <td class="feature-label">Warranty</td>
+                    <td>2 Years</td>
+                    <td>3 Years</td>
+                    <td>1 Year</td>
+                    <td>5 Years</td>
+                    <td>2 Years</td>
+                </tr>
+                <tr>
+                    <td class="feature-label">Weight</td>
+                    <td>4.5 lbs</td>
+                    <td>5.2 lbs</td>
+                    <td>4.0 lbs</td>
+                    <td>6.1 lbs</td>
+                    <td>4.8 lbs</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
